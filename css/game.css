@@ -16,7 +16,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background: rgba(255, 255, 255, 0.95);
+  background: #FFFFFF;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   z-index: 10;
 }
@@ -54,7 +54,7 @@
 }
 
 .instruction {
-  background: rgba(255, 255, 255, 0.95);
+  background: #FFFFFF;
   border-radius: 20px;
   padding: 24px;
   font-size: 28px;
@@ -275,7 +275,7 @@
 }
 
 .settlement-stats {
-  background: rgba(255, 255, 255, 0.8);
+  background: #F8F8F8;
   border-radius: 12px;
   padding: 24px;
   margin-bottom: 24px;
