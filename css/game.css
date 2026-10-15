@@ -15,9 +15,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-md);
+  padding: 16px;
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   z-index: 10;
 }
 
@@ -25,43 +25,43 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: var(--error-color);
-  color: var(--text-light);
+  background: #FF6B6B;
+  color: #FFFFFF;
   border: none;
-  font-size: var(--font-size-lg);
+  font-size: 28px;
   cursor: pointer;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .star-count {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
-  font-size: var(--font-size-lg);
+  gap: 8px;
+  font-size: 28px;
   font-weight: bold;
-  color: var(--primary-color);
+  color: #FF6B6B;
 }
 
 .star-icon {
-  font-size: var(--font-size-xl);
+  font-size: 36px;
 }
 
 /* 题目区域 */
 .question-area {
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: 32px 16px;
   text-align: center;
   flex-shrink: 0;
 }
 
 .instruction {
   background: rgba(255, 255, 255, 0.95);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
-  font-size: var(--font-size-lg);
+  border-radius: 20px;
+  padding: 24px;
+  font-size: 28px;
   font-weight: bold;
-  color: var(--text-primary);
-  box-shadow: var(--shadow);
-  margin-bottom: var(--spacing-md);
+  color: #2C3E50;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 16px;
   min-height: 80px;
   display: flex;
   align-items: center;
@@ -69,18 +69,18 @@
 }
 
 .play-btn {
-  padding: var(--spacing-sm) var(--spacing-lg);
-  font-size: var(--font-size-md);
-  background: var(--secondary-color);
-  color: var(--text-light);
+  padding: 12px 24px;
+  font-size: 24px;
+  background: #4ECDC4;
+  color: #FFFFFF;
   border: none;
-  border-radius: var(--border-radius);
+  border-radius: 12px;
   cursor: pointer;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   min-height: 50px;
   display: inline-flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: 12px;
 }
 
 /* 选项区域 */
@@ -88,8 +88,8 @@
   flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-lg);
-  padding: var(--spacing-lg);
+  gap: 24px;
+  padding: 24px;
   max-width: 600px;
   margin: 0 auto;
   align-content: center;
@@ -132,7 +132,7 @@
 
 .feedback-icon {
   font-size: 120px;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 24px;
 }
 
 .feedback-icon.correct {
@@ -171,9 +171,9 @@
 }
 
 .feedback-text {
-  font-size: var(--font-size-xl);
+  font-size: 36px;
   font-weight: bold;
-  color: var(--text-light);
+  color: #FFFFFF;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -194,11 +194,11 @@
 
 .settlement-content {
   background: linear-gradient(135deg, #FFE66D 0%, #FFA94D 100%);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-xl);
+  border-radius: 20px;
+  padding: 32px;
   max-width: 500px;
   width: 90%;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   animation: slideUp 0.5s ease;
   text-align: center;
 }
@@ -215,13 +215,13 @@
 }
 
 .settlement-title {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 24px;
 }
 
 .settlement-title span {
   font-size: 80px;
   display: block;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 16px;
   animation: celebrateEmoji 1s ease infinite;
 }
 
@@ -238,15 +238,15 @@
 }
 
 .settlement-title h2 {
-  font-size: var(--font-size-xl);
-  color: var(--text-primary);
+  font-size: 36px;
+  color: #2C3E50;
 }
 
 .settlement-stars {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-lg);
-  margin: var(--spacing-xl) 0;
+  gap: 24px;
+  margin: 32px 0;
 }
 
 .star-result {
@@ -276,40 +276,40 @@
 
 .settlement-stats {
   background: rgba(255, 255, 255, 0.8);
-  border-radius: var(--border-radius);
-  padding: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
 }
 
 .stat-row {
   display: flex;
   justify-content: space-between;
-  padding: var(--spacing-sm) 0;
-  font-size: var(--font-size-md);
-  color: var(--text-primary);
+  padding: 12px 0;
+  font-size: 24px;
+  color: #2C3E50;
 }
 
 .settlement-message {
-  font-size: var(--font-size-lg);
+  font-size: 28px;
   font-weight: bold;
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-xl);
-  padding: var(--spacing-md);
+  color: #2C3E50;
+  margin-bottom: 32px;
+  padding: 16px;
   background: rgba(255, 255, 255, 0.6);
-  border-radius: var(--border-radius);
+  border-radius: 12px;
 }
 
 .settlement-actions {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 16px;
 }
 
 /* 颜色卡片特殊样式 */
 .color-card {
   width: 100%;
   height: 100%;
-  border-radius: var(--border-radius-lg);
+  border-radius: 20px;
   border: 4px solid transparent;
   transition: all 0.2s ease;
 }
@@ -322,11 +322,11 @@
 @media (max-width: 768px) {
   .options-area {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
+    gap: 16px;
   }
 
   .settlement-stars {
-    gap: var(--spacing-md);
+    gap: 16px;
   }
 
   .star-result {

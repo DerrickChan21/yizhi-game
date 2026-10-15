@@ -5,7 +5,7 @@
 .parent-container {
   width: 100%;
   height: 100%;
-  background: var(--bg-color);
+  background: #F7F9FC;
   overflow-y: auto;
 }
 
@@ -24,50 +24,50 @@
 }
 
 .verify-content {
-  background: var(--text-light);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-xl);
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 32px;
   max-width: 400px;
   width: 90%;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   text-align: center;
 }
 
 .verify-content h2 {
-  font-size: var(--font-size-lg);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-md);
+  font-size: 28px;
+  color: #2C3E50;
+  margin-bottom: 16px;
 }
 
 .verify-content p {
-  font-size: var(--font-size-md);
-  color: var(--text-secondary);
-  margin-bottom: var(--spacing-lg);
+  font-size: 24px;
+  color: #7F8C8D;
+  margin-bottom: 24px;
 }
 
 .verify-question {
-  font-size: var(--font-size-xl);
+  font-size: 36px;
   font-weight: bold;
-  color: var(--primary-color);
-  margin: var(--spacing-lg) 0;
-  padding: var(--spacing-lg);
-  background: var(--bg-color);
-  border-radius: var(--border-radius);
+  color: #FF6B6B;
+  margin: 24px 0;
+  padding: 24px;
+  background: #F7F9FC;
+  border-radius: 12px;
 }
 
 .verify-input {
   width: 100%;
-  padding: var(--spacing-md);
-  font-size: var(--font-size-lg);
+  padding: 16px;
+  font-size: 28px;
   border: 2px solid #E0E0E0;
-  border-radius: var(--border-radius);
+  border-radius: 12px;
   text-align: center;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 24px;
 }
 
 .verify-actions {
   display: flex;
-  gap: var(--spacing-md);
+  gap: 16px;
 }
 
 .verify-actions button {
@@ -76,7 +76,7 @@
 
 /* 家长面板内容 */
 .parent-content {
-  padding: var(--spacing-md);
+  padding: 16px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -84,69 +84,69 @@
 .parent-header {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
-  padding: var(--spacing-md);
-  background: var(--text-light);
-  border-radius: var(--border-radius);
-  margin-bottom: var(--spacing-lg);
-  box-shadow: var(--shadow);
+  gap: 16px;
+  padding: 16px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .parent-header h1 {
   flex: 1;
-  font-size: var(--font-size-lg);
-  color: var(--text-primary);
+  font-size: 28px;
+  color: #2C3E50;
 }
 
 /* 统计总览 */
 .stats-overview {
-  background: var(--text-light);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
-  box-shadow: var(--shadow);
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .stats-overview h2 {
-  font-size: var(--font-size-lg);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-lg);
+  font-size: 28px;
+  color: #2C3E50;
+  margin-bottom: 24px;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: var(--spacing-md);
+  gap: 16px;
 }
 
 /* 关卡详情 */
 .level-details {
-  background: var(--text-light);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
-  box-shadow: var(--shadow);
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .level-details h2 {
-  font-size: var(--font-size-lg);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-lg);
+  font-size: 28px;
+  color: #2C3E50;
+  margin-bottom: 24px;
 }
 
 .level-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 16px;
 }
 
 .level-list-item {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
-  padding: var(--spacing-md);
-  background: var(--bg-color);
-  border-radius: var(--border-radius);
+  gap: 16px;
+  padding: 16px;
+  background: #F7F9FC;
+  border-radius: 12px;
 }
 
 .level-list-icon {
@@ -158,24 +158,24 @@
 }
 
 .level-list-name {
-  font-size: var(--font-size-md);
+  font-size: 24px;
   font-weight: bold;
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-xs);
+  color: #2C3E50;
+  margin-bottom: 8px;
 }
 
 .level-list-stats {
-  font-size: var(--font-size-sm);
-  color: var(--text-secondary);
+  font-size: 18px;
+  color: #7F8C8D;
 }
 
 .level-list-stars {
   display: flex;
-  gap: var(--spacing-xs);
+  gap: 8px;
 }
 
 .level-list-star {
-  font-size: var(--font-size-lg);
+  font-size: 28px;
   opacity: 0.3;
 }
 
@@ -185,87 +185,87 @@
 
 /* 最近游玩 */
 .recent-plays {
-  background: var(--text-light);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
-  box-shadow: var(--shadow);
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .recent-plays h2 {
-  font-size: var(--font-size-lg);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-lg);
+  font-size: 28px;
+  color: #2C3E50;
+  margin-bottom: 24px;
 }
 
 .recent-plays-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 16px;
 }
 
 .recent-play-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-md);
-  background: var(--bg-color);
-  border-radius: var(--border-radius);
+  padding: 16px;
+  background: #F7F9FC;
+  border-radius: 12px;
 }
 
 .recent-play-date {
-  font-size: var(--font-size-sm);
-  color: var(--text-secondary);
+  font-size: 18px;
+  color: #7F8C8D;
 }
 
 .recent-play-level {
-  font-size: var(--font-size-md);
+  font-size: 24px;
   font-weight: bold;
-  color: var(--text-primary);
+  color: #2C3E50;
 }
 
 .recent-play-stars {
   display: flex;
-  gap: var(--spacing-xs);
+  gap: 8px;
 }
 
 .recent-play-star {
-  font-size: var(--font-size-md);
+  font-size: 24px;
 }
 
 /* 管理功能 */
 .management {
-  background: var(--text-light);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
-  box-shadow: var(--shadow);
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .management h2 {
-  font-size: var(--font-size-lg);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-lg);
+  font-size: 28px;
+  color: #2C3E50;
+  margin-bottom: 24px;
 }
 
 .management-actions {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
 .warning-text {
-  padding: var(--spacing-md);
+  padding: 16px;
   background: #FFF3CD;
-  border-left: 4px solid var(--warning-color);
-  border-radius: var(--border-radius);
+  border-left: 4px solid #FFA94D;
+  border-radius: 12px;
 }
 
 .warning-text p {
-  font-size: var(--font-size-sm);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-xs);
+  font-size: 18px;
+  color: #2C3E50;
+  margin-bottom: 8px;
 }
 
 .warning-text p:last-child {
@@ -274,23 +274,23 @@
 
 /* 设置 */
 .settings {
-  background: var(--text-light);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
-  box-shadow: var(--shadow);
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .settings h2 {
-  font-size: var(--font-size-lg);
-  color: var(--text-primary);
-  margin-bottom: var(--spacing-lg);
+  font-size: 28px;
+  color: #2C3E50;
+  margin-bottom: 24px;
 }
 
 .setting-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-md) 0;
+  padding: 16px 0;
   border-bottom: 1px solid #E0E0E0;
 }
 
@@ -299,14 +299,14 @@
 }
 
 .setting-item label {
-  font-size: var(--font-size-md);
-  color: var(--text-primary);
+  font-size: 24px;
+  color: #2C3E50;
 }
 
 .setting-control {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: 16px;
 }
 
 .setting-control input[type="checkbox"] {
@@ -320,8 +320,8 @@
 }
 
 .setting-control span {
-  font-size: var(--font-size-md);
-  color: var(--text-secondary);
+  font-size: 24px;
+  color: #7F8C8D;
   min-width: 50px;
 }
 
