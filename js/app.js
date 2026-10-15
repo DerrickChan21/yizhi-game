@@ -129,10 +129,11 @@ class App {
 
     // 星球点击
     var planetItems = document.querySelectorAll('.planet-item');
+    var self = this;
     planetItems.forEach(function(item) {
       item.addEventListener('click', function(e) {
         var planet = item.dataset.planet;
-        this.handlePlanetClick(planet, item);
+        self.handlePlanetClick(planet, item);
       });
     });
   }
