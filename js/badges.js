@@ -145,18 +145,16 @@ class BadgesPage {
 
     const emoji = document.createElement('div');
     emoji.className = 'badge-card-emoji';
-    emoji.textContent = isUnlocked ? badge.emoji : '?';
+    emoji.textContent = isUnlocked ? badge.emoji : '';
     card.appendChild(emoji);
 
-    const name = document.createElement('div');
-    name.className = 'badge-card-name';
-    name.textContent = isUnlocked ? badge.name : '???';
-    card.appendChild(name);
-
-    const status = document.createElement('div');
-    status.className = 'badge-card-status';
-    status.textContent = isUnlocked ? '已获得' : '未获得';
-    card.appendChild(status);
+    // 已获得的显示名称,未获得的不显示
+    if (isUnlocked) {
+      const name = document.createElement('div');
+      name.className = 'badge-card-name';
+      name.textContent = badge.name;
+      card.appendChild(name);
+    }
 
     // 点击查看详情
     card.addEventListener('click', () => {

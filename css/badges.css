@@ -112,6 +112,7 @@
   box-shadow: var(--shadow);
   min-height: 140px;
   justify-content: center;
+  position: relative;
 }
 
 .badge-card:active {
@@ -123,8 +124,17 @@
 }
 
 .badge-card.locked {
-  opacity: 0.4;
-  filter: grayscale(100%);
+  opacity: 0.3;
+  background: rgba(200, 200, 200, 0.3);
+}
+
+.badge-card.locked::after {
+  content: '🔒';
+  position: absolute;
+  font-size: 40px;
+  bottom: 5px;
+  right: 5px;
+  opacity: 0.6;
 }
 
 .badge-card-emoji {
@@ -137,11 +147,7 @@
   font-weight: bold;
   color: var(--text-primary);
   text-align: center;
-}
-
-.badge-card-status {
-  font-size: var(--font-size-xs);
-  color: var(--text-secondary);
+  word-break: keep-all;
 }
 
 /* 空状态 */
