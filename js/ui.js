@@ -21,8 +21,8 @@ class UIManager {
    * 显示题目
    */
   showQuestion(question) {
-    const instructionEl = document.getElementById('instruction');
-    const optionsArea = document.getElementById('options-area');
+    var instructionEl = document.getElementById('instruction');
+    var optionsArea = document.getElementById('options-area');
 
     if (!instructionEl || !optionsArea) return;
 
@@ -40,8 +40,8 @@ class UIManager {
     }
 
     // 创建选项卡片
-    question.options.forEach((option, index) => {
-      const card = this.createOptionCard(option, index);
+    question.options.forEach((function(option, index) {
+      var card = this.createOptionCard(option, index);
       optionsArea.appendChild(card);
     });
   }
@@ -50,21 +50,21 @@ class UIManager {
    * 创建选项卡片
    */
   createOptionCard(option, index) {
-    const card = document.createElement('div');
+    var card = document.createElement('div');
     card.className = 'option-card';
     card.dataset.optionId = option.id;
     card.dataset.index = index;
 
     // 根据类型显示不同内容
     if (option.emoji) {
-      const emoji = document.createElement('div');
+      var emoji = document.createElement('div');
       emoji.className = 'option-emoji';
       emoji.textContent = option.emoji;
       card.appendChild(emoji);
     }
 
     if (option.label) {
-      const label = document.createElement('div');
+      var label = document.createElement('div');
       label.className = 'option-label';
       label.textContent = option.label;
       card.appendChild(label);
@@ -72,7 +72,7 @@ class UIManager {
 
     // 如果是颜色选项,显示颜色块
     if (option.hex) {
-      const colorBlock = document.createElement('div');
+      var colorBlock = document.createElement('div');
       colorBlock.className = 'color-card';
       colorBlock.style.backgroundColor = option.hex;
       card.appendChild(colorBlock);
@@ -87,8 +87,8 @@ class UIManager {
   showFeedback(isCorrect, message) {
     if (!this.feedbackLayer) return;
 
-    const iconEl = document.getElementById('feedback-icon');
-    const textEl = document.getElementById('feedback-text');
+    var iconEl = document.getElementById('feedback-icon');
+    var textEl = document.getElementById('feedback-text');
 
     // 设置图标
     iconEl.textContent = isCorrect ? '✓' : '✗';
@@ -108,7 +108,7 @@ class UIManager {
     }
 
     // 1秒后隐藏
-    setTimeout(() => {
+    setTimeout(function() {
       this.feedbackLayer.classList.add('hidden');
     }, 1000);
   }
@@ -119,10 +119,10 @@ class UIManager {
   showSettlement(result) {
     if (!this.settlementLayer) return;
 
-    const { stars, accuracy, time, message, newBadges } = result;
+    var { stars, accuracy, time, message, newBadges } = result;
 
     // 设置表情
-    const emojiEl = document.getElementById('settlement-emoji');
+    var emojiEl = document.getElementById('settlement-emoji');
     if (stars === 3) {
       emojiEl.textContent = '🎉';
     } else if (stars >= 2) {
@@ -134,16 +134,16 @@ class UIManager {
     }
 
     // 设置标题
-    const titleEl = document.getElementById('settlement-title-text');
+    var titleEl = document.getElementById('settlement-title-text');
     titleEl.textContent = stars >= 1 ? '关卡完成!' : '再试一次!';
 
     // 设置星星
-    for (let i = 1; i <= 3; i++) {
-      const starEl = document.getElementById(`star-${i}`);
+    for (var i = 1; i <= 3; i++) {
+      var starEl = document.getElementById(`star-${i}`);
       if (i <= stars) {
         starEl.classList.add('earned');
         // 延迟动画
-        setTimeout(() => {
+        setTimeout(function() {
           starEl.classList.add('earned');
         }, i * 300);
       } else {
@@ -192,12 +192,12 @@ class UIManager {
     }
 
     // 创建徽章庆祝弹窗
-    const modal = document.createElement('div');
+    var modal = document.createElement('div');
     modal.className = 'modal badge-celebration';
     modal.style.zIndex = '9999';
 
-    const badge = badges[0]; // 显示第一个徽章
-    const badgeData = GameStorage.getBadgeData(badge.id);
+    var badge = badges[0]; // 显示第一个徽章
+    var badgeData = GameStorage.getBadgeData(badge.id);
 
     modal.innerHTML = `
       <div class="modal-content badge-content">
@@ -215,7 +215,7 @@ class UIManager {
     audioManager.playCelebrate();
 
     // 3秒后自动关闭
-    setTimeout(() => {
+    setTimeout(function() {
       if (modal.parentNode) {
         modal.parentNode.removeChild(modal);
       }
@@ -226,13 +226,13 @@ class UIManager {
    * 更新进度条
    */
   updateProgress(current, total) {
-    const progressDots = document.getElementById('progress-dots');
+    var progressDots = document.getElementById('progress-dots');
     if (!progressDots) return;
 
     progressDots.innerHTML = '';
 
-    for (let i = 0; i < total; i++) {
-      const dot = document.createElement('div');
+    for (var i = 0; i < total; i++) {
+      var dot = document.createElement('div');
       dot.className = 'progress-dot';
 
       if (i < current) {
@@ -249,7 +249,7 @@ class UIManager {
    * 更新星星数
    */
   updateStarCount(stars) {
-    const starCountEl = document.getElementById('current-stars');
+    var starCountEl = document.getElementById('current-stars');
     if (starCountEl) {
       starCountEl.textContent = stars;
     }
@@ -259,7 +259,7 @@ class UIManager {
    * 显示选项反馈
    */
   showOptionFeedback(optionId, isCorrect) {
-    const optionCard = document.querySelector(`[data-option-id="${optionId}"]`);
+    var optionCard = document.querySelector(`[data-option-id="${optionId}"]`);
     if (!optionCard) return;
 
     if (isCorrect) {
@@ -269,7 +269,7 @@ class UIManager {
     }
 
     // 1秒后移除
-    setTimeout(() => {
+    setTimeout(function() {
       optionCard.classList.remove('correct', 'wrong');
     }, 1000);
   }
@@ -278,7 +278,7 @@ class UIManager {
    * 显示页面切换动画
    */
   showPageTransition(callback) {
-    const app = document.getElementById('app');
+    var app = document.getElementById('app');
     if (!app) {
       callback && callback();
       return;
@@ -287,7 +287,7 @@ class UIManager {
     app.style.opacity = '0';
     app.style.transform = 'translateY(20px)';
 
-    setTimeout(() => {
+    setTimeout(function() {
       callback && callback();
       app.style.opacity = '1';
       app.style.transform = 'translateY(0)';
@@ -298,7 +298,7 @@ class UIManager {
    * 显示 toast 消息
    */
   showToast(message, duration = 2000) {
-    const toast = document.createElement('div');
+    var toast = document.createElement('div');
     toast.className = 'toast';
     toast.textContent = message;
     toast.style.cssText = `
@@ -317,9 +317,9 @@ class UIManager {
 
     document.body.appendChild(toast);
 
-    setTimeout(() => {
+    setTimeout(function() {
       toast.style.animation = 'fadeOut 0.3s ease';
-      setTimeout(() => {
+      setTimeout(function() {
         document.body.removeChild(toast);
       }, 300);
     }, duration);
@@ -329,13 +329,13 @@ class UIManager {
    * 渲染关卡列表
    */
   renderLevelList(levels, planet) {
-    const levelsGrid = document.querySelector('.levels-grid');
+    var levelsGrid = document.querySelector('.levels-grid');
     if (!levelsGrid) return;
 
     levelsGrid.innerHTML = '';
 
-    levels.forEach((level, index) => {
-      const card = document.createElement('div');
+    levels.forEach((function(level, index) {
+      var card = document.createElement('div');
       card.className = 'level-card';
       card.dataset.levelId = level.id;
 
@@ -346,17 +346,17 @@ class UIManager {
       }
 
       // 关卡编号
-      const number = document.createElement('div');
+      var number = document.createElement('div');
       number.className = 'level-number';
       number.textContent = index + 1;
       card.appendChild(number);
 
       // 星星
-      const starsContainer = document.createElement('div');
+      var starsContainer = document.createElement('div');
       starsContainer.className = 'level-stars';
 
-      for (let i = 0; i < 3; i++) {
-        const star = document.createElement('div');
+      for (var i = 0; i < 3; i++) {
+        var star = document.createElement('div');
         star.className = 'level-star';
         if (i < level.bestStars) {
           star.classList.add('earned');
@@ -368,7 +368,7 @@ class UIManager {
       card.appendChild(starsContainer);
 
       // 关卡名称
-      const name = document.createElement('div');
+      var name = document.createElement('div');
       name.className = 'level-name';
       name.textContent = level.name || `第${index + 1}关`;
       card.appendChild(name);
@@ -379,4 +379,4 @@ class UIManager {
 }
 
 // 创建全局实例
-const uiManager = new UIManager();
+var uiManager = new UIManager();

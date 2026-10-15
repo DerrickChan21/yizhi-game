@@ -18,7 +18,7 @@ class AudioManager {
    * 预加载音效文件
    */
   preloadSounds() {
-    const soundList = [
+    var soundList = [
       { id: 'correct', src: 'audio/correct.mp3' },
       { id: 'error', src: 'audio/error.mp3' },
       { id: 'praise_1', src: 'audio/praise_1.mp3' },
@@ -29,8 +29,8 @@ class AudioManager {
       { id: 'click', src: 'audio/click.mp3' }
     ];
 
-    soundList.forEach(sound => {
-      const audio = new Audio(sound.src);
+    soundList.forEach(function(sound) {
+      var audio = new Audio(sound.src);
       audio.preload = 'auto';
       this.sounds[sound.id] = audio;
     });
@@ -47,8 +47,8 @@ class AudioManager {
       this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
       // 播放静音音频解锁
-      const buffer = this.audioContext.createBuffer(1, 1, 22050);
-      const source = this.audioContext.createBufferSource();
+      var buffer = this.audioContext.createBuffer(1, 1, 22050);
+      var source = this.audioContext.createBufferSource();
       source.buffer = buffer;
       source.connect(this.audioContext.destination);
       source.start(0);
@@ -65,12 +65,12 @@ class AudioManager {
    */
   playSound(soundId) {
     // 检查声音是否启用
-    const config = gameStorage.getConfig();
+    var config = gameStorage.getConfig();
     if (!config.audioEnabled) {
       return;
     }
 
-    const sound = this.sounds[soundId];
+    var sound = this.sounds[soundId];
     if (!sound) {
       console.warn('音效不存在:', soundId);
       return;
@@ -78,16 +78,16 @@ class AudioManager {
 
     try {
       // 克隆音频节点,避免同时播放冲突
-      const clone = sound.cloneNode();
+      var clone = sound.cloneNode();
       clone.volume = config.sfxVolume;
 
       // iOS Safari需要用户交互才能播放
       if (this.unlocked && this.audioContext) {
-        const source = this.audioContext.createMediaElementSource(clone);
+        var source = this.audioContext.createMediaElementSource(clone);
         source.connect(this.audioContext.destination);
       }
 
-      clone.play().catch(e => {
+      clone.play().catch(function(e) {
         console.warn('播放失败:', e);
       });
     } catch (e) {
@@ -113,8 +113,8 @@ class AudioManager {
    * 播放赞扬语音(随机)
    */
   playPraise() {
-    const praiseSounds = ['praise_1', 'praise_2', 'praise_3'];
-    const randomSound = praiseSounds[Math.floor(Math.random() * praiseSounds.length)];
+    var praiseSounds = ['praise_1', 'praise_2', 'praise_3'];
+    var randomSound = praiseSounds[Math.floor(Math.random() * praiseSounds.length)];
     this.playSound(randomSound);
   }
 
@@ -164,4 +164,4 @@ class AudioManager {
 }
 
 // 创建全局实例
-const audioManager = new AudioManager();
+var audioManager = new AudioManager();

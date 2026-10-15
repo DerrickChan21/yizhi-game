@@ -38,7 +38,7 @@ class App {
 
     // 隐藏音频提示(如果已解锁)
     if (audioManager.unlocked) {
-      const audioHint = document.getElementById('audio-hint');
+      var audioHint = document.getElementById('audio-hint');
       if (audioHint) {
         audioHint.style.display = 'none';
       }
@@ -52,9 +52,9 @@ class App {
    */
   bindEvents() {
     // 声音开关按钮
-    const audioToggle = document.getElementById('audio-toggle');
+    var audioToggle = document.getElementById('audio-toggle');
     if (audioToggle) {
-      audioToggle.addEventListener('click', () => {
+      audioToggle.addEventListener('click', function() {
         this.toggleAudio();
       });
       // 初始化按钮状态
@@ -62,76 +62,76 @@ class App {
     }
 
     // 倒计时按钮
-    const timerBtn = document.getElementById('timer-btn');
+    var timerBtn = document.getElementById('timer-btn');
     if (timerBtn) {
-      timerBtn.addEventListener('click', () => {
+      timerBtn.addEventListener('click', function() {
         this.showTimerModal();
       });
     }
 
     // 关闭倒计时弹窗
-    const timerClose = document.getElementById('timer-close');
+    var timerClose = document.getElementById('timer-close');
     if (timerClose) {
-      timerClose.addEventListener('click', () => {
+      timerClose.addEventListener('click', function() {
         this.hideTimerModal();
       });
     }
 
     // 倒计时选项
-    const timerOptions = document.querySelectorAll('.timer-option');
-    timerOptions.forEach(option => {
-      option.addEventListener('click', () => {
-        const minutes = parseInt(option.dataset.minutes);
+    var timerOptions = document.querySelectorAll('.timer-option');
+    timerOptions.forEach(function(option) {
+      option.addEventListener('click', function() {
+        var minutes = parseInt(option.dataset.minutes);
         this.setTimer(minutes);
         this.hideTimerModal();
       });
     });
 
     // 休息提醒确认按钮
-    const breakOk = document.getElementById('break-ok');
+    var breakOk = document.getElementById('break-ok');
     if (breakOk) {
-      breakOk.addEventListener('click', () => {
+      breakOk.addEventListener('click', function() {
         this.hideBreakModal();
       });
     }
 
     // 最近徽章点击
-    const lastBadge = document.getElementById('last-badge');
+    var lastBadge = document.getElementById('last-badge');
     if (lastBadge) {
-      lastBadge.addEventListener('click', () => {
+      lastBadge.addEventListener('click', function() {
         window.location.href = 'badges.html';
       });
     }
 
     // 家长按钮
-    const parentBtn = document.getElementById('parent-btn');
+    var parentBtn = document.getElementById('parent-btn');
     if (parentBtn) {
-      parentBtn.addEventListener('click', () => {
+      parentBtn.addEventListener('click', function() {
         this.navigateToParent();
       });
     }
 
     // 徽章按钮
-    const badgeBtn = document.getElementById('badge-btn');
+    var badgeBtn = document.getElementById('badge-btn');
     if (badgeBtn) {
-      badgeBtn.addEventListener('click', () => {
+      badgeBtn.addEventListener('click', function() {
         window.location.href = 'badges.html';
       });
     }
 
     // 返回按钮
-    const backBtn = document.getElementById('back-to-home');
+    var backBtn = document.getElementById('back-to-home');
     if (backBtn) {
-      backBtn.addEventListener('click', () => {
+      backBtn.addEventListener('click', function() {
         this.navigateHome();
       });
     }
 
     // 星球点击
-    const planetItems = document.querySelectorAll('.planet-item');
-    planetItems.forEach(item => {
-      item.addEventListener('click', (e) => {
-        const planet = item.dataset.planet;
+    var planetItems = document.querySelectorAll('.planet-item');
+    planetItems.forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        var planet = item.dataset.planet;
         this.handlePlanetClick(planet, item);
       });
     });
@@ -152,10 +152,10 @@ class App {
    * 更新统计信息
    */
   updateStats() {
-    const totalStars = document.getElementById('total-stars');
-    const completedLevels = document.getElementById('completed-levels');
-    const lastBadgeContainer = document.getElementById('last-badge-container');
-    const lastBadgeIcon = document.getElementById('last-badge-icon');
+    var totalStars = document.getElementById('total-stars');
+    var completedLevels = document.getElementById('completed-levels');
+    var lastBadgeContainer = document.getElementById('last-badge-container');
+    var lastBadgeIcon = document.getElementById('last-badge-icon');
 
     if (totalStars) {
       totalStars.textContent = this.progress.stats.totalStars;
@@ -163,8 +163,8 @@ class App {
 
     if (completedLevels) {
       // 计算完成关卡数
-      let completed = 0;
-      Object.keys(this.progress.levels).forEach(levelId => {
+      var completed = 0;
+      Object.keys(this.progress.levels).forEach(function(levelId) {
         if (this.progress.levels[levelId].status === 'completed') {
           completed++;
         }
@@ -173,9 +173,9 @@ class App {
     }
 
     // 显示最近获得的徽章
-    const lastBadge = gameStorage.getLastBadge();
+    var lastBadge = gameStorage.getLastBadge();
     if (lastBadge && lastBadgeContainer && lastBadgeIcon) {
-      const badgeData = this.getBadgeData(lastBadge.id);
+      var badgeData = this.getBadgeData(lastBadge.id);
       lastBadgeIcon.textContent = badgeData.emoji;
       lastBadgeContainer.style.display = 'flex';
       lastBadgeContainer.title = `最近获得: ${badgeData.name}`;
@@ -194,25 +194,25 @@ class App {
    */
   updatePlanetStatus() {
     // 颜色星球
-    const colorStats = gameStorage.getPlanetStats('color');
-    const colorStars = document.getElementById('color-stars');
+    var colorStats = gameStorage.getPlanetStats('color');
+    var colorStars = document.getElementById('color-stars');
     if (colorStars) {
       colorStars.textContent = colorStats.totalStars;
     }
 
     // 形状星球 - 检查是否解锁
-    const shapePlanet = document.querySelector('[data-planet="shape"]');
+    var shapePlanet = document.querySelector('[data-planet="shape"]');
     if (shapePlanet) {
-      const isUnlocked = gameStorage.checkPlanetUnlock(this.progress, 'shape');
+      var isUnlocked = gameStorage.checkPlanetUnlock(this.progress, 'shape');
       if (isUnlocked) {
         shapePlanet.classList.remove('locked');
       }
     }
 
     // 数字星球 - 检查是否解锁
-    const numberPlanet = document.querySelector('[data-planet="number"]');
+    var numberPlanet = document.querySelector('[data-planet="number"]');
     if (numberPlanet) {
-      const isUnlocked = gameStorage.checkPlanetUnlock(this.progress, 'number');
+      var isUnlocked = gameStorage.checkPlanetUnlock(this.progress, 'number');
       if (isUnlocked) {
         numberPlanet.classList.remove('locked');
       }
@@ -244,15 +244,15 @@ class App {
    * 导航到关卡选择页面
    */
   navigateToLevelSelect(planet) {
-    const homePage = document.getElementById('home-page');
-    const levelSelectPage = document.getElementById('level-select-page');
+    var homePage = document.getElementById('home-page');
+    var levelSelectPage = document.getElementById('level-select-page');
 
     if (!homePage || !levelSelectPage) return;
 
     // 更新标题
-    const planetTitle = document.getElementById('planet-title');
+    var planetTitle = document.getElementById('planet-title');
     if (planetTitle) {
-      const planetNames = {
+      var planetNames = {
         'color': '颜色星球',
         'shape': '形状星球',
         'number': '数字星球'
@@ -275,12 +275,12 @@ class App {
    * 渲染关卡列表
    */
   renderLevelList(planet) {
-    const levels = [];
+    var levels = [];
 
     // 获取该星球的所有关卡
-    for (let i = 1; i <= 5; i++) {
-      const levelId = `${planet}_${i}`;
-      const levelData = this.progress.levels[levelId];
+    for (var i = 1; i <= 5; i++) {
+      var levelId = `${planet}_${i}`;
+      var levelData = this.progress.levels[levelId];
 
       if (levelData) {
         levels.push({
@@ -299,7 +299,7 @@ class App {
    * 获取关卡名称
    */
   getLevelName(planet, level) {
-    const levelNames = {
+    var levelNames = {
       'color': ['基础色识别', '颜色分类', '颜色配对', '深浅色区分', '综合挑战'],
       'shape': ['基础形状', '形状分类', '形状配对', '形状组合', '综合挑战'],
       'number': ['认识数字', '数数', '比较大小', '简单加法', '综合挑战']
@@ -316,11 +316,11 @@ class App {
    * 绑定关卡点击事件
    */
   bindLevelClickEvents() {
-    const levelCards = document.querySelectorAll('.level-card');
+    var levelCards = document.querySelectorAll('.level-card');
 
-    levelCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const levelId = card.dataset.levelId;
+    levelCards.forEach(function(card) {
+      card.addEventListener('click', function() {
+        var levelId = card.dataset.levelId;
         this.handleLevelClick(levelId, card);
       });
     });
@@ -360,8 +360,8 @@ class App {
    * 导航回首页
    */
   navigateHome() {
-    const homePage = document.getElementById('home-page');
-    const levelSelectPage = document.getElementById('level-select-page');
+    var homePage = document.getElementById('home-page');
+    var levelSelectPage = document.getElementById('level-select-page');
 
     if (!homePage || !levelSelectPage) return;
 
@@ -376,7 +376,7 @@ class App {
    * 显示倒计时弹窗
    */
   showTimerModal() {
-    const modal = document.getElementById('timer-modal');
+    var modal = document.getElementById('timer-modal');
     if (modal) {
       modal.classList.remove('hidden');
       this.updateTimerOptions();
@@ -387,7 +387,7 @@ class App {
    * 隐藏倒计时弹窗
    */
   hideTimerModal() {
-    const modal = document.getElementById('timer-modal');
+    var modal = document.getElementById('timer-modal');
     if (modal) {
       modal.classList.add('hidden');
     }
@@ -397,9 +397,9 @@ class App {
    * 更新倒计时选项状态
    */
   updateTimerOptions() {
-    const options = document.querySelectorAll('.timer-option');
-    options.forEach(option => {
-      const minutes = parseInt(option.dataset.minutes);
+    var options = document.querySelectorAll('.timer-option');
+    options.forEach(function(option) {
+      var minutes = parseInt(option.dataset.minutes);
       if (minutes === this.timerDuration / 60) {
         option.classList.add('active');
       } else {
@@ -440,7 +440,7 @@ class App {
   startTimer() {
     if (this.timeLeft <= 0) return;
 
-    this.timer = setInterval(() => {
+    this.timer = setInterval(function() {
       this.timeLeft--;
       this.updateTimerDisplay();
 
@@ -464,17 +464,17 @@ class App {
    * 更新倒计时显示
    */
   updateTimerDisplay() {
-    const minutes = Math.floor(this.timeLeft / 60);
-    const seconds = this.timeLeft % 60;
-    const timeStr = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    var minutes = Math.floor(this.timeLeft / 60);
+    var seconds = this.timeLeft % 60;
+    var timeStr = `${minutes}:${seconds.toString().padStart(2, '0')}`;
 
-    const timerValue = document.getElementById('timer-value');
+    var timerValue = document.getElementById('timer-value');
     if (timerValue) {
       timerValue.textContent = timeStr;
     }
 
     // 少于1分钟时变红
-    const timerDisplay = document.getElementById('timer-display');
+    var timerDisplay = document.getElementById('timer-display');
     if (timerDisplay && this.timeLeft <= 60) {
       timerDisplay.style.color = '#FF6B6B';
     }
@@ -484,7 +484,7 @@ class App {
    * 显示倒计时
    */
   showTimerDisplay() {
-    const timerDisplay = document.getElementById('timer-display');
+    var timerDisplay = document.getElementById('timer-display');
     if (timerDisplay) {
       timerDisplay.style.display = 'flex';
     }
@@ -495,7 +495,7 @@ class App {
    * 隐藏倒计时
    */
   hideTimerDisplay() {
-    const timerDisplay = document.getElementById('timer-display');
+    var timerDisplay = document.getElementById('timer-display');
     if (timerDisplay) {
       timerDisplay.style.display = 'none';
     }
@@ -514,7 +514,7 @@ class App {
    * 显示休息提醒
    */
   showBreakModal() {
-    const modal = document.getElementById('break-modal');
+    var modal = document.getElementById('break-modal');
     if (modal) {
       modal.classList.remove('hidden');
     }
@@ -524,7 +524,7 @@ class App {
    * 隐藏休息提醒
    */
   hideBreakModal() {
-    const modal = document.getElementById('break-modal');
+    var modal = document.getElementById('break-modal');
     if (modal) {
       modal.classList.add('hidden');
     }
@@ -536,7 +536,7 @@ class App {
   playBreakSound() {
     // 使用Web Speech API
     if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance('时间到啦!该休息一下了!');
+      var utterance = new SpeechSynthesisUtterance('时间到啦!该休息一下了!');
       utterance.lang = 'zh-CN';
       utterance.rate = 0.9;
       speechSynthesis.speak(utterance);
@@ -547,7 +547,7 @@ class App {
    * 保存倒计时设置
    */
   saveTimerSetting() {
-    const config = gameStorage.getConfig();
+    var config = gameStorage.getConfig();
     config.timerDuration = this.timerDuration;
     gameStorage.saveConfig(config);
   }
@@ -556,7 +556,7 @@ class App {
    * 切换声音
    */
   toggleAudio() {
-    const config = gameStorage.getConfig();
+    var config = gameStorage.getConfig();
     config.audioEnabled = !config.audioEnabled;
     gameStorage.saveConfig(config);
     this.updateAudioButton();
@@ -567,9 +567,9 @@ class App {
    * 更新声音按钮状态
    */
   updateAudioButton() {
-    const audioToggle = document.getElementById('audio-toggle');
+    var audioToggle = document.getElementById('audio-toggle');
     if (audioToggle) {
-      const config = gameStorage.getConfig();
+      var config = gameStorage.getConfig();
       if (config.audioEnabled) {
         audioToggle.textContent = '🔊';
         audioToggle.classList.remove('muted');
@@ -587,7 +587,7 @@ class App {
     // 先清除旧的定时器
     this.clearTimer();
 
-    const config = gameStorage.getConfig();
+    var config = gameStorage.getConfig();
     if (config.timerDuration && config.timerDuration > 0) {
       this.timerDuration = config.timerDuration;
       this.timeLeft = this.timerDuration;
@@ -598,8 +598,8 @@ class App {
 }
 
 // 页面加载完成后初始化
-document.addEventListener('DOMContentLoaded', () => {
-  const app = new App();
+document.addEventListener('DOMContentLoaded', function() {
+  var app = new App();
   app.init();
 
   // 暴露到全局

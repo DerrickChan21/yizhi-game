@@ -4,7 +4,7 @@
  */
 
 // 星级评定常量
-const STAR_THRESHOLDS = {
+var STAR_THRESHOLDS = {
   THREE_STARS: 0.9,
   TWO_STARS: 0.7,
   ONE_STAR: 0.5
@@ -56,7 +56,7 @@ class Game {
    * 从URL获取关卡ID
    */
   getLevelIdFromUrl() {
-    const params = new URLSearchParams(window.location.search);
+    var params = new URLSearchParams(window.location.search);
     return params.get('level');
   }
 
@@ -66,16 +66,16 @@ class Game {
   async loadLevelData() {
     try {
       // 根据关卡ID确定文件夹
-      const planet = this.levelId.split('_')[0];
-      const folderMap = {
+      var planet = this.levelId.split('_')[0];
+      var folderMap = {
         'color': 'color',
         'shape': 'shape',
         'number': 'number'
       };
-      const folder = folderMap[planet] || 'color';
+      var folder = folderMap[planet] || 'color';
 
       // 尝试使用fetch加载(适用于HTTP服务器)
-      let data;
+      var data;
 
       // 检查是否是file://协议
       if (window.location.protocol === 'file:') {
@@ -83,7 +83,7 @@ class Game {
         data = await this.loadJSONLocal(`data/questions/${folder}/${this.levelId}.json`);
       } else {
         // HTTP协议下使用fetch
-        const response = await fetch(`data/questions/${folder}/${this.levelId}.json`);
+        var response = await fetch(`data/questions/${folder}/${this.levelId}.json`);
         if (!response.ok) {
           throw new Error('加载关卡数据失败');
         }
@@ -105,15 +105,15 @@ class Game {
    * 本地加载JSON(用于file://协议)
    */
   loadJSONLocal(url) {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
+    return new Promise((resolve, reject) {
+      var xhr = new XMLHttpRequest();
       xhr.overrideMimeType('application/json');
       xhr.open('GET', url, true);
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
           if (xhr.status === 200 || xhr.status === 0) {
             try {
-              const data = JSON.parse(xhr.responseText);
+              var data = JSON.parse(xhr.responseText);
               resolve(data);
             } catch (e) {
               reject(e);
@@ -133,9 +133,9 @@ class Game {
    */
   bindEvents() {
     // 退出按钮
-    const exitBtn = document.getElementById('exit-game');
+    var exitBtn = document.getElementById('exit-game');
     if (exitBtn) {
-      exitBtn.addEventListener('click', () => {
+      exitBtn.addEventListener('click', function() {
         if (confirm('确定要退出当前关卡吗?')) {
           window.location.href = 'index.html';
         }
@@ -143,44 +143,44 @@ class Game {
     }
 
     // 重听按钮
-    const playBtn = document.getElementById('play-instruction');
+    var playBtn = document.getElementById('play-instruction');
     if (playBtn) {
-      playBtn.addEventListener('click', () => {
+      playBtn.addEventListener('click', function() {
         this.playInstruction();
       });
     }
 
     // 重试按钮
-    const retryBtn = document.getElementById('retry-btn');
+    var retryBtn = document.getElementById('retry-btn');
     if (retryBtn) {
-      retryBtn.addEventListener('click', () => {
+      retryBtn.addEventListener('click', function() {
         this.retryLevel();
       });
     }
 
     // 下一关按钮
-    const nextBtn = document.getElementById('next-btn');
+    var nextBtn = document.getElementById('next-btn');
     if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
+      nextBtn.addEventListener('click', function() {
         this.goToNextLevel();
       });
     }
 
     // 返回地图按钮
-    const backBtn = document.getElementById('back-to-map');
+    var backBtn = document.getElementById('back-to-map');
     if (backBtn) {
-      backBtn.addEventListener('click', () => {
+      backBtn.addEventListener('click', function() {
         window.location.href = 'index.html';
       });
     }
 
     // 选项点击
-    const optionsArea = document.getElementById('options-area');
+    var optionsArea = document.getElementById('options-area');
     if (optionsArea) {
-      optionsArea.addEventListener('click', (e) => {
-        const optionCard = e.target.closest('.option-card');
+      optionsArea.addEventListener('click', function(e) {
+        var optionCard = e.target.closest('.option-card');
         if (optionCard && !this.isAnswering) {
-          const optionId = optionCard.dataset.optionId;
+          var optionId = optionCard.dataset.optionId;
           this.handleAnswer(optionId);
         }
       });
@@ -213,7 +213,7 @@ class Game {
       return;
     }
 
-    const question = this.questions[this.currentQuestionIndex];
+    var question = this.questions[this.currentQuestionIndex];
 
     // 显示题目
     uiManager.showQuestion(question);
@@ -229,11 +229,11 @@ class Game {
    * 播放题目说明
    */
   playInstruction() {
-    const question = this.questions[this.currentQuestionIndex];
+    var question = this.questions[this.currentQuestionIndex];
     if (question.instructionAudio) {
       // 播放音频文件
-      const audio = new Audio(question.instructionAudio);
-      audio.play().catch(e => console.warn('播放失败:', e));
+      var audio = new Audio(question.instructionAudio);
+      audio.play().catch(function(e) { console.warn('播放失败:', e));
     }
     // TODO: 如果没有音频,可以使用Web Speech API朗读
   }
@@ -246,25 +246,25 @@ class Game {
 
     this.isAnswering = true;
 
-    const question = this.questions[this.currentQuestionIndex];
-    const isCorrect = optionId === question.correct;
+    var question = this.questions[this.currentQuestionIndex];
+    var isCorrect = optionId === question.correct;
 
     // 显示选项反馈
     uiManager.showOptionFeedback(optionId, isCorrect);
 
     // 如果答错,也显示正确答案
     if (!isCorrect) {
-      setTimeout(() => {
+      setTimeout(function() {
         uiManager.showOptionFeedback(question.correct, true);
       }, 500);
     }
 
     // 显示反馈
-    const feedbackMessage = isCorrect
+    var feedbackMessage = isCorrect
       ? this.getRandomPraise()
       : question.feedback.error || '再试试!';
 
-    setTimeout(() => {
+    setTimeout(function() {
       uiManager.showFeedback(isCorrect, feedbackMessage);
     }, 500);
 
@@ -276,7 +276,7 @@ class Game {
     }
 
     // 下一题
-    setTimeout(() => {
+    setTimeout(function() {
       this.currentQuestionIndex++;
       this.isAnswering = false;
 
@@ -292,7 +292,7 @@ class Game {
    * 获取随机赞扬语句
    */
   getRandomPraise() {
-    const praises = [
+    var praises = [
       '真棒!',
       '太厉害了!',
       '你真聪明!',
@@ -310,8 +310,8 @@ class Game {
    * 结束游戏
    */
   async endGame() {
-    const totalTime = (Date.now() - this.startTime) / 1000; // 秒
-    const accuracy = this.correctCount / this.questions.length;
+    var totalTime = (Date.now() - this.startTime) / 1000; // 秒
+    var accuracy = this.correctCount / this.questions.length;
 
     // 计算星级
     this.stars = this.calculateStars(accuracy, totalTime);
@@ -326,18 +326,18 @@ class Game {
     );
 
     // 检查并解锁徽章
-    const newBadges = gameStorage.checkAchievementBadges();
+    var newBadges = gameStorage.checkAchievementBadges();
 
     // 关卡徽章(满星获得)
     if (this.stars === 3) {
-      const levelBadge = gameStorage.unlockBadge(this.levelId);
+      var levelBadge = gameStorage.unlockBadge(this.levelId);
       if (levelBadge) {
         newBadges.push(levelBadge);
       }
     }
 
     // 获取赞扬消息
-    const message = this.getSettlementMessage(this.stars);
+    var message = this.getSettlementMessage(this.stars);
 
     // 显示结算(包含徽章信息)
     uiManager.showSettlement({
@@ -386,11 +386,11 @@ class Game {
    * 更新结算按钮
    */
   updateSettlementButtons() {
-    const nextBtn = document.getElementById('next-btn');
-    const retryBtn = document.getElementById('retry-btn');
+    var nextBtn = document.getElementById('next-btn');
+    var retryBtn = document.getElementById('retry-btn');
 
     // 检查是否有下一关
-    const nextLevelId = this.getNextLevelId();
+    var nextLevelId = this.getNextLevelId();
     if (!nextLevelId || this.stars === 0) {
       // 没有下一关或未通关,隐藏下一关按钮
       if (nextBtn) {
@@ -408,16 +408,16 @@ class Game {
    * 获取下一关ID
    */
   getNextLevelId() {
-    const match = this.levelId.match(/(\w+)_(\d+)/);
+    var match = this.levelId.match(/(\w+)_(\d+)/);
     if (!match) return null;
 
-    const planet = match[1];
-    const currentLevel = parseInt(match[2]);
-    const nextLevel = currentLevel + 1;
+    var planet = match[1];
+    var currentLevel = parseInt(match[2]);
+    var nextLevel = currentLevel + 1;
 
     // 检查是否有下一关
-    const nextLevelId = `${planet}_${nextLevel}`;
-    const progress = gameStorage.getProgress();
+    var nextLevelId = `${planet}_${nextLevel}`;
+    var progress = gameStorage.getProgress();
 
     if (progress.levels[nextLevelId]) {
       return nextLevelId;
@@ -438,7 +438,7 @@ class Game {
    * 进入下一关
    */
   goToNextLevel() {
-    const nextLevelId = this.getNextLevelId();
+    var nextLevelId = this.getNextLevelId();
     if (nextLevelId) {
       window.location.href = `game.html?level=${nextLevelId}`;
     } else {
@@ -448,8 +448,8 @@ class Game {
 }
 
 // 页面加载完成后初始化
-document.addEventListener('DOMContentLoaded', () => {
-  const game = new Game();
+document.addEventListener('DOMContentLoaded', function() {
+  var game = new Game();
   game.init();
 
   // 暴露到全局

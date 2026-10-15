@@ -33,10 +33,10 @@ class ParentPanel {
    */
   generateVerifyQuestion() {
     // 简单的算术题
-    const num1 = Math.floor(Math.random() * 10) + 1;
-    const num2 = Math.floor(Math.random() * 10) + 1;
-    const operators = ['+', '-'];
-    const operator = operators[Math.floor(Math.random() * operators.length)];
+    var num1 = Math.floor(Math.random() * 10) + 1;
+    var num2 = Math.floor(Math.random() * 10) + 1;
+    var operators = ['+', '-'];
+    var operator = operators[Math.floor(Math.random() * operators.length)];
 
     if (operator === '+') {
       this.verifyAnswer = num1 + num2;
@@ -59,7 +59,7 @@ class ParentPanel {
    * 渲染验证题目
    */
   renderVerifyQuestion() {
-    const questionEl = document.getElementById('verify-question');
+    var questionEl = document.getElementById('verify-question');
     if (questionEl) {
       questionEl.textContent = this.verifyQuestion;
     }
@@ -70,25 +70,25 @@ class ParentPanel {
    */
   bindEvents() {
     // 取消按钮
-    const cancelBtn = document.getElementById('verify-cancel');
+    var cancelBtn = document.getElementById('verify-cancel');
     if (cancelBtn) {
-      cancelBtn.addEventListener('click', () => {
+      cancelBtn.addEventListener('click', function() {
         this.goBack();
       });
     }
 
     // 确认按钮
-    const confirmBtn = document.getElementById('verify-confirm');
+    var confirmBtn = document.getElementById('verify-confirm');
     if (confirmBtn) {
-      confirmBtn.addEventListener('click', () => {
+      confirmBtn.addEventListener('click', function() {
         this.handleVerify();
       });
     }
 
     // 回车键确认
-    const answerInput = document.getElementById('verify-answer');
+    var answerInput = document.getElementById('verify-answer');
     if (answerInput) {
-      answerInput.addEventListener('keypress', (e) => {
+      answerInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
           this.handleVerify();
         }
@@ -96,50 +96,50 @@ class ParentPanel {
     }
 
     // 返回按钮
-    const backBtn = document.getElementById('back-to-game');
+    var backBtn = document.getElementById('back-to-game');
     if (backBtn) {
-      backBtn.addEventListener('click', () => {
+      backBtn.addEventListener('click', function() {
         this.goBack();
       });
     }
 
     // 重置颜色星球
-    const resetColorBtn = document.getElementById('reset-color-levels');
+    var resetColorBtn = document.getElementById('reset-color-levels');
     if (resetColorBtn) {
-      resetColorBtn.addEventListener('click', () => {
+      resetColorBtn.addEventListener('click', function() {
         this.resetPlanet('color');
       });
     }
 
     // 重置全部
-    const resetAllBtn = document.getElementById('reset-all');
+    var resetAllBtn = document.getElementById('reset-all');
     if (resetAllBtn) {
-      resetAllBtn.addEventListener('click', () => {
+      resetAllBtn.addEventListener('click', function() {
         this.resetAll();
       });
     }
 
     // 音效开关
-    const audioToggle = document.getElementById('audio-toggle');
+    var audioToggle = document.getElementById('audio-toggle');
     if (audioToggle) {
-      const config = gameStorage.getConfig();
+      var config = gameStorage.getConfig();
       audioToggle.checked = config.audioEnabled;
 
-      audioToggle.addEventListener('change', (e) => {
+      audioToggle.addEventListener('change', function(e) {
         audioManager.toggleAudio(e.target.checked);
       });
     }
 
     // 音量滑块
-    const volumeSlider = document.getElementById('volume-slider');
-    const volumeValue = document.getElementById('volume-value');
+    var volumeSlider = document.getElementById('volume-slider');
+    var volumeValue = document.getElementById('volume-value');
     if (volumeSlider && volumeValue) {
-      const config = gameStorage.getConfig();
+      var config = gameStorage.getConfig();
       volumeSlider.value = config.sfxVolume * 100;
       volumeValue.textContent = `${Math.round(config.sfxVolume * 100)}%`;
 
-      volumeSlider.addEventListener('input', (e) => {
-        const volume = e.target.value / 100;
+      volumeSlider.addEventListener('input', function(e) {
+        var volume = e.target.value / 100;
         audioManager.setVolume(volume);
         volumeValue.textContent = `${Math.round(volume * 100)}%`;
       });
@@ -150,10 +150,10 @@ class ParentPanel {
    * 处理验证
    */
   handleVerify() {
-    const answerInput = document.getElementById('verify-answer');
+    var answerInput = document.getElementById('verify-answer');
     if (!answerInput) return;
 
-    const userAnswer = parseInt(answerInput.value);
+    var userAnswer = parseInt(answerInput.value);
 
     if (isNaN(userAnswer)) {
       alert('请输入答案!');
@@ -174,8 +174,8 @@ class ParentPanel {
    * 显示家长面板内容
    */
   showParentContent() {
-    const verifyEl = document.getElementById('parent-verify');
-    const contentEl = document.getElementById('parent-content');
+    var verifyEl = document.getElementById('parent-verify');
+    var contentEl = document.getElementById('parent-content');
 
     if (verifyEl) {
       verifyEl.classList.add('hidden');
@@ -195,19 +195,19 @@ class ParentPanel {
    * 渲染统计信息
    */
   renderStats() {
-    const progress = gameStorage.getProgress();
+    var progress = gameStorage.getProgress();
 
     // 总星星数
-    const totalStarsEl = document.getElementById('parent-total-stars');
+    var totalStarsEl = document.getElementById('parent-total-stars');
     if (totalStarsEl) {
       totalStarsEl.textContent = progress.stats.totalStars;
     }
 
     // 完成关卡数
-    const completedLevelsEl = document.getElementById('parent-completed-levels');
+    var completedLevelsEl = document.getElementById('parent-completed-levels');
     if (completedLevelsEl) {
-      let completed = 0;
-      Object.keys(progress.levels).forEach(levelId => {
+      var completed = 0;
+      Object.keys(progress.levels).forEach(function(levelId) {
         if (progress.levels[levelId].status === 'completed') {
           completed++;
         }
@@ -216,13 +216,13 @@ class ParentPanel {
     }
 
     // 平均正确率
-    const accuracyEl = document.getElementById('parent-accuracy');
+    var accuracyEl = document.getElementById('parent-accuracy');
     if (accuracyEl) {
       accuracyEl.textContent = `${Math.round(progress.stats.averageAccuracy * 100)}%`;
     }
 
     // 总游玩次数
-    const totalPlaysEl = document.getElementById('parent-total-plays');
+    var totalPlaysEl = document.getElementById('parent-total-plays');
     if (totalPlaysEl) {
       totalPlaysEl.textContent = progress.stats.totalPlays;
     }
@@ -232,21 +232,21 @@ class ParentPanel {
    * 渲染关卡列表
    */
   renderLevelList() {
-    const levelListEl = document.getElementById('level-list');
+    var levelListEl = document.getElementById('level-list');
     if (!levelListEl) return;
 
-    const progress = gameStorage.getProgress();
+    var progress = gameStorage.getProgress();
     levelListEl.innerHTML = '';
 
-    const planets = [
+    var planets = [
       { id: 'color', name: '颜色星球', icon: '🎨' },
       { id: 'shape', name: '形状星球', icon: '🔷' },
       { id: 'number', name: '数字星球', icon: '🔢' }
     ];
 
-    planets.forEach(planet => {
+    planets.forEach(function(planet) {
       // 星球标题
-      const planetHeader = document.createElement('div');
+      var planetHeader = document.createElement('div');
       planetHeader.style.cssText = `
         font-size: 20px;
         font-weight: bold;
@@ -259,31 +259,31 @@ class ParentPanel {
       levelListEl.appendChild(planetHeader);
 
       // 关卡列表
-      for (let i = 1; i <= 5; i++) {
-        const levelId = `${planet.id}_${i}`;
-        const level = progress.levels[levelId];
+      for (var i = 1; i <= 5; i++) {
+        var levelId = `${planet.id}_${i}`;
+        var level = progress.levels[levelId];
 
         if (!level) continue;
 
-        const item = document.createElement('div');
+        var item = document.createElement('div');
         item.className = 'level-list-item';
 
         // 图标
-        const icon = document.createElement('div');
+        var icon = document.createElement('div');
         icon.className = 'level-list-icon';
         icon.textContent = planet.icon;
         item.appendChild(icon);
 
         // 信息
-        const info = document.createElement('div');
+        var info = document.createElement('div');
         info.className = 'level-list-info';
 
-        const name = document.createElement('div');
+        var name = document.createElement('div');
         name.className = 'level-list-name';
         name.textContent = `第${i}关`;
         info.appendChild(name);
 
-        const stats = document.createElement('div');
+        var stats = document.createElement('div');
         stats.className = 'level-list-stats';
         stats.textContent = `尝试次数: ${level.attempts} | 最佳用时: ${level.bestTime ? Math.round(level.bestTime) + '秒' : '无'}`;
         info.appendChild(stats);
@@ -291,11 +291,11 @@ class ParentPanel {
         item.appendChild(info);
 
         // 星星
-        const starsContainer = document.createElement('div');
+        var starsContainer = document.createElement('div');
         starsContainer.className = 'level-list-stars';
 
-        for (let j = 0; j < 3; j++) {
-          const star = document.createElement('div');
+        for (var j = 0; j < 3; j++) {
+          var star = document.createElement('div');
           star.className = 'level-list-star';
           if (j < level.bestStars) {
             star.classList.add('earned');
@@ -315,10 +315,10 @@ class ParentPanel {
    * 渲染最近游玩
    */
   renderRecentPlays() {
-    const recentPlaysEl = document.getElementById('recent-plays-list');
+    var recentPlaysEl = document.getElementById('recent-plays-list');
     if (!recentPlaysEl) return;
 
-    const progress = gameStorage.getProgress();
+    var progress = gameStorage.getProgress();
     recentPlaysEl.innerHTML = '';
 
     if (!progress.playHistory || progress.playHistory.length === 0) {
@@ -327,22 +327,22 @@ class ParentPanel {
     }
 
     // 显示最近10条
-    const recentHistory = progress.playHistory.slice(-10).reverse();
+    var recentHistory = progress.playHistory.slice(-10).reverse();
 
-    recentHistory.forEach(record => {
-      const item = document.createElement('div');
+    recentHistory.forEach(function(record) {
+      var item = document.createElement('div');
       item.className = 'recent-play-item';
 
       // 日期
-      const date = document.createElement('div');
+      var date = document.createElement('div');
       date.className = 'recent-play-date';
       date.textContent = record.date;
       item.appendChild(date);
 
       // 关卡
-      const level = document.createElement('div');
+      var level = document.createElement('div');
       level.className = 'recent-play-level';
-      const levelNames = {
+      var levelNames = {
         'color_1': '颜色星球 - 第1关',
         'color_2': '颜色星球 - 第2关',
         'color_3': '颜色星球 - 第3关',
@@ -353,11 +353,11 @@ class ParentPanel {
       item.appendChild(level);
 
       // 星星
-      const starsContainer = document.createElement('div');
+      var starsContainer = document.createElement('div');
       starsContainer.className = 'recent-play-stars';
 
-      for (let i = 0; i < 3; i++) {
-        const star = document.createElement('div');
+      for (var i = 0; i < 3; i++) {
+        var star = document.createElement('div');
         star.className = 'recent-play-star';
         star.textContent = i < record.stars ? '⭐' : '☆';
         starsContainer.appendChild(star);
@@ -377,7 +377,7 @@ class ParentPanel {
       return;
     }
 
-    const success = gameStorage.resetPlanet(planet);
+    var success = gameStorage.resetPlanet(planet);
 
     if (success) {
       alert('重置成功!');
@@ -401,7 +401,7 @@ class ParentPanel {
       return;
     }
 
-    const success = gameStorage.resetAll();
+    var success = gameStorage.resetAll();
 
     if (success) {
       alert('重置成功!');
@@ -426,8 +426,8 @@ class ParentPanel {
 }
 
 // 页面加载完成后初始化
-document.addEventListener('DOMContentLoaded', () => {
-  const parentPanel = new ParentPanel();
+document.addEventListener('DOMContentLoaded', function() {
+  var parentPanel = new ParentPanel();
   parentPanel.init();
 
   // 暴露到全局

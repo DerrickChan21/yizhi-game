@@ -37,36 +37,36 @@ class BadgesPage {
    */
   bindEvents() {
     // 返回按钮
-    const backBtn = document.getElementById('back-to-home');
+    var backBtn = document.getElementById('back-to-home');
     if (backBtn) {
-      backBtn.addEventListener('click', () => {
+      backBtn.addEventListener('click', function() {
         window.location.href = 'index.html';
       });
     }
 
     // 分类标签
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
+    var tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
         this.switchCategory(btn.dataset.category);
         // 更新active状态
-        tabBtns.forEach(b => b.classList.remove('active'));
+        tabBtns.forEach(function(b) { b.classList.remove('active'));
         btn.classList.add('active');
       });
     });
 
     // 关闭弹窗
-    const closeBtn = document.getElementById('badge-modal-close');
+    var closeBtn = document.getElementById('badge-modal-close');
     if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
+      closeBtn.addEventListener('click', function() {
         this.hideModal();
       });
     }
 
     // 点击背景关闭弹窗
-    const modal = document.getElementById('badge-modal');
+    var modal = document.getElementById('badge-modal');
     if (modal) {
-      modal.addEventListener('click', (e) => {
+      modal.addEventListener('click', function(e) {
         if (e.target === modal) {
           this.hideModal();
         }
@@ -86,8 +86,8 @@ class BadgesPage {
    * 渲染统计
    */
   renderStats() {
-    const totalBadges = document.getElementById('total-badges');
-    const totalProgress = document.getElementById('total-progress');
+    var totalBadges = document.getElementById('total-badges');
+    var totalProgress = document.getElementById('total-progress');
 
     if (totalBadges) {
       totalBadges.textContent = this.unlockedBadges.length;
@@ -102,17 +102,17 @@ class BadgesPage {
    * 渲染徽章
    */
   renderBadges() {
-    const grid = document.getElementById('badges-grid');
-    const emptyState = document.getElementById('empty-state');
+    var grid = document.getElementById('badges-grid');
+    var emptyState = document.getElementById('empty-state');
 
     if (!grid) return;
 
     grid.innerHTML = '';
 
     // 过滤徽章
-    let filteredBadges = this.allBadges;
+    var filteredBadges = this.allBadges;
     if (this.currentCategory !== 'all') {
-      filteredBadges = this.allBadges.filter(badge => badge.category === this.currentCategory);
+      filteredBadges = this.allBadges.filter(function(badge) { return badge.category === this.currentCategory);
     }
 
     // 如果没有徽章
@@ -128,9 +128,9 @@ class BadgesPage {
     }
 
     // 渲染每个徽章
-    filteredBadges.forEach(badge => {
-      const isUnlocked = this.unlockedBadges.includes(badge.id);
-      const card = this.createBadgeCard(badge, isUnlocked);
+    filteredBadges.forEach(badgfunction(e) {
+      var isUnlocked = this.unlockedBadges.includes(badge.id);
+      var card = this.createBadgeCard(badge, isUnlocked);
       grid.appendChild(card);
     });
   }
@@ -139,25 +139,25 @@ class BadgesPage {
    * 创建徽章卡片
    */
   createBadgeCard(badge, isUnlocked) {
-    const card = document.createElement('div');
+    var card = document.createElement('div');
     card.className = `badge-card ${isUnlocked ? 'unlocked' : 'locked'}`;
     card.dataset.badgeId = badge.id;
 
-    const emoji = document.createElement('div');
+    var emoji = document.createElement('div');
     emoji.className = 'badge-card-emoji';
     emoji.textContent = isUnlocked ? badge.emoji : '';
     card.appendChild(emoji);
 
     // 已获得的显示名称,未获得的不显示
     if (isUnlocked) {
-      const name = document.createElement('div');
+      var name = document.createElement('div');
       name.className = 'badge-card-name';
       name.textContent = badge.name;
       card.appendChild(name);
     }
 
     // 点击查看详情
-    card.addEventListener('click', () => {
+    card.addEventListener('click', function() {
       this.showBadgeDetail(badge, isUnlocked);
     });
 
@@ -168,20 +168,20 @@ class BadgesPage {
    * 显示徽章详情
    */
   showBadgeDetail(badge, isUnlocked) {
-    const modal = document.getElementById('badge-modal');
-    const emoji = document.getElementById('badge-detail-emoji');
-    const name = document.getElementById('badge-detail-name');
-    const category = document.getElementById('badge-detail-category');
-    const desc = document.getElementById('badge-detail-desc');
-    const condition = document.getElementById('badge-detail-condition');
-    const rarity = document.getElementById('badge-detail-rarity');
+    var modal = document.getElementById('badge-modal');
+    var emoji = document.getElementById('badge-detail-emoji');
+    var name = document.getElementById('badge-detail-name');
+    var category = document.getElementById('badge-detail-category');
+    var desc = document.getElementById('badge-detail-desc');
+    var condition = document.getElementById('badge-detail-condition');
+    var rarity = document.getElementById('badge-detail-rarity');
 
     if (!modal) return;
 
     emoji.textContent = isUnlocked ? badge.emoji : '?';
     name.textContent = isUnlocked ? badge.name : '???';
 
-    const categoryNames = {
+    var categoryNames = {
       'color': '颜色星球',
       'shape': '形状星球',
       'number': '数字星球',
@@ -191,7 +191,7 @@ class BadgesPage {
 
     desc.textContent = isUnlocked ? badge.description : '完成挑战解锁此徽章';
 
-    const rarityNames = {
+    var rarityNames = {
       'common': '普通',
       'uncommon': '优秀',
       'rare': '稀有',
@@ -209,7 +209,7 @@ class BadgesPage {
    * 隐藏弹窗
    */
   hideModal() {
-    const modal = document.getElementById('badge-modal');
+    var modal = document.getElementById('badge-modal');
     if (modal) {
       modal.classList.add('hidden');
     }
@@ -217,8 +217,8 @@ class BadgesPage {
 }
 
 // 页面加载完成后初始化
-document.addEventListener('DOMContentLoaded', () => {
-  const badgesPage = new BadgesPage();
+document.addEventListener('DOMContentLoaded', function() {
+  var badgesPage = new BadgesPage();
   badgesPage.init();
 
   // 暴露到全局

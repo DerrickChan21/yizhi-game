@@ -15,12 +15,12 @@ class GameStorage {
    */
   getProgress() {
     try {
-      const data = localStorage.getItem(this.PROGRESS_KEY);
+      var data = localStorage.getItem(this.PROGRESS_KEY);
       if (!data) {
         return this.getDefaultProgress();
       }
 
-      const progress = JSON.parse(data);
+      var progress = JSON.parse(data);
 
       // 校验数据完整性
       if (!this.validateProgress(progress)) {
@@ -41,7 +41,7 @@ class GameStorage {
   saveProgress(progress) {
     try {
       progress.lastUpdate = new Date().toISOString();
-      const data = JSON.stringify(progress);
+      var data = JSON.stringify(progress);
       localStorage.setItem(this.PROGRESS_KEY, data);
       return true;
     } catch (e) {
@@ -111,8 +111,8 @@ class GameStorage {
     }
 
     // 检查必要的字段
-    const requiredFields = ['version', 'lastUpdate', 'levels', 'stats'];
-    for (const field of requiredFields) {
+    var requiredFields = ['version', 'lastUpdate', 'levels', 'stats'];
+    for (var field of requiredFields) {
       if (!(field in progress)) {
         return false;
       }
@@ -125,8 +125,8 @@ class GameStorage {
    * 更新关卡进度
    */
   updateLevelProgress(levelId, stars, time, correctCount, totalCount) {
-    const progress = this.getProgress();
-    const level = progress.levels[levelId];
+    var progress = this.getProgress();
+    var level = progress.levels[levelId];
 
     if (!level) {
       console.error('关卡不存在:', levelId);
@@ -190,13 +190,13 @@ class GameStorage {
    */
   unlockNextLevel(progress, currentLevelId) {
     // 解析当前关卡ID
-    const match = currentLevelId.match(/(\w+)_(\d+)/);
+    var match = currentLevelId.match(/(\w+)_(\d+)/);
     if (!match) return;
 
-    const planet = match[1];
-    const currentLevel = parseInt(match[2]);
-    const nextLevel = currentLevel + 1;
-    const nextLevelId = `${planet}_${nextLevel}`;
+    var planet = match[1];
+    var currentLevel = parseInt(match[2]);
+    var nextLevel = currentLevel + 1;
+    var nextLevelId = `${planet}_${nextLevel}`;
 
     // 检查是否有下一关
     if (progress.levels[nextLevelId]) {
@@ -212,7 +212,7 @@ class GameStorage {
    */
   getConfig() {
     try {
-      const data = localStorage.getItem(this.CONFIG_KEY);
+      var data = localStorage.getItem(this.CONFIG_KEY);
       if (!data) {
         return this.getDefaultConfig();
       }
@@ -252,7 +252,7 @@ class GameStorage {
    * 重置关卡进度
    */
   resetLevel(levelId) {
-    const progress = this.getProgress();
+    var progress = this.getProgress();
 
     if (progress.levels[levelId]) {
       progress.levels[levelId] = {
@@ -275,10 +275,10 @@ class GameStorage {
    * 重置星球进度
    */
   resetPlanet(planet) {
-    const progress = this.getProgress();
+    var progress = this.getProgress();
 
     // 重置该星球的所有关卡
-    Object.keys(progress.levels).forEach(levelId => {
+    Object.keys(progress.levels).forEach(function(levelId) {
       if (levelId.startsWith(planet + '_')) {
         progress.levels[levelId] = {
           status: levelId === `${planet}_1` ? 'unlocked' : 'locked',
@@ -306,17 +306,17 @@ class GameStorage {
    * 获取星球统计信息
    */
   getPlanetStats(planet) {
-    const progress = this.getProgress();
-    let totalStars = 0;
-    let maxStars = 0;
-    let completedLevels = 0;
-    let totalLevels = 0;
+    var progress = this.getProgress();
+    var totalStars = 0;
+    var maxStars = 0;
+    var completedLevels = 0;
+    var totalLevels = 0;
 
-    Object.keys(progress.levels).forEach(levelId => {
+    Object.keys(progress.levels).forEach(function(levelId) {
       if (levelId.startsWith(planet + '_')) {
         totalLevels++;
         maxStars += 3; // 每关最多3星
-        const level = progress.levels[levelId];
+        var level = progress.levels[levelId];
         totalStars += level.bestStars;
         if (level.status === 'completed') {
           completedLevels++;
@@ -336,7 +336,7 @@ class GameStorage {
    * 检查是否解锁新星球
    */
   checkPlanetUnlock(progress, planet) {
-    const stats = this.getPlanetStats(planet);
+    var stats = this.getPlanetStats(planet);
 
     // 颜色星球: 完成所有5关解锁
     if (planet === 'color') {
@@ -345,13 +345,13 @@ class GameStorage {
 
     // 形状星球: 需要颜色星球完成
     if (planet === 'shape') {
-      const colorStats = this.getPlanetStats('color');
+      var colorStats = this.getPlanetStats('color');
       return colorStats.completedLevels >= 5;
     }
 
     // 数字星球: 需要形状星球完成
     if (planet === 'number') {
-      const shapeStats = this.getPlanetStats('shape');
+      var shapeStats = this.getPlanetStats('shape');
       return shapeStats.completedLevels >= 5;
     }
 
@@ -362,7 +362,7 @@ class GameStorage {
    * 解锁徽章
    */
   unlockBadge(badgeId) {
-    const progress = this.getProgress();
+    var progress = this.getProgress();
 
     // 检查是否已拥有
     if (progress.badges.includes(badgeId)) {
@@ -384,8 +384,8 @@ class GameStorage {
    * 检查并解锁成就徽章
    */
   checkAchievementBadges() {
-    const progress = this.getProgress();
-    const unlocked = [];
+    var progress = this.getProgress();
+    var unlocked = [];
 
     // 星星收集者 - 累计10星
     if (progress.stats.totalStars >= 10 && !progress.badges.includes('star_10')) {
@@ -398,8 +398,8 @@ class GameStorage {
     }
 
     // 关卡征服者 - 完成5关
-    let completedLevels = 0;
-    Object.keys(progress.levels).forEach(levelId => {
+    var completedLevels = 0;
+    Object.keys(progress.levels).forEach(function(levelId) {
       if (progress.levels[levelId].status === 'completed') {
         completedLevels++;
       }
@@ -415,8 +415,8 @@ class GameStorage {
     }
 
     // 完美主义者 - 5关满星
-    let perfectLevels = 0;
-    Object.keys(progress.levels).forEach(levelId => {
+    var perfectLevels = 0;
+    Object.keys(progress.levels).forEach(function(levelId) {
       if (progress.levels[levelId].bestStars === 3) {
         perfectLevels++;
       }
@@ -446,18 +446,18 @@ class GameStorage {
       unlocked.push(this.unlockBadge('number_master'));
     }
 
-    return unlocked.filter(b => b !== null);
+    return unlocked.filter(function(b) { return b !== null; });
   }
 
   /**
    * 检查星球是否满星
    */
   checkPlanetPerfect(planet) {
-    const progress = this.getProgress();
-    let perfectCount = 0;
-    let totalCount = 0;
+    var progress = this.getProgress();
+    var perfectCount = 0;
+    var totalCount = 0;
 
-    Object.keys(progress.levels).forEach(levelId => {
+    Object.keys(progress.levels).forEach(function(levelId) {
       if (levelId.startsWith(planet + '_')) {
         totalCount++;
         if (progress.levels[levelId].bestStars === 3) {
@@ -474,16 +474,16 @@ class GameStorage {
    */
   async getAllBadges() {
     try {
-      const response = await fetch('data/badges.json');
+      var response = await fetch('data/badges.json');
       if (!response.ok) {
         throw new Error('加载徽章数据失败');
       }
-      const data = await response.json();
+      var data = await response.json();
       return data.badges;
     } catch (e) {
       console.warn('加载徽章数据失败,使用内置数据:', e);
       // 降级方案: 返回内置的徽章列表
-      return Object.keys(this.constructor.getBadgeData('').constructor.prototype).map(key => ({
+      return Object.keys(this.constructor.getBadgeData('').constructor.prototype).map(function(key) { return {
         id: key,
         ...this.constructor.getBadgeData(key)
       }));
@@ -494,7 +494,7 @@ class GameStorage {
    * 获取已解锁的徽章
    */
   getUnlockedBadges() {
-    const progress = this.getProgress();
+    var progress = this.getProgress();
     return progress.badges;
   }
 
@@ -502,7 +502,7 @@ class GameStorage {
    * 获取最近获得的徽章
    */
   getLastBadge() {
-    const progress = this.getProgress();
+    var progress = this.getProgress();
     return progress.lastBadge;
   }
 
@@ -510,7 +510,7 @@ class GameStorage {
    * 获取徽章数据(统一数据源)
    */
   static getBadgeData(badgeId) {
-    const badgeMap = {
+    var badgeMap = {
       'color_1': { emoji: '', name: '红色新手', description: '完成颜色识别基础关' },
       'color_2': { emoji: '', name: '颜色学徒', description: '掌握颜色分类' },
       'color_3': { emoji: '', name: '颜色达人', description: '学会颜色配对' },
@@ -543,4 +543,4 @@ class GameStorage {
 }
 
 // 创建全局实例
-const gameStorage = new GameStorage();
+var gameStorage = new GameStorage();
