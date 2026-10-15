@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>我的徽章墙 - 益智游戏</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/badges.css">
+</head>
+<body>
+  <div class="badges-container">
+    <!-- 头部 -->
+    <div class="badges-header">
+      <button id="back-to-home" class="back-btn">← 返回</button>
+      <h1>我的徽章墙</h1>
+    </div>
+
+    <!-- 统计信息 -->
+    <div class="badges-stats">
+      <div class="stat-card">
+        <div class="stat-icon">️</div>
+        <div class="stat-info">
+          <div class="stat-value" id="total-badges">0</div>
+          <div class="stat-label">已获得徽章</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🏆</div>
+        <div class="stat-info">
+          <div class="stat-value" id="total-progress">0/25</div>
+          <div class="stat-label">完成度</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 分类标签 -->
+    <div class="category-tabs">
+      <button class="tab-btn active" data-category="all">全部</button>
+      <button class="tab-btn" data-category="color">颜色星球</button>
+      <button class="tab-btn" data-category="shape">形状星球</button>
+      <button class="tab-btn" data-category="number">数字星球</button>
+      <button class="tab-btn" data-category="achievement">成就</button>
+    </div>
+
+    <!-- 徽章网格 -->
+    <div class="badges-grid" id="badges-grid">
+      <!-- 徽章由JS动态生成 -->
+    </div>
+
+    <!-- 空状态 -->
+    <div class="empty-state" id="empty-state" style="display: none;">
+      <div class="empty-icon">🎖️</div>
+      <p>还没有获得徽章</p>
+      <p class="empty-hint">快去玩游戏获得徽章吧!</p>
+    </div>
+  </div>
+
+  <!-- 徽章详情弹窗 -->
+  <div id="badge-modal" class="modal hidden">
+    <div class="modal-content badge-detail-content">
+      <div class="modal-header">
+        <h2>徽章详情</h2>
+        <button class="modal-close" id="badge-modal-close">✕</button>
+      </div>
+      <div class="badge-detail">
+        <div class="badge-detail-emoji" id="badge-detail-emoji"></div>
+        <div class="badge-detail-name" id="badge-detail-name"></div>
+        <div class="badge-detail-category" id="badge-detail-category"></div>
+        <p class="badge-detail-desc" id="badge-detail-desc"></p>
+        <div class="badge-detail-condition" id="badge-detail-condition"></div>
+        <div class="badge-detail-rarity" id="badge-detail-rarity"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/badges.js"></script>
+</body>
+</html>

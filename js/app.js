@@ -99,7 +99,7 @@ class App {
     const lastBadge = document.getElementById('last-badge');
     if (lastBadge) {
       lastBadge.addEventListener('click', () => {
-        uiManager.showToast('徽章墙功能即将开放!');
+        window.location.href = 'badges.html';
       });
     }
 
@@ -115,7 +115,7 @@ class App {
     const badgeBtn = document.getElementById('badge-btn');
     if (badgeBtn) {
       badgeBtn.addEventListener('click', () => {
-        uiManager.showToast('徽章墙功能即将开放!');
+        window.location.href = 'badges.html';
       });
     }
 
