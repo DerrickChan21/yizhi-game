@@ -1,0 +1,119 @@
+{
+  "level": "color_4",
+  "title": "深浅色区分",
+  "description": "区分同一颜色的深浅变体",
+  "questions": [
+    {
+      "id": "color_4_q1",
+      "type": "compare",
+      "instruction": "哪个是深红色?",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "深红色"},
+        {"id": "opt2", "emoji": "", "label": "浅红色"},
+        {"id": "opt3", "emoji": "🔵", "label": "蓝色"},
+        {"id": "opt4", "emoji": "🟢", "label": "绿色"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真棒!这个红色更深!",
+        "error": "深色的是更暗一点的红色"
+      }
+    },
+    {
+      "id": "color_4_q2",
+      "type": "compare",
+      "instruction": "找出浅蓝色",
+      "options": [
+        {"id": "opt1", "emoji": "🔵", "label": "深蓝色"},
+        {"id": "opt2", "emoji": "", "label": "浅蓝色"},
+        {"id": "opt3", "emoji": "🔴", "label": "红色"},
+        {"id": "opt4", "emoji": "🟡", "label": "黄色"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太厉害了!浅蓝色像天空一样!",
+        "error": "浅色的是更亮一点的蓝色"
+      }
+    },
+    {
+      "id": "color_4_q3",
+      "type": "compare",
+      "instruction": "深绿色和浅绿色,哪个更深?",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "深绿色"},
+        {"id": "opt2", "emoji": "", "label": "浅绿色"},
+        {"id": "opt3", "emoji": "", "label": "红色"},
+        {"id": "opt4", "emoji": "", "label": "蓝色"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真棒!这个绿色更深!",
+        "error": "深色的是更像森林的颜色"
+      }
+    },
+    {
+      "id": "color_4_q4",
+      "type": "compare",
+      "instruction": "哪个颜色更浅?",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "浅黄色"},
+        {"id": "opt2", "emoji": "", "label": "深黄色"},
+        {"id": "opt3", "emoji": "🔴", "label": "红色"},
+        {"id": "opt4", "emoji": "🟢", "label": "绿色"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "做得好!这个黄色更浅!",
+        "error": "浅色的是更亮一点的颜色"
+      }
+    },
+    {
+      "id": "color_4_q5",
+      "type": "compare",
+      "instruction": "把颜色从深到浅排列",
+      "options": [
+        {"id": "opt1", "emoji": "🔴🟠🔴", "label": "深红浅红"},
+        {"id": "opt2", "emoji": "🔵", "label": "蓝蓝"},
+        {"id": "opt3", "emoji": "🟢🟢", "label": "绿绿"},
+        {"id": "opt4", "emoji": "🟡🟡", "label": "黄黄"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "太棒了!排列正确!",
+        "error": "看看哪个是从深到浅的"
+      }
+    },
+    {
+      "id": "color_4_q6",
+      "type": "compare",
+      "instruction": "找出和深黄色一样的",
+      "options": [
+        {"id": "opt1", "emoji": "🟡", "label": "浅黄"},
+        {"id": "opt2", "emoji": "", "label": "深黄"},
+        {"id": "opt3", "emoji": "🟢", "label": "绿色"},
+        {"id": "opt4", "emoji": "🔵", "label": "蓝色"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "真棒!都是深黄色!",
+        "error": "深黄色是更像橙色的黄"
+      }
+    },
+    {
+      "id": "color_4_q7",
+      "type": "compare",
+      "instruction": "哪个是浅紫色?",
+      "options": [
+        {"id": "opt1", "emoji": "🟣", "label": "深紫色"},
+        {"id": "opt2", "emoji": "", "label": "浅紫色"},
+        {"id": "opt3", "emoji": "🔴", "label": "红色"},
+        {"id": "opt4", "emoji": "", "label": "绿色"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太厉害了!浅紫色真漂亮!",
+        "error": "浅色的是更柔和的紫色"
+      }
+    }
+  ]
+}

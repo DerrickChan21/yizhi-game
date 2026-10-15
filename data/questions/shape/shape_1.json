@@ -1,0 +1,87 @@
+{
+  "level": "shape_1",
+  "title": "基础形状识别",
+  "description": "认识圆形、方形、三角形、星形",
+  "questions": [
+    {
+      "id": "shape_1_q1",
+      "type": "identify",
+      "instruction": "找出圆形",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "emoji": "⬜", "label": "方形"},
+        {"id": "opt3", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真棒!圆形就是这样的!",
+        "error": "再找找,圆形像球一样"
+      }
+    },
+    {
+      "id": "shape_1_q2",
+      "type": "identify",
+      "instruction": "哪个是方形?",
+      "options": [
+        {"id": "opt1", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt2", "emoji": "", "label": "方形"},
+        {"id": "opt3", "emoji": "", "label": "圆形"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太厉害了!方形有四条边!",
+        "error": "方形像盒子一样"
+      }
+    },
+    {
+      "id": "shape_1_q3",
+      "type": "identify",
+      "instruction": "找出三角形",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "emoji": "⬜", "label": "方形"},
+        {"id": "opt3", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "真棒!三角形有三个角!",
+        "error": "三角形像小山一样"
+      }
+    },
+    {
+      "id": "shape_1_q4",
+      "type": "identify",
+      "instruction": "点一点星形",
+      "options": [
+        {"id": "opt1", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt3", "emoji": "⭐", "label": "星形"},
+        {"id": "opt4", "emoji": "⬜", "label": "方形"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "做得好!星形闪闪发光!",
+        "error": "星形像天上的星星"
+      }
+    },
+    {
+      "id": "shape_1_q5",
+      "type": "identify",
+      "instruction": "圆形在哪里?",
+      "options": [
+        {"id": "opt1", "emoji": "⭐", "label": "星形"},
+        {"id": "opt2", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt3", "emoji": "⬜", "label": "方形"},
+        {"id": "opt4", "emoji": "", "label": "圆形"}
+      ],
+      "correct": "opt4",
+      "feedback": {
+        "success": "太棒了!你找到了圆形!",
+        "error": "再试试,圆形在哪里?"
+      }
+    }
+  ]
+}

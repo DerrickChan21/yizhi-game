@@ -1,0 +1,119 @@
+{
+  "level": "shape_5",
+  "title": "综合挑战",
+  "description": "综合运用形状知识",
+  "questions": [
+    {
+      "id": "shape_5_q1",
+      "type": "identify",
+      "instruction": "找出圆形",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "emoji": "⬜", "label": "方形"},
+        {"id": "opt3", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真棒!圆形就是这个!",
+        "error": "再想想,圆形像球一样"
+      }
+    },
+    {
+      "id": "shape_5_q2",
+      "type": "classify",
+      "instruction": "把方形的积木分类",
+      "options": [
+        {"id": "opt1", "emoji": "⬜", "label": "方形"},
+        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt3", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "太棒了!方形有四条边!",
+        "error": "方形像积木盒子"
+      }
+    },
+    {
+      "id": "shape_5_q3",
+      "type": "match",
+      "instruction": "找出和三角形一样的",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "emoji": "", "label": "方形"},
+        {"id": "opt3", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "真厉害!都是三角形!",
+        "error": "三角形像小山一样"
+      }
+    },
+    {
+      "id": "shape_5_q4",
+      "type": "compose",
+      "instruction": "哪个图形用了方形?",
+      "options": [
+        {"id": "opt1", "emoji": "🏠", "label": "房子"},
+        {"id": "opt2", "emoji": "🐟", "label": "小鱼"},
+        {"id": "opt3", "emoji": "🚗", "label": "汽车"},
+        {"id": "opt4", "emoji": "", "label": "球"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "做得好!房子是方形的!",
+        "error": "想想房子的样子"
+      }
+    },
+    {
+      "id": "shape_5_q5",
+      "type": "identify",
+      "instruction": "星形在哪里?",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "emoji": "⬜", "label": "方形"},
+        {"id": "opt3", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形"}
+      ],
+      "correct": "opt4",
+      "feedback": {
+        "success": "太棒了!你找到了星形!",
+        "error": "再试试,星形像星星"
+      }
+    },
+    {
+      "id": "shape_5_q6",
+      "type": "match",
+      "instruction": "找出不同的形状",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt3", "emoji": "⬜", "label": "方形"},
+        {"id": "opt4", "emoji": "", "label": "圆形"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "真棒!找出不一样的了!",
+        "error": "看看哪个形状不一样"
+      }
+    },
+    {
+      "id": "shape_5_q7",
+      "type": "compose",
+      "instruction": "用形状拼出雪人",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "两个圆形"},
+        {"id": "opt2", "emoji": "⬜⬜", "label": "两个方形"},
+        {"id": "opt3", "emoji": "🔺", "label": "两个三角"},
+        {"id": "opt4", "emoji": "⭐⭐", "label": "两个星形"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "太棒了!雪人是圆形的!",
+        "error": "雪人是圆滚滚的"
+      }
+    }
+  ]
+}

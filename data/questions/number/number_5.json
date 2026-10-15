@@ -1,0 +1,119 @@
+{
+  "level": "number_5",
+  "title": "综合挑战",
+  "description": "综合运用数字知识",
+  "questions": [
+    {
+      "id": "number_5_q1",
+      "type": "identify",
+      "instruction": "找出数字3",
+      "options": [
+        {"id": "opt1", "emoji": "3️⃣", "label": "3"},
+        {"id": "opt2", "emoji": "1️⃣", "label": "1"},
+        {"id": "opt3", "emoji": "2️⃣", "label": "2"},
+        {"id": "opt4", "emoji": "4️", "label": "4"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真棒!数字3就是这样的!",
+        "error": "再想想,3像耳朵"
+      }
+    },
+    {
+      "id": "number_5_q2",
+      "type": "count",
+      "instruction": "数一数有几个苹果?",
+      "options": [
+        {"id": "opt1", "emoji": "🍎🍎", "label": "2个"},
+        {"id": "opt2", "emoji": "🍎🍎", "label": "3个"},
+        {"id": "opt3", "emoji": "", "label": "1个"},
+        {"id": "opt4", "emoji": "🍎🍎🍎", "label": "4个"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太棒了!有3个苹果!",
+        "error": "1、2、3"
+      }
+    },
+    {
+      "id": "number_5_q3",
+      "type": "compare",
+      "instruction": "4和2,哪个更大?",
+      "options": [
+        {"id": "opt1", "emoji": "2️⃣", "label": "2"},
+        {"id": "opt2", "emoji": "4️⃣", "label": "4"},
+        {"id": "opt3", "emoji": "3️⃣", "label": "3"},
+        {"id": "opt4", "emoji": "1️⃣", "label": "1"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "真棒!4比2大!",
+        "error": "4比2大"
+      }
+    },
+    {
+      "id": "number_5_q4",
+      "type": "add",
+      "instruction": "2加2等于几?",
+      "options": [
+        {"id": "opt1", "emoji": "3️", "label": "3"},
+        {"id": "opt2", "emoji": "4️", "label": "4"},
+        {"id": "opt3", "emoji": "5️", "label": "5"},
+        {"id": "opt4", "emoji": "2️⃣", "label": "2"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太厉害了!2+2=4!",
+        "error": "2加2等于几?"
+      }
+    },
+    {
+      "id": "number_5_q5",
+      "type": "count",
+      "instruction": "有几只小猫?",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "1只"},
+        {"id": "opt2", "emoji": "🐱", "label": "2只"},
+        {"id": "opt3", "emoji": "🐱🐱🐱", "label": "3只"},
+        {"id": "opt4", "emoji": "🐱🐱🐱🐱", "label": "4只"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "真棒!有3只小猫!",
+        "error": "1只、2只、3只"
+      }
+    },
+    {
+      "id": "number_5_q6",
+      "type": "compare",
+      "instruction": "哪组更多?",
+      "options": [
+        {"id": "opt1", "emoji": "⭐", "label": "1颗"},
+        {"id": "opt2", "emoji": "⭐⭐⭐⭐", "label": "4颗"},
+        {"id": "opt3", "emoji": "⭐⭐", "label": "2颗"},
+        {"id": "opt4", "emoji": "⭐⭐⭐", "label": "3颗"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太棒了!4颗星最多!",
+        "error": "数一数哪个最多"
+      }
+    },
+    {
+      "id": "number_5_q7",
+      "type": "add",
+      "instruction": "1加3等于几?",
+      "options": [
+        {"id": "opt1", "emoji": "2️⃣", "label": "2"},
+        {"id": "opt2", "emoji": "3️", "label": "3"},
+        {"id": "opt3", "emoji": "4️", "label": "4"},
+        {"id": "opt4", "emoji": "5️⃣", "label": "5"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "真棒!1+3=4!",
+        "error": "1加3等于几?"
+      }
+    }
+  ]
+}

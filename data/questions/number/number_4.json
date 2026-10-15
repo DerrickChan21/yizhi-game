@@ -1,0 +1,103 @@
+{
+  "level": "number_4",
+  "title": "简单加法",
+  "description": "学习1-5的简单加法",
+  "questions": [
+    {
+      "id": "number_4_q1",
+      "type": "add",
+      "instruction": "1个苹果加1个苹果等于几个?",
+      "options": [
+        {"id": "opt1", "emoji": "🍎", "label": "1个"},
+        {"id": "opt2", "emoji": "🍎🍎", "label": "2个"},
+        {"id": "opt3", "emoji": "🍎🍎", "label": "3个"},
+        {"id": "opt4", "emoji": "🍎🍎🍎", "label": "4个"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "真棒!1+1=2!",
+        "error": "1个加1个是几个?"
+      }
+    },
+    {
+      "id": "number_4_q2",
+      "type": "add",
+      "instruction": "2只鸭子加1只鸭子等于几只?",
+      "options": [
+        {"id": "opt1", "emoji": "🦆🦆", "label": "2只"},
+        {"id": "opt2", "emoji": "🦆", "label": "1只"},
+        {"id": "opt3", "emoji": "🦆", "label": "3只"},
+        {"id": "opt4", "emoji": "🦆🦆🦆", "label": "4只"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "太棒了!2+1=3!",
+        "error": "2只加1只是几只?"
+      }
+    },
+    {
+      "id": "number_4_q3",
+      "type": "add",
+      "instruction": "1颗星加2颗星等于几颗?",
+      "options": [
+        {"id": "opt1", "emoji": "⭐", "label": "1颗"},
+        {"id": "opt2", "emoji": "⭐⭐", "label": "2颗"},
+        {"id": "opt3", "emoji": "⭐⭐⭐", "label": "3颗"},
+        {"id": "opt4", "emoji": "⭐⭐⭐⭐", "label": "4颗"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "真棒!1+2=3!",
+        "error": "1颗加2颗是几颗?"
+      }
+    },
+    {
+      "id": "number_4_q4",
+      "type": "add",
+      "instruction": "2个球加2个球等于几个?",
+      "options": [
+        {"id": "opt1", "emoji": "🔵", "label": "2个"},
+        {"id": "opt2", "emoji": "", "label": "1个"},
+        {"id": "opt3", "emoji": "🔵🔵", "label": "3个"},
+        {"id": "opt4", "emoji": "🔵🔵", "label": "4个"}
+      ],
+      "correct": "opt4",
+      "feedback": {
+        "success": "太厉害了!2+2=4!",
+        "error": "2个加2个是几个?"
+      }
+    },
+    {
+      "id": "number_4_q5",
+      "type": "add",
+      "instruction": "3朵花加1朵花等于几朵?",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "1朵"},
+        {"id": "opt2", "emoji": "", "label": "2朵"},
+        {"id": "opt3", "emoji": "🌸🌸🌸", "label": "3朵"},
+        {"id": "opt4", "emoji": "🌸🌸🌸", "label": "4朵"}
+      ],
+      "correct": "opt4",
+      "feedback": {
+        "success": "真棒!3+1=4!",
+        "error": "3朵加1朵是几朵?"
+      }
+    },
+    {
+      "id": "number_4_q6",
+      "type": "add",
+      "instruction": "1加4等于几?",
+      "options": [
+        {"id": "opt1", "emoji": "3️⃣", "label": "3"},
+        {"id": "opt2", "emoji": "4️⃣", "label": "4"},
+        {"id": "opt3", "emoji": "5️⃣", "label": "5"},
+        {"id": "opt4", "emoji": "2️⃣", "label": "2"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "太棒了!1+4=5!",
+        "error": "1加4等于几?"
+      }
+    }
+  ]
+}

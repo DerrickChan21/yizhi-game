@@ -1,0 +1,103 @@
+{
+  "level": "color_2",
+  "title": "颜色分类",
+  "description": "将物品按颜色分组",
+  "questions": [
+    {
+      "id": "color_2_q1",
+      "type": "classify",
+      "instruction": "把红色的苹果放到红色篮子里",
+      "options": [
+        {"id": "opt1", "emoji": "🔴", "label": "红色"},
+        {"id": "opt2", "emoji": "🔵", "label": "蓝色"},
+        {"id": "opt3", "emoji": "🟡", "label": "黄色"},
+        {"id": "opt4", "emoji": "🟢", "label": "绿色"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真棒!苹果是红色的!",
+        "error": "再想想,苹果是什么颜色?"
+      }
+    },
+    {
+      "id": "color_2_q2",
+      "type": "classify",
+      "instruction": "找出所有黄色的东西",
+      "options": [
+        {"id": "opt1", "emoji": "🍎", "label": "苹果"},
+        {"id": "opt2", "emoji": "🍌", "label": "香蕉"},
+        {"id": "opt3", "emoji": "🫐", "label": "蓝莓"},
+        {"id": "opt4", "emoji": "🌿", "label": "树叶"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太棒了!香蕉是黄色的!",
+        "error": "黄色的像太阳一样的颜色"
+      }
+    },
+    {
+      "id": "color_2_q3",
+      "type": "classify",
+      "instruction": "蓝色的小汽车在哪里?",
+      "options": [
+        {"id": "opt1", "emoji": "🚗", "label": "红车"},
+        {"id": "opt2", "emoji": "🚙", "label": "蓝车"},
+        {"id": "opt3", "emoji": "🚕", "label": "黄车"},
+        {"id": "opt4", "emoji": "🚖", "label": "绿车"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "真厉害!找到蓝色小车了!",
+        "error": "蓝色的是像天空一样的颜色"
+      }
+    },
+    {
+      "id": "color_2_q4",
+      "type": "classify",
+      "instruction": "绿色的树叶应该归到哪类?",
+      "options": [
+        {"id": "opt1", "emoji": "🔴", "label": "红色"},
+        {"id": "opt2", "emoji": "🔵", "label": "蓝色"},
+        {"id": "opt3", "emoji": "🟡", "label": "黄色"},
+        {"id": "opt4", "emoji": "🟢", "label": "绿色"}
+      ],
+      "correct": "opt4",
+      "feedback": {
+        "success": "做得好!树叶是绿色的!",
+        "error": "想想草地的颜色"
+      }
+    },
+    {
+      "id": "color_2_q5",
+      "type": "classify",
+      "instruction": "把这些花朵按颜色分开",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "粉花"},
+        {"id": "opt2", "emoji": "", "label": "红花"},
+        {"id": "opt3", "emoji": "", "label": "黄花"},
+        {"id": "opt4", "emoji": "", "label": "紫花"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "真棒!这朵花是红色的!",
+        "error": "红色的是像火一样的颜色"
+      }
+    },
+    {
+      "id": "color_2_q6",
+      "type": "classify",
+      "instruction": "哪个篮子里装的都是红色?",
+      "options": [
+        {"id": "opt1", "emoji": "🍓", "label": "红篮子"},
+        {"id": "opt2", "emoji": "🫐🍇", "label": "蓝篮子"},
+        {"id": "opt3", "emoji": "🍌🍋", "label": "黄篮子"},
+        {"id": "opt4", "emoji": "🥝🌿", "label": "绿篮子"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "太棒了!都是红色的水果!",
+        "error": "看看哪个篮子里都是红色"
+      }
+    }
+  ]
+}

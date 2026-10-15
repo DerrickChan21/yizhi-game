@@ -1,0 +1,87 @@
+{
+  "level": "number_1",
+  "title": "认识数字",
+  "description": "认识数字1-5",
+  "questions": [
+    {
+      "id": "number_1_q1",
+      "type": "identify",
+      "instruction": "找出数字1",
+      "options": [
+        {"id": "opt1", "emoji": "1️⃣", "label": "1"},
+        {"id": "opt2", "emoji": "2️⃣", "label": "2"},
+        {"id": "opt3", "emoji": "3️⃣", "label": "3"},
+        {"id": "opt4", "emoji": "4️⃣", "label": "4"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真棒!数字1就是这样的!",
+        "error": "再找找,1像一根小棍子"
+      }
+    },
+    {
+      "id": "number_1_q2",
+      "type": "identify",
+      "instruction": "哪个是数字2?",
+      "options": [
+        {"id": "opt1", "emoji": "3️⃣", "label": "3"},
+        {"id": "opt2", "emoji": "2️⃣", "label": "2"},
+        {"id": "opt3", "emoji": "1️", "label": "1"},
+        {"id": "opt4", "emoji": "4️", "label": "4"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太厉害了!数字2像小鸭子!",
+        "error": "2像游泳的小鸭子"
+      }
+    },
+    {
+      "id": "number_1_q3",
+      "type": "identify",
+      "instruction": "找出数字3",
+      "options": [
+        {"id": "opt1", "emoji": "1️⃣", "label": "1"},
+        {"id": "opt2", "emoji": "4️⃣", "label": "4"},
+        {"id": "opt3", "emoji": "3️", "label": "3"},
+        {"id": "opt4", "emoji": "2️", "label": "2"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "真棒!数字3像耳朵!",
+        "error": "3像听声音的耳朵"
+      }
+    },
+    {
+      "id": "number_1_q4",
+      "type": "identify",
+      "instruction": "点一点数字4",
+      "options": [
+        {"id": "opt1", "emoji": "2️⃣", "label": "2"},
+        {"id": "opt2", "emoji": "3️", "label": "3"},
+        {"id": "opt3", "emoji": "4️", "label": "4"},
+        {"id": "opt4", "emoji": "1️⃣", "label": "1"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "做得好!数字4像小旗!",
+        "error": "4像飘扬的旗子"
+      }
+    },
+    {
+      "id": "number_1_q5",
+      "type": "identify",
+      "instruction": "数字5在哪里?",
+      "options": [
+        {"id": "opt1", "emoji": "3️", "label": "3"},
+        {"id": "opt2", "emoji": "2️⃣", "label": "2"},
+        {"id": "opt3", "emoji": "1️⃣", "label": "1"},
+        {"id": "opt4", "emoji": "5️⃣", "label": "5"}
+      ],
+      "correct": "opt4",
+      "feedback": {
+        "success": "太棒了!你找到了数字5!",
+        "error": "再试试,5像秤钩"
+      }
+    }
+  ]
+}

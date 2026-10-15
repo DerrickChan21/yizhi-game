@@ -1,0 +1,103 @@
+{
+  "level": "shape_2",
+  "title": "形状分类",
+  "description": "将物品按形状分组",
+  "questions": [
+    {
+      "id": "shape_2_q1",
+      "type": "classify",
+      "instruction": "把圆形的球放到圆形篮子里",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "emoji": "⬜", "label": "方形"},
+        {"id": "opt3", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真棒!球是圆形的!",
+        "error": "再想想,球是什么形状?"
+      }
+    },
+    {
+      "id": "shape_2_q2",
+      "type": "classify",
+      "instruction": "找出所有方形的东西",
+      "options": [
+        {"id": "opt1", "emoji": "🍎", "label": "苹果"},
+        {"id": "opt2", "emoji": "📦", "label": "盒子"},
+        {"id": "opt3", "emoji": "", "label": "球"},
+        {"id": "opt4", "emoji": "", "label": "披萨"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太棒了!盒子是方形的!",
+        "error": "方形的像积木盒子"
+      }
+    },
+    {
+      "id": "shape_2_q3",
+      "type": "classify",
+      "instruction": "三角形的三明治在哪里?",
+      "options": [
+        {"id": "opt1", "emoji": "🍪", "label": "饼干"},
+        {"id": "opt2", "emoji": "🍕", "label": "披萨"},
+        {"id": "opt3", "emoji": "", "label": "球"},
+        {"id": "opt4", "emoji": "📦", "label": "盒子"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "真厉害!找到三角形了!",
+        "error": "三角形像小山一样"
+      }
+    },
+    {
+      "id": "shape_2_q4",
+      "type": "classify",
+      "instruction": "圆形的甜甜圈应该归到哪类?",
+      "options": [
+        {"id": "opt1", "emoji": "⭐", "label": "星形"},
+        {"id": "opt2", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt3", "emoji": "⬜", "label": "方形"},
+        {"id": "opt4", "emoji": "", "label": "圆形"}
+      ],
+      "correct": "opt4",
+      "feedback": {
+        "success": "做得好!甜甜圈是圆形的!",
+        "error": "想想太阳的形状"
+      }
+    },
+    {
+      "id": "shape_2_q5",
+      "type": "classify",
+      "instruction": "把这些积木按形状分开",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "圆形积木"},
+        {"id": "opt2", "emoji": "⬜", "label": "方形积木"},
+        {"id": "opt3", "emoji": "🔺", "label": "三角积木"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形积木"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真棒!分类正确!",
+        "error": "看看哪个是圆形的"
+      }
+    },
+    {
+      "id": "shape_2_q6",
+      "type": "classify",
+      "instruction": "哪个篮子里装的都是方形?",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "圆形篮"},
+        {"id": "opt2", "emoji": "📦📦", "label": "方形篮"},
+        {"id": "opt3", "emoji": "🔺🔺", "label": "三角篮"},
+        {"id": "opt4", "emoji": "⭐⭐", "label": "星形篮"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太棒了!都是方形的!",
+        "error": "看看哪个篮子里都是方形"
+      }
+    }
+  ]
+}

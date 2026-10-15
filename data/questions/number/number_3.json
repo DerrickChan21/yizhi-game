@@ -1,0 +1,103 @@
+{
+  "level": "number_3",
+  "title": "比较大小",
+  "description": "学会比较数字大小",
+  "questions": [
+    {
+      "id": "number_3_q1",
+      "type": "compare",
+      "instruction": "哪个数字更大?",
+      "options": [
+        {"id": "opt1", "emoji": "3️", "label": "3"},
+        {"id": "opt2", "emoji": "5️", "label": "5"},
+        {"id": "opt3", "emoji": "1️⃣", "label": "1"},
+        {"id": "opt4", "emoji": "2️", "label": "2"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "真棒!5比3大!",
+        "error": "5比1、2、3都大"
+      }
+    },
+    {
+      "id": "number_3_q2",
+      "type": "compare",
+      "instruction": "哪个数字更小?",
+      "options": [
+        {"id": "opt1", "emoji": "4️", "label": "4"},
+        {"id": "opt2", "emoji": "1️", "label": "1"},
+        {"id": "opt3", "emoji": "3️⃣", "label": "3"},
+        {"id": "opt4", "emoji": "2️", "label": "2"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太厉害了!1是最小的!",
+        "error": "1比2、3、4都小"
+      }
+    },
+    {
+      "id": "number_3_q3",
+      "type": "compare",
+      "instruction": "2和4,哪个更大?",
+      "options": [
+        {"id": "opt1", "emoji": "2️⃣", "label": "2"},
+        {"id": "opt2", "emoji": "4️", "label": "4"},
+        {"id": "opt3", "emoji": "3️⃣", "label": "3"},
+        {"id": "opt4", "emoji": "1️", "label": "1"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "真棒!4比2大!",
+        "error": "4比2大"
+      }
+    },
+    {
+      "id": "number_3_q4",
+      "type": "compare",
+      "instruction": "哪组更多?",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "1个苹果"},
+        {"id": "opt2", "emoji": "🍎🍎🍎", "label": "3个苹果"},
+        {"id": "opt3", "emoji": "🍎🍎", "label": "2个苹果"},
+        {"id": "opt4", "emoji": "", "label": "4个苹果"}
+      ],
+      "correct": "opt4",
+      "feedback": {
+        "success": "做得好!4个苹果最多!",
+        "error": "数一数哪个最多"
+      }
+    },
+    {
+      "id": "number_3_q5",
+      "type": "compare",
+      "instruction": "哪组更少?",
+      "options": [
+        {"id": "opt1", "emoji": "⭐⭐⭐⭐", "label": "4颗星"},
+        {"id": "opt2", "emoji": "⭐", "label": "1颗星"},
+        {"id": "opt3", "emoji": "⭐⭐", "label": "2颗星"},
+        {"id": "opt4", "emoji": "⭐⭐⭐", "label": "3颗星"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太棒了!1颗星最少!",
+        "error": "数一数哪个最少"
+      }
+    },
+    {
+      "id": "number_3_q6",
+      "type": "compare",
+      "instruction": "5和3,哪个更大?",
+      "options": [
+        {"id": "opt1", "emoji": "3️⃣", "label": "3"},
+        {"id": "opt2", "emoji": "5️⃣", "label": "5"},
+        {"id": "opt3", "emoji": "4️⃣", "label": "4"},
+        {"id": "opt4", "emoji": "2️⃣", "label": "2"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "真棒!5比3大!",
+        "error": "5比3大"
+      }
+    }
+  ]
+}

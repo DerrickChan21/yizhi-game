@@ -1,0 +1,234 @@
+{
+  "level": "color_1",
+  "title": "基础色识别",
+  "description": "识别红、黄、蓝、绿四种基础色",
+  "questions": [
+    {
+      "id": "color_1_q1",
+      "type": "identify",
+      "instruction": "听一听,找出红色",
+      "instructionAudio": "audio/color_1_q1.mp3",
+      "options": [
+        {
+          "id": "opt1",
+          "type": "color",
+          "color": "red",
+          "emoji": "🔴",
+          "hex": "#FF0000",
+          "label": "红色"
+        },
+        {
+          "id": "opt2",
+          "type": "color",
+          "color": "blue",
+          "emoji": "🔵",
+          "hex": "#0000FF",
+          "label": "蓝色"
+        },
+        {
+          "id": "opt3",
+          "type": "color",
+          "color": "yellow",
+          "emoji": "🟡",
+          "hex": "#FFFF00",
+          "label": "黄色"
+        },
+        {
+          "id": "opt4",
+          "type": "color",
+          "color": "green",
+          "emoji": "🟢",
+          "hex": "#00FF00",
+          "label": "绿色"
+        }
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": ["真棒!红色就是这个颜色!", "太厉害了!你找到了红色!"],
+        "error": ["再试试,红色在哪里?", "红色的像苹果一样的颜色"]
+      },
+      "timeLimit": 30,
+      "points": 1
+    },
+    {
+      "id": "color_1_q2",
+      "type": "identify_object",
+      "instruction": "哪个是蓝色的?",
+      "instructionAudio": "audio/color_1_q2.mp3",
+      "options": [
+        {
+          "id": "opt1",
+          "type": "object",
+          "name": "苹果",
+          "emoji": "🍎",
+          "color": "red"
+        },
+        {
+          "id": "opt2",
+          "type": "object",
+          "name": "蓝莓",
+          "emoji": "🫐",
+          "color": "blue"
+        },
+        {
+          "id": "opt3",
+          "type": "object",
+          "name": "香蕉",
+          "emoji": "🍌",
+          "color": "yellow"
+        },
+        {
+          "id": "opt4",
+          "type": "object",
+          "name": "树叶",
+          "emoji": "🌿",
+          "color": "green"
+        }
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": ["太厉害了!蓝莓是蓝色的!", "真棒!你认识蓝色!"],
+        "error": ["看看哪个是蓝色的?", "蓝色的像天空一样的颜色"]
+      },
+      "timeLimit": 30,
+      "points": 1
+    },
+    {
+      "id": "color_1_q3",
+      "type": "identify",
+      "instruction": "找出黄色",
+      "instructionAudio": "audio/color_1_q3.mp3",
+      "options": [
+        {
+          "id": "opt1",
+          "type": "color",
+          "color": "yellow",
+          "emoji": "🟡",
+          "hex": "#FFFF00",
+          "label": "黄色"
+        },
+        {
+          "id": "opt2",
+          "type": "color",
+          "color": "red",
+          "emoji": "🔴",
+          "hex": "#FF0000",
+          "label": "红色"
+        },
+        {
+          "id": "opt3",
+          "type": "color",
+          "color": "green",
+          "emoji": "🟢",
+          "hex": "#00FF00",
+          "label": "绿色"
+        },
+        {
+          "id": "opt4",
+          "type": "color",
+          "color": "blue",
+          "emoji": "🔵",
+          "hex": "#0000FF",
+          "label": "蓝色"
+        }
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": ["你真聪明!黄色找到了!", "太棒了!黄色就是这个颜色!"],
+        "error": ["黄色在哪里呢?再找找", "黄色的像香蕉一样的颜色"]
+      },
+      "timeLimit": 30,
+      "points": 1
+    },
+    {
+      "id": "color_1_q4",
+      "type": "identify_object",
+      "instruction": "点一点绿色",
+      "instructionAudio": "audio/color_1_q4.mp3",
+      "options": [
+        {
+          "id": "opt1",
+          "type": "object",
+          "name": "汽车",
+          "emoji": "🚗",
+          "color": "red"
+        },
+        {
+          "id": "opt2",
+          "type": "object",
+          "name": "花朵",
+          "emoji": "🌸",
+          "color": "pink"
+        },
+        {
+          "id": "opt3",
+          "type": "object",
+          "name": "树叶",
+          "emoji": "🌿",
+          "color": "green"
+        },
+        {
+          "id": "opt4",
+          "type": "object",
+          "name": "猫咪",
+          "emoji": "🐱",
+          "color": "orange"
+        }
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": ["做得好!树叶是绿色的!", "真棒!你找到了绿色!"],
+        "error": ["绿色的东西在哪里?", "绿色的像草一样的颜色"]
+      },
+      "timeLimit": 30,
+      "points": 1
+    },
+    {
+      "id": "color_1_q5",
+      "type": "identify",
+      "instruction": "红色在哪里?",
+      "instructionAudio": "audio/color_1_q5.mp3",
+      "options": [
+        {
+          "id": "opt1",
+          "type": "color",
+          "color": "green",
+          "emoji": "🟢",
+          "hex": "#00FF00",
+          "label": "绿色"
+        },
+        {
+          "id": "opt2",
+          "type": "color",
+          "color": "blue",
+          "emoji": "🔵",
+          "hex": "#0000FF",
+          "label": "蓝色"
+        },
+        {
+          "id": "opt3",
+          "type": "color",
+          "color": "red",
+          "emoji": "🔴",
+          "hex": "#FF0000",
+          "label": "红色"
+        },
+        {
+          "id": "opt4",
+          "type": "color",
+          "color": "yellow",
+          "emoji": "🟡",
+          "hex": "#FFFF00",
+          "label": "黄色"
+        }
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": ["太棒了!你找到了红色!", "真厉害!红色就在这里!"],
+        "error": ["再试试,红色在哪里?", "红色的像火一样的颜色"]
+      },
+      "timeLimit": 30,
+      "points": 1
+    }
+  ]
+}

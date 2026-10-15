@@ -1,0 +1,135 @@
+{
+  "level": "color_5",
+  "title": "综合挑战",
+  "description": "综合运用颜色知识",
+  "questions": [
+    {
+      "id": "color_5_q1",
+      "type": "identify",
+      "instruction": "找出红色",
+      "options": [
+        {"id": "opt1", "emoji": "🔴", "label": "红色"},
+        {"id": "opt2", "emoji": "🔵", "label": "蓝色"},
+        {"id": "opt3", "emoji": "🟡", "label": "黄色"},
+        {"id": "opt4", "emoji": "🟢", "label": "绿色"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真棒!红色就是这个!",
+        "error": "再想想,红色像什么?"
+      }
+    },
+    {
+      "id": "color_5_q2",
+      "type": "classify",
+      "instruction": "把红色的物品分类",
+      "options": [
+        {"id": "opt1", "emoji": "🍎", "label": "苹果"},
+        {"id": "opt2", "emoji": "🫐", "label": "蓝莓"},
+        {"id": "opt3", "emoji": "🍌", "label": "香蕉"},
+        {"id": "opt4", "emoji": "🌿", "label": "树叶"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "太棒了!苹果是红色的!",
+        "error": "红色的像火一样的颜色"
+      }
+    },
+    {
+      "id": "color_5_q3",
+      "type": "compare",
+      "instruction": "哪个是深蓝色?",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "深蓝色"},
+        {"id": "opt2", "emoji": "", "label": "浅蓝色"},
+        {"id": "opt3", "emoji": "", "label": "红色"},
+        {"id": "opt4", "emoji": "🟡", "label": "黄色"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真厉害!深蓝色像大海!",
+        "error": "深色的是更暗的蓝色"
+      }
+    },
+    {
+      "id": "color_5_q4",
+      "type": "match",
+      "instruction": "找出和绿色一样的",
+      "options": [
+        {"id": "opt1", "emoji": "🔴", "label": "红色"},
+        {"id": "opt2", "emoji": "🔵", "label": "蓝色"},
+        {"id": "opt3", "emoji": "🟢", "label": "绿色"},
+        {"id": "opt4", "emoji": "🟡", "label": "黄色"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "做得好!都是绿色!",
+        "error": "想想草地的颜色"
+      }
+    },
+    {
+      "id": "color_5_q5",
+      "type": "mix",
+      "instruction": "黄色加蓝色变成什么?",
+      "options": [
+        {"id": "opt1", "emoji": "🟢", "label": "绿色"},
+        {"id": "opt2", "emoji": "🟠", "label": "橙色"},
+        {"id": "opt3", "emoji": "🟣", "label": "紫色"},
+        {"id": "opt4", "emoji": "🔴", "label": "红色"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "太棒了!黄+蓝=绿!",
+        "error": "像树叶一样的颜色"
+      }
+    },
+    {
+      "id": "color_5_q6",
+      "type": "classify",
+      "instruction": "按颜色排序",
+      "options": [
+        {"id": "opt1", "emoji": "🔴🟡", "label": "红黄蓝"},
+        {"id": "opt2", "emoji": "🔴🟢", "label": "黄红绿"},
+        {"id": "opt3", "emoji": "🔵🟡", "label": "蓝绿黄"},
+        {"id": "opt4", "emoji": "🟢🔴🔵", "label": "绿红蓝"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真棒!排序正确!",
+        "error": "想想彩虹的颜色顺序"
+      }
+    },
+    {
+      "id": "color_5_q7",
+      "type": "identify",
+      "instruction": "找出不同的颜色",
+      "options": [
+        {"id": "opt1", "emoji": "🔴", "label": "红色"},
+        {"id": "opt2", "emoji": "🔴", "label": "红色"},
+        {"id": "opt3", "emoji": "🔵", "label": "蓝色"},
+        {"id": "opt4", "emoji": "🔴", "label": "红色"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "太厉害了!找出不一样的了!",
+        "error": "看看哪个颜色不一样"
+      }
+    },
+    {
+      "id": "color_5_q8",
+      "type": "identify",
+      "instruction": "颜色大挑战",
+      "options": [
+        {"id": "opt1", "emoji": "🟣", "label": "紫色"},
+        {"id": "opt2", "emoji": "🟠", "label": "橙色"},
+        {"id": "opt3", "emoji": "🔴", "label": "红色"},
+        {"id": "opt4", "emoji": "🟢", "label": "绿色"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "太棒了!你认识所有颜色了!",
+        "error": "红色加蓝色是什么颜色?"
+      }
+    }
+  ]
+}

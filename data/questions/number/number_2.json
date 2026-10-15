@@ -1,0 +1,103 @@
+{
+  "level": "number_2",
+  "title": "数数",
+  "description": "学会数数1-10",
+  "questions": [
+    {
+      "id": "number_2_q1",
+      "type": "count",
+      "instruction": "数一数有几个苹果?",
+      "options": [
+        {"id": "opt1", "emoji": "🍎🍎", "label": "3个"},
+        {"id": "opt2", "emoji": "🍎", "label": "1个"},
+        {"id": "opt3", "emoji": "🍎🍎", "label": "2个"},
+        {"id": "opt4", "emoji": "🍎🍎🍎", "label": "4个"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真棒!有3个苹果!",
+        "error": "再数一遍,1、2、3"
+      }
+    },
+    {
+      "id": "number_2_q2",
+      "type": "count",
+      "instruction": "有几只小鸭子?",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "1只"},
+        {"id": "opt2", "emoji": "🦆🦆", "label": "2只"},
+        {"id": "opt3", "emoji": "🦆🦆", "label": "3只"},
+        {"id": "opt4", "emoji": "🦆🦆🦆", "label": "4只"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太厉害了!有2只小鸭子!",
+        "error": "1只、2只"
+      }
+    },
+    {
+      "id": "number_2_q3",
+      "type": "count",
+      "instruction": "数一数有几颗星?",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "1颗"},
+        {"id": "opt2", "emoji": "⭐⭐⭐", "label": "3颗"},
+        {"id": "opt3", "emoji": "⭐⭐⭐⭐", "label": "4颗"},
+        {"id": "opt4", "emoji": "⭐⭐", "label": "2颗"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "真棒!有4颗星星!",
+        "error": "数一数,1、2、3、4"
+      }
+    },
+    {
+      "id": "number_2_q4",
+      "type": "count",
+      "instruction": "有几朵花?",
+      "options": [
+        {"id": "opt1", "emoji": "🌸", "label": "2朵"},
+        {"id": "opt2", "emoji": "🌸🌸🌸", "label": "4朵"},
+        {"id": "opt3", "emoji": "🌸🌸", "label": "3朵"},
+        {"id": "opt4", "emoji": "", "label": "1朵"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "做得好!有2朵花!",
+        "error": "再数一遍"
+      }
+    },
+    {
+      "id": "number_2_q5",
+      "type": "count",
+      "instruction": "数一数有几个球?",
+      "options": [
+        {"id": "opt1", "emoji": "🔵🔵", "label": "2个"},
+        {"id": "opt2", "emoji": "🔵🔵", "label": "3个"},
+        {"id": "opt3", "emoji": "🔵", "label": "1个"},
+        {"id": "opt4", "emoji": "🔵🔵🔵", "label": "4个"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "太棒了!有3个球!",
+        "error": "1个、2个、3个"
+      }
+    },
+    {
+      "id": "number_2_q6",
+      "type": "count",
+      "instruction": "有几只小猫?",
+      "options": [
+        {"id": "opt1", "emoji": "🐱", "label": "1只"},
+        {"id": "opt2", "emoji": "🐱", "label": "2只"},
+        {"id": "opt3", "emoji": "🐱🐱🐱", "label": "3只"},
+        {"id": "opt4", "emoji": "🐱🐱🐱", "label": "4只"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "真棒!有3只小猫!",
+        "error": "咪咪、喵喵、咪咪"
+      }
+    }
+  ]
+}

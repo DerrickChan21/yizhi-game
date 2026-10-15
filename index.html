@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>益智游戏 - 认知启蒙</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <!-- 主容器 -->
+  <div id="app" class="app-container">
+    <!-- 首页地图页面 -->
+    <div id="home-page" class="page active">
+      <!-- 顶部统计栏 -->
+      <div class="header">
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-icon">⭐</span>
+            <span id="total-stars" class="stat-value">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">🏆</span>
+            <span id="completed-levels" class="stat-value">0</span>
+          </div>
+          <div class="stat-item last-badge" id="last-badge-container" style="display: none;">
+            <span class="stat-icon" id="last-badge-icon"></span>
+            <span class="stat-value" id="last-badge-name">徽章</span>
+          </div>
+          <div class="stat-item" id="timer-display" style="display: none;">
+            <span class="stat-icon"></span>
+            <span id="timer-value" class="stat-value">5:00</span>
+          </div>
+        </div>
+        <div class="header-buttons">
+          <button id="audio-toggle" class="audio-toggle-btn" title="开启/关闭声音">🔊</button>
+          <button id="timer-btn" class="timer-btn" title="设置倒计时">⏰</button>
+          <button id="parent-btn" class="parent-btn" title="家长查看">家长查看</button>
+        </div>
+      </div>
+
+      <!-- 游戏标题 -->
+      <div class="game-title">
+        <h1>认知启蒙游戏</h1>
+        <p>选择一个星球开始冒险吧!</p>
+      </div>
+
+      <!-- 星球地图 -->
+      <div class="planet-map">
+        <!-- 星球1: 颜色星球 -->
+        <div class="planet-item" data-planet="color">
+          <div class="planet-icon color-planet">🎨</div>
+          <div class="planet-name">颜色星球</div>
+          <div class="planet-progress">
+            <span id="color-stars">0</span>/15 ⭐
+          </div>
+        </div>
+
+        <!-- 星球2: 形状星球 (Phase 2) -->
+        <div class="planet-item locked" data-planet="shape">
+          <div class="planet-icon shape-planet">🔷</div>
+          <div class="planet-name">形状星球</div>
+          <div class="planet-progress">
+            <span class="lock-icon">🔒</span>
+          </div>
+        </div>
+
+        <!-- 星球3: 数字星球 (Phase 2) -->
+        <div class="planet-item locked" data-planet="number">
+          <div class="planet-icon number-planet">🔢</div>
+          <div class="planet-name">数字星球</div>
+          <div class="planet-progress">
+            <span class="lock-icon">🔒</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 徽章墙入口 -->
+      <div class="badge-entrance">
+        <button id="badge-btn" class="btn-secondary">
+          <span>🏅</span> 我的徽章墙
+        </button>
+      </div>
+
+      <!-- 倒计时设置弹窗 -->
+      <div id="timer-modal" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>设置休息时间</h2>
+            <button class="modal-close" id="timer-close">✕</button>
+          </div>
+          <div class="modal-body">
+            <p class="timer-hint">选择游戏时间,到时间后会提醒休息哦!</p>
+            <div class="timer-options">
+              <button class="timer-option" data-minutes="5">
+                <div class="timer-icon">⏰</div>
+                <div class="timer-label">5分钟</div>
+                <div class="timer-desc">短游戏</div>
+              </button>
+              <button class="timer-option" data-minutes="10">
+                <div class="timer-icon">⏰</div>
+                <div class="timer-label">10分钟</div>
+                <div class="timer-desc">中等</div>
+              </button>
+              <button class="timer-option" data-minutes="15">
+                <div class="timer-icon">⏰</div>
+                <div class="timer-label">15分钟</div>
+                <div class="timer-desc">长时间</div>
+              </button>
+              <button class="timer-option" data-minutes="0">
+                <div class="timer-icon">❌</div>
+                <div class="timer-label">关闭</div>
+                <div class="timer-desc">不设限制</div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 休息提醒弹窗 -->
+      <div id="break-modal" class="modal hidden">
+        <div class="modal-content break-content">
+          <div class="break-emoji"></div>
+          <h2 class="break-title">时间到啦!</h2>
+          <p class="break-message">果果玩了很久啦,<br>休息一下,看看远方,喝点水吧!</p>
+          <button class="btn-primary" id="break-ok">我知道啦!</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 关卡选择页面 -->
+    <div id="level-select-page" class="page">
+      <div class="page-header">
+        <button id="back-to-home" class="back-btn">← 返回</button>
+        <h2 id="planet-title">颜色星球</h2>
+      </div>
+
+      <div class="levels-grid">
+        <!-- 关卡列表会由JS动态生成 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 脚本加载 -->
+  <script src="js/storage.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

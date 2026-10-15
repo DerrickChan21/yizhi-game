@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>游戏进行中</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div id="game-container" class="game-container">
+    <!-- 顶部进度条 -->
+    <div class="game-header">
+      <button id="exit-game" class="exit-btn">✕</button>
+      <div class="progress-bar">
+        <div id="progress-dots" class="progress-dots">
+          <!-- 进度点由JS动态生成 -->
+        </div>
+      </div>
+      <div class="star-count">
+        <span class="star-icon">⭐</span>
+        <span id="current-stars">0</span>
+      </div>
+    </div>
+
+    <!-- 题目展示区 -->
+    <div class="question-area">
+      <div id="instruction" class="instruction">
+        <!-- 题目说明 -->
+      </div>
+      <button id="play-instruction" class="play-btn">
+        🔊 再听一次
+      </button>
+    </div>
+
+    <!-- 选项展示区 -->
+    <div id="options-area" class="options-area">
+      <!-- 选项由JS动态生成 -->
+    </div>
+
+    <!-- 反馈层 -->
+    <div id="feedback-layer" class="feedback-layer hidden">
+      <div class="feedback-content">
+        <div id="feedback-icon" class="feedback-icon"></div>
+        <div id="feedback-text" class="feedback-text"></div>
+      </div>
+    </div>
+
+    <!-- 关卡结算层 -->
+    <div id="settlement-layer" class="settlement-layer hidden">
+      <div class="settlement-content">
+        <div class="settlement-title">
+          <span id="settlement-emoji">🎉</span>
+          <h2 id="settlement-title-text">关卡完成!</h2>
+        </div>
+
+        <div class="settlement-stars">
+          <div class="star-result" id="star-1">⭐</div>
+          <div class="star-result" id="star-2">⭐</div>
+          <div class="star-result" id="star-3">⭐</div>
+        </div>
+
+        <div class="settlement-stats">
+          <div class="stat-row">
+            <span>正确率:</span>
+            <span id="accuracy">0%</span>
+          </div>
+          <div class="stat-row">
+            <span>用时:</span>
+            <span id="time-used">0秒</span>
+          </div>
+        </div>
+
+        <div class="settlement-message">
+          <p id="settlement-message">太棒了!</p>
+        </div>
+
+        <div class="settlement-actions">
+          <button id="retry-btn" class="btn-secondary">
+            🔁 再玩一次
+          </button>
+          <button id="next-btn" class="btn-primary">
+            ➡️ 进入下一关
+          </button>
+          <button id="back-to-map" class="btn-secondary">
+            🗺️ 返回地图
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 脚本加载 -->
+  <script src="js/storage.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+{
+  "level": "shape_3",
+  "title": "形状配对",
+  "description": "找出相同形状",
+  "questions": [
+    {
+      "id": "shape_3_q1",
+      "type": "match",
+      "instruction": "找出和圆形一样的形状",
+      "options": [
+        {"id": "opt1", "emoji": "⬜", "label": "方形"},
+        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt3", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "真棒!都是圆形!",
+        "error": "再找找,哪个是圆形?"
+      }
+    },
+    {
+      "id": "shape_3_q2",
+      "type": "match",
+      "instruction": "哪两个形状是一样的?",
+      "options": [
+        {"id": "opt1", "emoji": "⭐", "label": "星星"},
+        {"id": "opt2", "emoji": "⭐", "label": "星星"},
+        {"id": "opt3", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt4", "emoji": "", "label": "圆形"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "太棒了!两个都是星形!",
+        "error": "找找两个相同的形状"
+      }
+    },
+    {
+      "id": "shape_3_q3",
+      "type": "match",
+      "instruction": "方形的好朋友在哪里?",
+      "options": [
+        {"id": "opt1", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt3", "emoji": "⬜", "label": "方形"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "真厉害!找到方形好朋友了!",
+        "error": "方形像积木盒子"
+      }
+    },
+    {
+      "id": "shape_3_q4",
+      "type": "match",
+      "instruction": "匹配相同的形状",
+      "options": [
+        {"id": "opt1", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt3", "emoji": "⬜", "label": "方形"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "做得好!形状配对成功!",
+        "error": "想想三角形的样子"
+      }
+    },
+    {
+      "id": "shape_3_q5",
+      "type": "match",
+      "instruction": "找出不同的那个",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt3", "emoji": "⬜", "label": "方形"},
+        {"id": "opt4", "emoji": "", "label": "圆形"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "真棒!找出不一样的了!",
+        "error": "看看哪个形状不一样"
+      }
+    },
+    {
+      "id": "shape_3_q6",
+      "type": "match",
+      "instruction": "形状连连看",
+      "options": [
+        {"id": "opt1", "emoji": "⭐", "label": "星形"},
+        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt3", "emoji": "🔺", "label": "三角形"},
+        {"id": "opt4", "emoji": "⬜", "label": "方形"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "太棒了!连线成功!",
+        "error": "想想星星的形状"
+      }
+    }
+  ]
+}

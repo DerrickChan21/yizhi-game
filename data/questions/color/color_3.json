@@ -1,0 +1,103 @@
+{
+  "level": "color_3",
+  "title": "颜色配对",
+  "description": "找出相同颜色",
+  "questions": [
+    {
+      "id": "color_3_q1",
+      "type": "match",
+      "instruction": "找出和红色一样的颜色",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "蓝色"},
+        {"id": "opt2", "emoji": "🔴", "label": "红色"},
+        {"id": "opt3", "emoji": "", "label": "黄色"},
+        {"id": "opt4", "emoji": "", "label": "绿色"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "真棒!都是红色!",
+        "error": "再找找,哪个是红色?"
+      }
+    },
+    {
+      "id": "color_3_q2",
+      "type": "match",
+      "instruction": "哪两个颜色是一样的?",
+      "options": [
+        {"id": "opt1", "emoji": "🔴🔴", "label": "红红"},
+        {"id": "opt2", "emoji": "🔵", "label": "红蓝"},
+        {"id": "opt3", "emoji": "🔵🟡", "label": "蓝黄"},
+        {"id": "opt4", "emoji": "🟡", "label": "黄绿"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "太棒了!两个都是红色!",
+        "error": "找找两个相同的颜色"
+      }
+    },
+    {
+      "id": "color_3_q3",
+      "type": "match",
+      "instruction": "蓝色的好朋友在哪里?",
+      "options": [
+        {"id": "opt1", "emoji": "🔵", "label": "蓝色"},
+        {"id": "opt2", "emoji": "🔴", "label": "红色"},
+        {"id": "opt3", "emoji": "🟡", "label": "黄色"},
+        {"id": "opt4", "emoji": "🟢", "label": "绿色"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真厉害!找到蓝色好朋友了!",
+        "error": "蓝色的是像大海一样的颜色"
+      }
+    },
+    {
+      "id": "color_3_q4",
+      "type": "match",
+      "instruction": "匹配相同的颜色",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "黄色"},
+        {"id": "opt2", "emoji": "🔴", "label": "红色"},
+        {"id": "opt3", "emoji": "🔵", "label": "蓝色"},
+        {"id": "opt4", "emoji": "🟢", "label": "绿色"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "做得好!颜色配对成功!",
+        "error": "想想太阳的颜色"
+      }
+    },
+    {
+      "id": "color_3_q5",
+      "type": "match",
+      "instruction": "找出不同的那个",
+      "options": [
+        {"id": "opt1", "emoji": "🔴", "label": "红色"},
+        {"id": "opt2", "emoji": "🔴", "label": "红色"},
+        {"id": "opt3", "emoji": "🔵", "label": "蓝色"},
+        {"id": "opt4", "emoji": "🔴", "label": "红色"}
+      ],
+      "correct": "opt3",
+      "feedback": {
+        "success": "真棒!找出不一样的了!",
+        "error": "看看哪个颜色不一样"
+      }
+    },
+    {
+      "id": "color_3_q6",
+      "type": "match",
+      "instruction": "颜色连连看",
+      "options": [
+        {"id": "opt1", "emoji": "🟢", "label": "绿色"},
+        {"id": "opt2", "emoji": "🔴", "label": "红色"},
+        {"id": "opt3", "emoji": "🔵", "label": "蓝色"},
+        {"id": "opt4", "emoji": "🟡", "label": "黄色"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "太棒了!连线成功!",
+        "error": "想想草地的颜色"
+      }
+    }
+  ]
+}

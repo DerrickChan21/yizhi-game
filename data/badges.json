@@ -1,0 +1,229 @@
+{
+  "badges": [
+    {
+      "id": "color_1",
+      "name": "红色新手",
+      "emoji": "",
+      "description": "完成颜色星球第1关",
+      "condition": "完成颜色识别基础关",
+      "rarity": "common",
+      "category": "color"
+    },
+    {
+      "id": "color_2",
+      "name": "颜色学徒",
+      "emoji": "",
+      "description": "完成颜色星球第2关",
+      "condition": "掌握颜色分类",
+      "rarity": "common",
+      "category": "color"
+    },
+    {
+      "id": "color_3",
+      "name": "颜色达人",
+      "emoji": "",
+      "description": "完成颜色星球第3关",
+      "condition": "学会颜色配对",
+      "rarity": "uncommon",
+      "category": "color"
+    },
+    {
+      "id": "color_4",
+      "name": "颜色专家",
+      "emoji": "🎯",
+      "description": "完成颜色星球第4关",
+      "condition": "区分深浅色",
+      "rarity": "uncommon",
+      "category": "color"
+    },
+    {
+      "id": "color_5",
+      "name": "颜色大师",
+      "emoji": "👑",
+      "description": "完成颜色星球第5关(3星)",
+      "condition": "颜色知识全掌握",
+      "rarity": "rare",
+      "category": "color"
+    },
+    {
+      "id": "shape_1",
+      "name": "形状新手",
+      "emoji": "",
+      "description": "完成形状星球第1关",
+      "condition": "认识基础形状",
+      "rarity": "common",
+      "category": "shape"
+    },
+    {
+      "id": "shape_2",
+      "name": "形状学徒",
+      "emoji": "🔷",
+      "description": "完成形状星球第2关",
+      "condition": "学会形状分类",
+      "rarity": "common",
+      "category": "shape"
+    },
+    {
+      "id": "shape_3",
+      "name": "形状达人",
+      "emoji": "💠",
+      "description": "完成形状星球第3关",
+      "condition": "掌握形状配对",
+      "rarity": "uncommon",
+      "category": "shape"
+    },
+    {
+      "id": "shape_4",
+      "name": "形状专家",
+      "emoji": "🔶",
+      "description": "完成形状星球第4关",
+      "condition": "学会形状组合",
+      "rarity": "uncommon",
+      "category": "shape"
+    },
+    {
+      "id": "shape_5",
+      "name": "形状大师",
+      "emoji": "",
+      "description": "完成形状星球第5关(3星)",
+      "condition": "形状知识全掌握",
+      "rarity": "rare",
+      "category": "shape"
+    },
+    {
+      "id": "number_1",
+      "name": "数字新手",
+      "emoji": "1️⃣",
+      "description": "完成数字星球第1关",
+      "condition": "认识数字1-5",
+      "rarity": "common",
+      "category": "number"
+    },
+    {
+      "id": "number_2",
+      "name": "数字学徒",
+      "emoji": "🔢",
+      "description": "完成数字星球第2关",
+      "condition": "学会数数",
+      "rarity": "common",
+      "category": "number"
+    },
+    {
+      "id": "number_3",
+      "name": "数字达人",
+      "emoji": "🧮",
+      "description": "完成数字星球第3关",
+      "condition": "比较大小",
+      "rarity": "uncommon",
+      "category": "number"
+    },
+    {
+      "id": "number_4",
+      "name": "数字专家",
+      "emoji": "📊",
+      "description": "完成数字星球第4关",
+      "condition": "学会简单加法",
+      "rarity": "uncommon",
+      "category": "number"
+    },
+    {
+      "id": "number_5",
+      "name": "数字大师",
+      "emoji": "👑",
+      "description": "完成数字星球第5关(3星)",
+      "condition": "数字知识全掌握",
+      "rarity": "rare",
+      "category": "number"
+    },
+    {
+      "id": "star_10",
+      "name": "星星收集者",
+      "emoji": "⭐",
+      "description": "累计获得10颗星",
+      "condition": "收集10颗星星",
+      "rarity": "uncommon",
+      "category": "achievement"
+    },
+    {
+      "id": "star_30",
+      "name": "星星达人",
+      "emoji": "🌟",
+      "description": "累计获得30颗星",
+      "condition": "收集30颗星星",
+      "rarity": "rare",
+      "category": "achievement"
+    },
+    {
+      "id": "level_5",
+      "name": "关卡征服者",
+      "emoji": "🏆",
+      "description": "完成5个关卡",
+      "condition": "完成5关",
+      "rarity": "uncommon",
+      "category": "achievement"
+    },
+    {
+      "id": "level_15",
+      "name": "学习小能手",
+      "emoji": "",
+      "description": "完成所有15个关卡",
+      "condition": "完成全部关卡",
+      "rarity": "epic",
+      "category": "achievement"
+    },
+    {
+      "id": "perfect_5",
+      "name": "完美主义者",
+      "emoji": "💎",
+      "description": "5个关卡满星(3星)",
+      "condition": "5关全3星",
+      "rarity": "rare",
+      "category": "achievement"
+    },
+    {
+      "id": "play_30min",
+      "name": "游戏达人",
+      "emoji": "🎮",
+      "description": "累计游戏30分钟",
+      "condition": "游戏时长30分钟",
+      "rarity": "uncommon",
+      "category": "achievement"
+    },
+    {
+      "id": "first_play",
+      "name": "初次尝试",
+      "emoji": "",
+      "description": "第一次玩游戏",
+      "condition": "首次进入游戏",
+      "rarity": "common",
+      "category": "achievement"
+    },
+    {
+      "id": "color_master",
+      "name": "颜色大师(成就)",
+      "emoji": "🎨",
+      "description": "颜色星球全部满星",
+      "condition": "颜色星球5关全3星",
+      "rarity": "epic",
+      "category": "achievement"
+    },
+    {
+      "id": "shape_master",
+      "name": "形状大师(成就)",
+      "emoji": "🔷",
+      "description": "形状星球全部满星",
+      "condition": "形状星球5关全3星",
+      "rarity": "epic",
+      "category": "achievement"
+    },
+    {
+      "id": "number_master",
+      "name": "数字大师(成就)",
+      "emoji": "",
+      "description": "数字星球全部满星",
+      "condition": "数字星球5关全3星",
+      "rarity": "epic",
+      "category": "achievement"
+    }
+  ]
+}

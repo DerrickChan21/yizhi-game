@@ -1,0 +1,103 @@
+{
+  "level": "shape_4",
+  "title": "形状组合",
+  "description": "用基础形状组合成复杂图形",
+  "questions": [
+    {
+      "id": "shape_4_q1",
+      "type": "compose",
+      "instruction": "两个三角形可以拼成什么?",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "emoji": "⬜", "label": "方形"},
+        {"id": "opt3", "emoji": "🔺", "label": "两个三角"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "真棒!两个三角形可以拼成方形!",
+        "error": "两个三角形拼在一起像什么?"
+      }
+    },
+    {
+      "id": "shape_4_q2",
+      "type": "compose",
+      "instruction": "圆形加三角形变成什么?",
+      "options": [
+        {"id": "opt1", "emoji": "🐟", "label": "小鱼"},
+        {"id": "opt2", "emoji": "🏠", "label": "房子"},
+        {"id": "opt3", "emoji": "🚗", "label": "汽车"},
+        {"id": "opt4", "emoji": "", "label": "球"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "太棒了!像一条小鱼!",
+        "error": "圆形身体+三角形尾巴"
+      }
+    },
+    {
+      "id": "shape_4_q3",
+      "type": "compose",
+      "instruction": "方形加三角形变成什么?",
+      "options": [
+        {"id": "opt1", "emoji": "🏠", "label": "房子"},
+        {"id": "opt2", "emoji": "🐟", "label": "小鱼"},
+        {"id": "opt3", "emoji": "🚗", "label": "汽车"},
+        {"id": "opt4", "emoji": "", "label": "球"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "真厉害!像一座小房子!",
+        "error": "方形房子+三角形屋顶"
+      }
+    },
+    {
+      "id": "shape_4_q4",
+      "type": "compose",
+      "instruction": "哪个图形用了圆形?",
+      "options": [
+        {"id": "opt1", "emoji": "🏠", "label": "房子"},
+        {"id": "opt2", "emoji": "🚗", "label": "汽车"},
+        {"id": "opt3", "emoji": "📦", "label": "盒子"},
+        {"id": "opt4", "emoji": "🔺", "label": "三角形"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "做得好!汽车轮子是圆形的!",
+        "error": "想想什么东西有轮子"
+      }
+    },
+    {
+      "id": "shape_4_q5",
+      "type": "compose",
+      "instruction": "用形状拼出小花",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "圆形花心"},
+        {"id": "opt2", "emoji": "", "label": "方形花瓣"},
+        {"id": "opt3", "emoji": "🔺", "label": "三角叶子"},
+        {"id": "opt4", "emoji": "⭐", "label": "星形花蕊"}
+      ],
+      "correct": "opt1",
+      "feedback": {
+        "success": "太棒了!小花真漂亮!",
+        "error": "花心是什么形状?"
+      }
+    },
+    {
+      "id": "shape_4_q6",
+      "type": "compose",
+      "instruction": "几个圆形可以拼成毛毛虫?",
+      "options": [
+        {"id": "opt1", "emoji": "", "label": "1个圆形"},
+        {"id": "opt2", "emoji": "🔵🔵", "label": "3个圆形"},
+        {"id": "opt3", "emoji": "⬜⬜", "label": "2个方形"},
+        {"id": "opt4", "emoji": "🔺🔺🔺", "label": "3个三角"}
+      ],
+      "correct": "opt2",
+      "feedback": {
+        "success": "真棒!毛毛虫是圆形的!",
+        "error": "毛毛虫是一节一节的圆形"
+      }
+    }
+  ]
+}
