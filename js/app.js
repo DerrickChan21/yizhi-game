@@ -23,6 +23,7 @@ App.prototype.init = function() {
 };
 
 App.prototype.bindEvents = function() {
+  alert('bindEvents开始');
   var self = this;
   var audioToggle = document.getElementById('audio-toggle');
   if (audioToggle) {
@@ -63,11 +64,14 @@ App.prototype.bindEvents = function() {
   if (backBtn) {
     backBtn.addEventListener('click', function() { self.navigateHome(); });
   }
+  alert('找到星球元素');
   var planetItems = document.querySelectorAll('.planet-item');
+  alert('星球数量:' + planetItems.length);
   for (var i = 0; i < planetItems.length; i++) {
     (function(item) {
       item.addEventListener('click', function() {
         var planet = item.getAttribute('data-planet');
+        alert('点击星球:' + planet);
         self.handlePlanetClick(planet, item);
       });
     })(planetItems[i]);
@@ -137,6 +141,7 @@ App.prototype.handlePlanetClick = function(planet, element) {
 };
 
 App.prototype.navigateToLevelSelect = function(planet) {
+  alert('navigateToLevelSelect开始');
   var homePage = document.getElementById('home-page');
   var levelSelectPage = document.getElementById('level-select-page');
   if (!homePage || !levelSelectPage) return;
@@ -145,13 +150,16 @@ App.prototype.navigateToLevelSelect = function(planet) {
     var planetNames = { 'color': '颜色星球', 'shape': '形状星球', 'number': '数字星球' };
     planetTitle.textContent = planetNames[planet] || '未知星球';
   }
+  alert('调用renderLevelList');
   this.renderLevelList(planet);
   homePage.className = homePage.className.replace(' active', '');
+  alert('添加active类');
   levelSelectPage.className += ' active';
   this.bindLevelClickEvents();
 };
 
 App.prototype.renderLevelList = function(planet) {
+  alert('renderLevelList开始,planet=' + planet);
   var levels = [];
   for (var i = 1; i <= 5; i++) {
     var levelId = planet + '_' + i;
@@ -181,6 +189,7 @@ App.prototype.getLevelName = function(planet, level) {
 };
 
 App.prototype.bindLevelClickEvents = function() {
+  alert('bindLevelClickEvents开始');
   var self = this;
   var levelCards = document.querySelectorAll('.level-card');
   for (var i = 0; i < levelCards.length; i++) {

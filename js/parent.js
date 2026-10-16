@@ -3,8 +3,8 @@
  * 查看进度、管理功能
  */
 
-class ParentPanel {
-  constructor() {
+function ParentPanel() {
+function ParentPanel() {
     this.isVerified = false;
     this.verifyQuestion = null;
     this.verifyAnswer = null;
@@ -13,7 +13,7 @@ class ParentPanel {
   /**
    * 初始化
    */
-  init() {
+ParentPanel.prototype.init = function() {
     console.log('家长面板初始化...');
 
     // 生成验证题目

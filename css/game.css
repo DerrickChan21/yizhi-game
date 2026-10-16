@@ -5,7 +5,7 @@
 
 /* 游戏容器 */
 .game-container {
-  background: var(--bg-gradient);
+  background: #FFFFFF;
   display: flex;
   flex-direction: column;
 }
