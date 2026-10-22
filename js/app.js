@@ -132,10 +132,6 @@ App.prototype.handlePlanetClick = function(planet, element) {
     uiManager.showToast('这个星球还未解锁哦!');
     return;
   }
-  if (planet !== 'color') {
-    uiManager.showToast('这个星球即将开放!');
-    return;
-  }
   this.currentPlanet = planet;
   this.navigateToLevelSelect(planet);
 };
