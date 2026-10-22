@@ -10,8 +10,8 @@
       "options": [
         {"id": "opt1", "emoji": "🍎", "label": "1个"},
         {"id": "opt2", "emoji": "🍎🍎", "label": "2个"},
-        {"id": "opt3", "emoji": "🍎🍎", "label": "3个"},
-        {"id": "opt4", "emoji": "🍎🍎🍎", "label": "4个"}
+        {"id": "opt3", "emoji": "🍎🍎🍎", "label": "3个"},
+        {"id": "opt4", "emoji": "🍎🍎🍎🍎", "label": "4个"}
       ],
       "correct": "opt2",
       "feedback": {
@@ -22,12 +22,12 @@
     {
       "id": "number_4_q2",
       "type": "add",
-      "instruction": "2只鸭子加1只鸭子等于几只?",
+      "instruction": "2只小鸡加1只小鸡等于几只?",
       "options": [
-        {"id": "opt1", "emoji": "🦆🦆", "label": "2只"},
-        {"id": "opt2", "emoji": "🦆", "label": "1只"},
-        {"id": "opt3", "emoji": "🦆", "label": "3只"},
-        {"id": "opt4", "emoji": "🦆🦆🦆", "label": "4只"}
+        {"id": "opt1", "emoji": "🐤🐤", "label": "2只"},
+        {"id": "opt2", "emoji": "🐤", "label": "1只"},
+        {"id": "opt3", "emoji": "🐤🐤🐤", "label": "3只"},
+        {"id": "opt4", "emoji": "🐤🐤🐤🐤", "label": "4只"}
       ],
       "correct": "opt3",
       "feedback": {
@@ -56,10 +56,10 @@
       "type": "add",
       "instruction": "2个球加2个球等于几个?",
       "options": [
-        {"id": "opt1", "emoji": "🔵", "label": "2个"},
-        {"id": "opt2", "emoji": "", "label": "1个"},
-        {"id": "opt3", "emoji": "🔵🔵", "label": "3个"},
-        {"id": "opt4", "emoji": "🔵🔵", "label": "4个"}
+        {"id": "opt1", "emoji": "🔵🔵", "label": "2个"},
+        {"id": "opt2", "emoji": "🔵", "label": "1个"},
+        {"id": "opt3", "emoji": "🔵🔵🔵", "label": "3个"},
+        {"id": "opt4", "emoji": "🔵🔵🔵🔵", "label": "4个"}
       ],
       "correct": "opt4",
       "feedback": {
@@ -72,10 +72,10 @@
       "type": "add",
       "instruction": "3朵花加1朵花等于几朵?",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "1朵"},
-        {"id": "opt2", "emoji": "", "label": "2朵"},
+        {"id": "opt1", "emoji": "🌸", "label": "1朵"},
+        {"id": "opt2", "emoji": "🌸🌸", "label": "2朵"},
         {"id": "opt3", "emoji": "🌸🌸🌸", "label": "3朵"},
-        {"id": "opt4", "emoji": "🌸🌸🌸", "label": "4朵"}
+        {"id": "opt4", "emoji": "🌸🌸🌸🌸", "label": "4朵"}
       ],
       "correct": "opt4",
       "feedback": {

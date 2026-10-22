@@ -4,11 +4,10 @@
  */
 
 function ParentPanel() {
-function ParentPanel() {
     this.isVerified = false;
     this.verifyQuestion = null;
     this.verifyAnswer = null;
-  }
+};
 
   /**
    * 初始化
@@ -26,12 +25,12 @@ ParentPanel.prototype.init = function() {
     this.renderVerifyQuestion();
 
     console.log('家长面板初始化完成');
-  }
+};
 
   /**
    * 生成验证题目
    */
-  generateVerifyQuestion() {
+ParentPanel.prototype.generateVerifyQuestion = function() {
     // 简单的算术题
     var num1 = Math.floor(Math.random() * 10) + 1;
     var num2 = Math.floor(Math.random() * 10) + 1;
@@ -44,36 +43,37 @@ ParentPanel.prototype.init = function() {
       // 确保结果不为负数
       if (num1 < num2) {
         this.verifyAnswer = num2 - num1;
-        this.verifyQuestion = `${num2} ${operator} ${num1} = ?`;
+        this.verifyQuestion = num2 + ' ' + operator + ' ' + num1 + ' = ?';
       } else {
         this.verifyAnswer = num1 - num2;
       }
     }
 
     if (!this.verifyQuestion) {
-      this.verifyQuestion = `${num1} ${operator} ${num2} = ?`;
+      this.verifyQuestion = num1 + ' ' + operator + ' ' + num2 + ' = ?';
     }
-  }
+};
 
   /**
    * 渲染验证题目
    */
-  renderVerifyQuestion() {
+ParentPanel.prototype.renderVerifyQuestion = function() {
     var questionEl = document.getElementById('verify-question');
     if (questionEl) {
       questionEl.textContent = this.verifyQuestion;
     }
-  }
+};
 
   /**
    * 绑定事件
    */
-  bindEvents() {
+ParentPanel.prototype.bindEvents = function() {
+    var self = this;
     // 取消按钮
     var cancelBtn = document.getElementById('verify-cancel');
     if (cancelBtn) {
       cancelBtn.addEventListener('click', function() {
-        this.goBack();
+        self.goBack();
       });
     }
 
@@ -81,7 +81,7 @@ ParentPanel.prototype.init = function() {
     var confirmBtn = document.getElementById('verify-confirm');
     if (confirmBtn) {
       confirmBtn.addEventListener('click', function() {
-        this.handleVerify();
+        self.handleVerify();
       });
     }
 
@@ -90,7 +90,7 @@ ParentPanel.prototype.init = function() {
     if (answerInput) {
       answerInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
-          this.handleVerify();
+          self.handleVerify();
         }
       });
     }
@@ -99,7 +99,7 @@ ParentPanel.prototype.init = function() {
     var backBtn = document.getElementById('back-to-game');
     if (backBtn) {
       backBtn.addEventListener('click', function() {
-        this.goBack();
+        self.goBack();
       });
     }
 
@@ -107,7 +107,7 @@ ParentPanel.prototype.init = function() {
     var resetColorBtn = document.getElementById('reset-color-levels');
     if (resetColorBtn) {
       resetColorBtn.addEventListener('click', function() {
-        this.resetPlanet('color');
+        self.resetPlanet('color');
       });
     }
 
@@ -115,7 +115,7 @@ ParentPanel.prototype.init = function() {
     var resetAllBtn = document.getElementById('reset-all');
     if (resetAllBtn) {
       resetAllBtn.addEventListener('click', function() {
-        this.resetAll();
+        self.resetAll();
       });
     }
 
@@ -136,20 +136,20 @@ ParentPanel.prototype.init = function() {
     if (volumeSlider && volumeValue) {
       var config = gameStorage.getConfig();
       volumeSlider.value = config.sfxVolume * 100;
-      volumeValue.textContent = `${Math.round(config.sfxVolume * 100)}%`;
+      volumeValue.textContent = Math.round(config.sfxVolume * 100) + '%';
 
       volumeSlider.addEventListener('input', function(e) {
         var volume = e.target.value / 100;
         audioManager.setVolume(volume);
-        volumeValue.textContent = `${Math.round(volume * 100)}%`;
+        volumeValue.textContent = Math.round(volume * 100) + '%';
       });
     }
-  }
+};
 
   /**
    * 处理验证
    */
-  handleVerify() {
+ParentPanel.prototype.handleVerify = function() {
     var answerInput = document.getElementById('verify-answer');
     if (!answerInput) return;
 
@@ -168,12 +168,12 @@ ParentPanel.prototype.init = function() {
       answerInput.value = '';
       answerInput.focus();
     }
-  }
+};
 
   /**
    * 显示家长面板内容
    */
-  showParentContent() {
+ParentPanel.prototype.showParentContent = function() {
     var verifyEl = document.getElementById('parent-verify');
     var contentEl = document.getElementById('parent-content');
 
@@ -189,12 +189,12 @@ ParentPanel.prototype.init = function() {
     this.renderStats();
     this.renderLevelList();
     this.renderRecentPlays();
-  }
+};
 
   /**
    * 渲染统计信息
    */
-  renderStats() {
+ParentPanel.prototype.renderStats = function() {
     var progress = gameStorage.getProgress();
 
     // 总星星数
@@ -218,7 +218,7 @@ ParentPanel.prototype.init = function() {
     // 平均正确率
     var accuracyEl = document.getElementById('parent-accuracy');
     if (accuracyEl) {
-      accuracyEl.textContent = `${Math.round(progress.stats.averageAccuracy * 100)}%`;
+      accuracyEl.textContent = Math.round(progress.stats.averageAccuracy * 100) + '%';
     }
 
     // 总游玩次数
@@ -226,12 +226,12 @@ ParentPanel.prototype.init = function() {
     if (totalPlaysEl) {
       totalPlaysEl.textContent = progress.stats.totalPlays;
     }
-  }
+};
 
   /**
    * 渲染关卡列表
    */
-  renderLevelList() {
+ParentPanel.prototype.renderLevelList = function() {
     var levelListEl = document.getElementById('level-list');
     if (!levelListEl) return;
 
@@ -247,20 +247,14 @@ ParentPanel.prototype.init = function() {
     planets.forEach(function(planet) {
       // 星球标题
       var planetHeader = document.createElement('div');
-      planetHeader.style.cssText = `
-        font-size: 20px;
-        font-weight: bold;
-        margin: 20px 0 10px 0;
-        padding: 10px;
-        background: #f0f0f0;
-        border-radius: 8px;
-      `;
-      planetHeader.textContent = `${planet.icon} ${planet.name}`;
+      planetHeader.style.cssText = 'font-size: 20px; font-weight: bold; margin: 20px 0 10px 0;' +
+        'padding: 10px; background: #f0f0f0; border-radius: 8px;';
+      planetHeader.textContent = planet.icon + ' ' + planet.name;
       levelListEl.appendChild(planetHeader);
 
       // 关卡列表
       for (var i = 1; i <= 5; i++) {
-        var levelId = `${planet.id}_${i}`;
+        var levelId = planet.id + '_' + i;
         var level = progress.levels[levelId];
 
         if (!level) continue;
@@ -280,12 +274,12 @@ ParentPanel.prototype.init = function() {
 
         var name = document.createElement('div');
         name.className = 'level-list-name';
-        name.textContent = `第${i}关`;
+        name.textContent = '第' + i + '关';
         info.appendChild(name);
 
         var stats = document.createElement('div');
         stats.className = 'level-list-stats';
-        stats.textContent = `尝试次数: ${level.attempts} | 最佳用时: ${level.bestTime ? Math.round(level.bestTime) + '秒' : '无'}`;
+        stats.textContent = '尝试次数: ' + level.attempts + ' | 最佳用时: ' + (level.bestTime ? Math.round(level.bestTime) + '秒' : '无');
         info.appendChild(stats);
 
         item.appendChild(info);
@@ -309,12 +303,12 @@ ParentPanel.prototype.init = function() {
         levelListEl.appendChild(item);
       }
     });
-  }
+};
 
   /**
    * 渲染最近游玩
    */
-  renderRecentPlays() {
+ParentPanel.prototype.renderRecentPlays = function() {
     var recentPlaysEl = document.getElementById('recent-plays-list');
     if (!recentPlaysEl) return;
 
@@ -367,13 +361,13 @@ ParentPanel.prototype.init = function() {
 
       recentPlaysEl.appendChild(item);
     });
-  }
+};
 
   /**
    * 重置星球进度
    */
-  resetPlanet(planet) {
-    if (!confirm(`确定要重置${planet === 'color' ? '颜色' : planet === 'shape' ? '形状' : '数字'}星球的进度吗?`)) {
+ParentPanel.prototype.resetPlanet = function(planet) {
+    if (!confirm('确定要重置' + (planet === 'color' ? '颜色' : planet === 'shape' ? '形状' : '数字') + '星球的进度吗?')) {
       return;
     }
 
@@ -387,12 +381,12 @@ ParentPanel.prototype.init = function() {
     } else {
       alert('重置失败!');
     }
-  }
+};
 
   /**
    * 重置全部进度
    */
-  resetAll() {
+ParentPanel.prototype.resetAll = function() {
     if (!confirm('确定要重置全部进度吗?\\n这将清空所有星星和徽章记录!')) {
       return;
     }
@@ -411,19 +405,18 @@ ParentPanel.prototype.init = function() {
     } else {
       alert('重置失败!');
     }
-  }
+};
 
   /**
    * 返回
    */
-  goBack() {
-    if (document.referrer && document.referrer.includes('game.html')) {
+ParentPanel.prototype.goBack = function() {
+    if (document.referrer && document.referrer.indexOf('game.html') !== -1) {
       window.history.back();
     } else {
       window.location.href = 'index.html';
     }
-  }
-}
+};
 
 // 页面加载完成后初始化
 document.addEventListener('DOMContentLoaded', function() {

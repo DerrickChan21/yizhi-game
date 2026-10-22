@@ -36,7 +36,6 @@
 .star-count {
   display: flex;
   align-items: center;
-  gap: 8px;
   font-size: 28px;
   font-weight: bold;
   color: #FF6B6B;
@@ -80,23 +79,36 @@
   min-height: 50px;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
 }
 
 /* 选项区域 */
+/* 选项区域
+   原为 CSS Grid —— iOS 9 / Safari 9 完全不支持 Grid，会让 4 个选项
+   塌成一列、只看得到第一个。改为 flex + 子元素 margin，全平台一条路径。
+   容器必须给定宽度，否则百分比宽度在 fit-content 容器里会塌。 */
 .options-area {
   flex: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  padding: 24px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  align-content: center;
+  width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  align-content: center;
+  padding: 12px;
 }
 
-.options-area.three-columns {
-  grid-template-columns: repeat(3, 1fr);
+.options-area > * {
+  width: calc(50% - 24px);
+  margin: 12px;
+}
+
+.options-area.three-columns > * {
+  width: calc(33.3333% - 24px);
 }
 
 /* 反馈层 */
@@ -245,7 +257,6 @@
 .settlement-stars {
   display: flex;
   justify-content: center;
-  gap: 24px;
   margin: 32px 0;
 }
 
@@ -302,7 +313,6 @@
 .settlement-actions {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 /* 颜色卡片特殊样式 */
@@ -321,12 +331,19 @@
 /* 响应式适配 */
 @media (max-width: 768px) {
   .options-area {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    padding: 8px;
+  }
+
+  .options-area > * {
+    width: calc(50% - 16px);
+    margin: 8px;
+  }
+
+  .options-area.three-columns > * {
+    width: calc(33.3333% - 16px);
   }
 
   .settlement-stars {
-    gap: 16px;
   }
 
   .star-result {
@@ -335,5 +352,28 @@
 
   .feedback-icon {
     font-size: 100px;
+  }
+}
+
+/* ============================================
+   iOS 9 兼容：flex gap 的等价替代
+   iOS 9 / Safari 9 不支持 flex 的 gap（要 Safari 14.1），
+   统一改用相邻兄弟 margin，所有平台行为一致。
+   ============================================ */
+.star-count > * + * {
+  margin-left: 8px;
+}
+
+.settlement-stars > * + * {
+  margin-left: 24px;
+}
+
+.settlement-actions > * + * {
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .settlement-stars > * + * {
+    margin-left: 16px;
   }
 }

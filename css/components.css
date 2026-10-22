@@ -21,7 +21,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
 }
 
 .btn-primary {
@@ -74,7 +73,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
   min-height: 140px;
   justify-content: center;
 }
@@ -101,7 +99,6 @@
 
 .level-stars {
   display: flex;
-  gap: 8px;
 }
 
 .level-star {
@@ -144,7 +141,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
   min-width: 120px;
   min-height: 120px;
   border: 4px solid transparent;
@@ -263,7 +259,6 @@
 
 .modal-footer {
   display: flex;
-  gap: 16px;
   justify-content: flex-end;
 }
 
@@ -275,7 +270,6 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
-  gap: 16px;
   min-height: 100px;
 }
 
@@ -308,7 +302,6 @@
 
 .progress-dots {
   display: flex;
-  gap: 12px;
   justify-content: center;
   align-items: center;
 }
@@ -452,4 +445,51 @@
   cursor: pointer;
   border: none;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ============================================
+   iOS 9 兼容：flex gap 的等价替代
+   ============================================ */
+.btn-primary > * + *,
+.btn-secondary > * + *,
+.btn-warning > * + *,
+.btn-danger > * + * {
+  margin-left: 12px;
+}
+
+.level-card > * + * {
+  margin-top: 12px;
+}
+
+.option-card > * + * {
+  margin-top: 12px;
+}
+
+.level-stars > * + * {
+  margin-left: 8px;
+}
+
+.modal-footer > * + * {
+  margin-left: 16px;
+}
+
+.stat-card > * + * {
+  margin-left: 16px;
+}
+
+.progress-dots > * + * {
+  margin-left: 12px;
+}
+
+/* 颜色题色块
+   iOS 9 的 emoji 字体没有 🟢🟡🟠🟣（Unicode 12），用 CSS 实心圆代替，
+   永不依赖系统字体。边长按 em 走，跟随 .option-emoji 的 60px 字号。 */
+.color-swatch {
+  display: inline-block;
+  width: 0.82em;
+  height: 0.82em;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 0, 0, 0.12);
+  vertical-align: middle;
+  margin: 0 4px;
 }

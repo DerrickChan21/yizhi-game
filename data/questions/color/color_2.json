@@ -26,7 +26,7 @@
       "options": [
         {"id": "opt1", "emoji": "🍎", "label": "苹果"},
         {"id": "opt2", "emoji": "🍌", "label": "香蕉"},
-        {"id": "opt3", "emoji": "🫐", "label": "蓝莓"},
+        {"id": "opt3", "emoji": "💧", "label": "蓝莓"},
         {"id": "opt4", "emoji": "🌿", "label": "树叶"}
       ],
       "correct": "opt2",
@@ -72,10 +72,10 @@
       "type": "classify",
       "instruction": "把这些花朵按颜色分开",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "粉花"},
-        {"id": "opt2", "emoji": "", "label": "红花"},
-        {"id": "opt3", "emoji": "", "label": "黄花"},
-        {"id": "opt4", "emoji": "", "label": "紫花"}
+        {"id": "opt1", "hex": "#FF8FB1", "label": "粉花"},
+        {"id": "opt2", "hex": "#E53935", "label": "红花"},
+        {"id": "opt3", "hex": "#FFD700", "label": "黄花"},
+        {"id": "opt4", "hex": "#8E44AD", "label": "紫花"}
       ],
       "correct": "opt2",
       "feedback": {
@@ -89,9 +89,9 @@
       "instruction": "哪个篮子里装的都是红色?",
       "options": [
         {"id": "opt1", "emoji": "🍓", "label": "红篮子"},
-        {"id": "opt2", "emoji": "🫐🍇", "label": "蓝篮子"},
+        {"id": "opt2", "emoji": "💙🍇", "label": "蓝篮子"},
         {"id": "opt3", "emoji": "🍌🍋", "label": "黄篮子"},
-        {"id": "opt4", "emoji": "🥝🌿", "label": "绿篮子"}
+        {"id": "opt4", "emoji": "🍏🌿", "label": "绿篮子"}
       ],
       "correct": "opt1",
       "feedback": {

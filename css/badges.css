@@ -10,7 +10,6 @@
 .badges-header {
   display: flex;
   align-items: center;
-  gap: 16px;
   padding: 16px;
   background: #FFFFFF;
   border-radius: 12px;
@@ -26,9 +25,11 @@
 
 /* 统计信息 */
 .badges-stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: -8px;
   margin-bottom: 16px;
 }
 
@@ -38,7 +39,6 @@
   padding: 16px;
   display: flex;
   align-items: center;
-  gap: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
@@ -63,8 +63,11 @@
 
 /* 分类标签 */
 .category-tabs {
+  display: -webkit-flex;
   display: flex;
-  gap: 12px;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: -6px;
   margin-bottom: 16px;
   overflow-x: auto;
   padding-bottom: 12px;
@@ -94,9 +97,13 @@
 
 /* 徽章网格 */
 .badges-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 16px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin: -8px;
 }
 
 .badge-card {
@@ -106,7 +113,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -250,10 +256,6 @@
 
 /* 响应式 */
 @media (max-width: 768px) {
-  .badges-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 12px;
-  }
 
   .badge-card {
     min-height: 120px;
@@ -266,5 +268,43 @@
 
   .badge-card-name {
     font-size: 14px;
+  }
+}
+
+/* ============================================
+   iOS 9 兼容：flex gap 的等价替代
+   ============================================ */
+.badges-header > * + * {
+  margin-left: 16px;
+}
+
+.badges-stats > * {
+  width: calc(50% - 16px);
+  margin: 8px;
+}
+
+.stat-card > * + * {
+  margin-left: 16px;
+}
+
+.category-tabs > * {
+  margin: 6px;
+}
+
+.badge-card > * + * {
+  margin-top: 12px;
+}
+
+.badges-grid > * {
+  flex: 1 1 120px;
+  max-width: 140px;
+  margin: 8px;
+}
+
+/* 窄屏收紧徽章间距（必须放在默认规则之后，否则会被同优先级规则盖掉） */
+@media (max-width: 768px) {
+  .badges-grid > * {
+    flex-basis: 100px;
+    margin: 6px;
   }
 }

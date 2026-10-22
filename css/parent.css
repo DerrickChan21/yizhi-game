@@ -67,7 +67,6 @@
 
 .verify-actions {
   display: flex;
-  gap: 16px;
 }
 
 .verify-actions button {
@@ -84,7 +83,6 @@
 .parent-header {
   display: flex;
   align-items: center;
-  gap: 16px;
   padding: 16px;
   background: #FFFFFF;
   border-radius: 12px;
@@ -114,9 +112,11 @@
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 16px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: -8px;
 }
 
 /* 关卡详情 */
@@ -137,13 +137,11 @@
 .level-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 .level-list-item {
   display: flex;
   align-items: center;
-  gap: 16px;
   padding: 16px;
   background: #F7F9FC;
   border-radius: 12px;
@@ -171,7 +169,6 @@
 
 .level-list-stars {
   display: flex;
-  gap: 8px;
 }
 
 .level-list-star {
@@ -201,7 +198,6 @@
 .recent-plays-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 .recent-play-item {
@@ -226,7 +222,6 @@
 
 .recent-play-stars {
   display: flex;
-  gap: 8px;
 }
 
 .recent-play-star {
@@ -251,7 +246,6 @@
 .management-actions {
   display: flex;
   flex-direction: column;
-  gap: 16px;
   margin-bottom: 24px;
 }
 
@@ -306,7 +300,6 @@
 .setting-control {
   display: flex;
   align-items: center;
-  gap: 16px;
 }
 
 .setting-control input[type="checkbox"] {
@@ -327,8 +320,8 @@
 
 /* 响应式适配 */
 @media (max-width: 768px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .stats-grid > * {
+    flex-basis: 140px;
   }
 
   .management-actions {
@@ -338,4 +331,48 @@
   .management-actions button {
     width: 100%;
   }
+}
+
+/* ============================================
+   iOS 9 兼容：flex gap 的等价替代
+   ============================================ */
+.verify-actions > * + * {
+  margin-left: 16px;
+}
+
+.parent-header > * + * {
+  margin-left: 16px;
+}
+
+.stats-grid > * {
+  flex: 1 1 150px;
+  margin: 8px;
+}
+
+.level-list > * + * {
+  margin-top: 16px;
+}
+
+.level-list-item > * + * {
+  margin-left: 16px;
+}
+
+.level-list-stars > * + * {
+  margin-left: 8px;
+}
+
+.recent-plays-list > * + * {
+  margin-top: 16px;
+}
+
+.recent-play-stars > * + * {
+  margin-left: 8px;
+}
+
+.management-actions > * + * {
+  margin-top: 16px;
+}
+
+.setting-control > * + * {
+  margin-left: 16px;
 }

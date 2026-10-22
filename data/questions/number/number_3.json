@@ -8,10 +8,10 @@
       "type": "compare",
       "instruction": "哪个数字更大?",
       "options": [
-        {"id": "opt1", "emoji": "3️", "label": "3"},
-        {"id": "opt2", "emoji": "5️", "label": "5"},
+        {"id": "opt1", "emoji": "3️⃣", "label": "3"},
+        {"id": "opt2", "emoji": "5️⃣", "label": "5"},
         {"id": "opt3", "emoji": "1️⃣", "label": "1"},
-        {"id": "opt4", "emoji": "2️", "label": "2"}
+        {"id": "opt4", "emoji": "2️⃣", "label": "2"}
       ],
       "correct": "opt2",
       "feedback": {
@@ -24,10 +24,10 @@
       "type": "compare",
       "instruction": "哪个数字更小?",
       "options": [
-        {"id": "opt1", "emoji": "4️", "label": "4"},
-        {"id": "opt2", "emoji": "1️", "label": "1"},
+        {"id": "opt1", "emoji": "4️⃣", "label": "4"},
+        {"id": "opt2", "emoji": "1️⃣", "label": "1"},
         {"id": "opt3", "emoji": "3️⃣", "label": "3"},
-        {"id": "opt4", "emoji": "2️", "label": "2"}
+        {"id": "opt4", "emoji": "2️⃣", "label": "2"}
       ],
       "correct": "opt2",
       "feedback": {
@@ -41,9 +41,9 @@
       "instruction": "2和4,哪个更大?",
       "options": [
         {"id": "opt1", "emoji": "2️⃣", "label": "2"},
-        {"id": "opt2", "emoji": "4️", "label": "4"},
+        {"id": "opt2", "emoji": "4️⃣", "label": "4"},
         {"id": "opt3", "emoji": "3️⃣", "label": "3"},
-        {"id": "opt4", "emoji": "1️", "label": "1"}
+        {"id": "opt4", "emoji": "1️⃣", "label": "1"}
       ],
       "correct": "opt2",
       "feedback": {
@@ -56,10 +56,10 @@
       "type": "compare",
       "instruction": "哪组更多?",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "1个苹果"},
+        {"id": "opt1", "emoji": "🍎", "label": "1个苹果"},
         {"id": "opt2", "emoji": "🍎🍎🍎", "label": "3个苹果"},
         {"id": "opt3", "emoji": "🍎🍎", "label": "2个苹果"},
-        {"id": "opt4", "emoji": "", "label": "4个苹果"}
+        {"id": "opt4", "emoji": "🍎🍎🍎🍎", "label": "4个苹果"}
       ],
       "correct": "opt4",
       "feedback": {

@@ -8,10 +8,10 @@
       "type": "match",
       "instruction": "找出和红色一样的颜色",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "蓝色"},
+        {"id": "opt1", "hex": "#0000FF", "label": "蓝色"},
         {"id": "opt2", "emoji": "🔴", "label": "红色"},
-        {"id": "opt3", "emoji": "", "label": "黄色"},
-        {"id": "opt4", "emoji": "", "label": "绿色"}
+        {"id": "opt3", "hex": "#FFFF00", "label": "黄色"},
+        {"id": "opt4", "hex": "#00FF00", "label": "绿色"}
       ],
       "correct": "opt2",
       "feedback": {
@@ -56,7 +56,7 @@
       "type": "match",
       "instruction": "匹配相同的颜色",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "黄色"},
+        {"id": "opt1", "hex": "#FFFF00", "label": "黄色"},
         {"id": "opt2", "emoji": "🔴", "label": "红色"},
         {"id": "opt3", "emoji": "🔵", "label": "蓝色"},
         {"id": "opt4", "emoji": "🟢", "label": "绿色"}

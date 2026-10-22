@@ -11,7 +11,7 @@
         {"id": "opt1", "emoji": "3️⃣", "label": "3"},
         {"id": "opt2", "emoji": "1️⃣", "label": "1"},
         {"id": "opt3", "emoji": "2️⃣", "label": "2"},
-        {"id": "opt4", "emoji": "4️", "label": "4"}
+        {"id": "opt4", "emoji": "4️⃣", "label": "4"}
       ],
       "correct": "opt1",
       "feedback": {
@@ -25,9 +25,9 @@
       "instruction": "数一数有几个苹果?",
       "options": [
         {"id": "opt1", "emoji": "🍎🍎", "label": "2个"},
-        {"id": "opt2", "emoji": "🍎🍎", "label": "3个"},
-        {"id": "opt3", "emoji": "", "label": "1个"},
-        {"id": "opt4", "emoji": "🍎🍎🍎", "label": "4个"}
+        {"id": "opt2", "emoji": "🍎🍎🍎", "label": "3个"},
+        {"id": "opt3", "emoji": "🍎", "label": "1个"},
+        {"id": "opt4", "emoji": "🍎🍎🍎🍎", "label": "4个"}
       ],
       "correct": "opt2",
       "feedback": {
@@ -56,9 +56,9 @@
       "type": "add",
       "instruction": "2加2等于几?",
       "options": [
-        {"id": "opt1", "emoji": "3️", "label": "3"},
-        {"id": "opt2", "emoji": "4️", "label": "4"},
-        {"id": "opt3", "emoji": "5️", "label": "5"},
+        {"id": "opt1", "emoji": "3️⃣", "label": "3"},
+        {"id": "opt2", "emoji": "4️⃣", "label": "4"},
+        {"id": "opt3", "emoji": "5️⃣", "label": "5"},
         {"id": "opt4", "emoji": "2️⃣", "label": "2"}
       ],
       "correct": "opt2",
@@ -72,8 +72,8 @@
       "type": "count",
       "instruction": "有几只小猫?",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "1只"},
-        {"id": "opt2", "emoji": "🐱", "label": "2只"},
+        {"id": "opt1", "emoji": "🐱", "label": "1只"},
+        {"id": "opt2", "emoji": "🐱🐱", "label": "2只"},
         {"id": "opt3", "emoji": "🐱🐱🐱", "label": "3只"},
         {"id": "opt4", "emoji": "🐱🐱🐱🐱", "label": "4只"}
       ],
@@ -105,8 +105,8 @@
       "instruction": "1加3等于几?",
       "options": [
         {"id": "opt1", "emoji": "2️⃣", "label": "2"},
-        {"id": "opt2", "emoji": "3️", "label": "3"},
-        {"id": "opt3", "emoji": "4️", "label": "4"},
+        {"id": "opt2", "emoji": "3️⃣", "label": "3"},
+        {"id": "opt3", "emoji": "4️⃣", "label": "4"},
         {"id": "opt4", "emoji": "5️⃣", "label": "5"}
       ],
       "correct": "opt3",

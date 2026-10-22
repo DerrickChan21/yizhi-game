@@ -25,7 +25,7 @@
       "instruction": "把红色的物品分类",
       "options": [
         {"id": "opt1", "emoji": "🍎", "label": "苹果"},
-        {"id": "opt2", "emoji": "🫐", "label": "蓝莓"},
+        {"id": "opt2", "emoji": "💧", "label": "蓝莓"},
         {"id": "opt3", "emoji": "🍌", "label": "香蕉"},
         {"id": "opt4", "emoji": "🌿", "label": "树叶"}
       ],
@@ -40,9 +40,9 @@
       "type": "compare",
       "instruction": "哪个是深蓝色?",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "深蓝色"},
-        {"id": "opt2", "emoji": "", "label": "浅蓝色"},
-        {"id": "opt3", "emoji": "", "label": "红色"},
+        {"id": "opt1", "hex": "#00008B", "label": "深蓝色"},
+        {"id": "opt2", "hex": "#6699FF", "label": "浅蓝色"},
+        {"id": "opt3", "hex": "#FF0000", "label": "红色"},
         {"id": "opt4", "emoji": "🟡", "label": "黄色"}
       ],
       "correct": "opt1",

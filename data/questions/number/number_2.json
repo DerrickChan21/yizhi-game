@@ -8,10 +8,10 @@
       "type": "count",
       "instruction": "数一数有几个苹果?",
       "options": [
-        {"id": "opt1", "emoji": "🍎🍎", "label": "3个"},
+        {"id": "opt1", "emoji": "🍎🍎🍎", "label": "3个"},
         {"id": "opt2", "emoji": "🍎", "label": "1个"},
         {"id": "opt3", "emoji": "🍎🍎", "label": "2个"},
-        {"id": "opt4", "emoji": "🍎🍎🍎", "label": "4个"}
+        {"id": "opt4", "emoji": "🍎🍎🍎🍎", "label": "4个"}
       ],
       "correct": "opt1",
       "feedback": {
@@ -22,16 +22,16 @@
     {
       "id": "number_2_q2",
       "type": "count",
-      "instruction": "有几只小鸭子?",
+      "instruction": "有几只小鸡?",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "1只"},
-        {"id": "opt2", "emoji": "🦆🦆", "label": "2只"},
-        {"id": "opt3", "emoji": "🦆🦆", "label": "3只"},
-        {"id": "opt4", "emoji": "🦆🦆🦆", "label": "4只"}
+        {"id": "opt1", "emoji": "🐤", "label": "1只"},
+        {"id": "opt2", "emoji": "🐤🐤", "label": "2只"},
+        {"id": "opt3", "emoji": "🐤🐤🐤", "label": "3只"},
+        {"id": "opt4", "emoji": "🐤🐤🐤🐤", "label": "4只"}
       ],
       "correct": "opt2",
       "feedback": {
-        "success": "太厉害了!有2只小鸭子!",
+        "success": "太厉害了!有2只小鸡!",
         "error": "1只、2只"
       }
     },
@@ -40,7 +40,7 @@
       "type": "count",
       "instruction": "数一数有几颗星?",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "1颗"},
+        {"id": "opt1", "emoji": "⭐", "label": "1颗"},
         {"id": "opt2", "emoji": "⭐⭐⭐", "label": "3颗"},
         {"id": "opt3", "emoji": "⭐⭐⭐⭐", "label": "4颗"},
         {"id": "opt4", "emoji": "⭐⭐", "label": "2颗"}
@@ -56,10 +56,10 @@
       "type": "count",
       "instruction": "有几朵花?",
       "options": [
-        {"id": "opt1", "emoji": "🌸", "label": "2朵"},
-        {"id": "opt2", "emoji": "🌸🌸🌸", "label": "4朵"},
-        {"id": "opt3", "emoji": "🌸🌸", "label": "3朵"},
-        {"id": "opt4", "emoji": "", "label": "1朵"}
+        {"id": "opt1", "emoji": "🌸🌸", "label": "2朵"},
+        {"id": "opt2", "emoji": "🌸🌸🌸🌸", "label": "4朵"},
+        {"id": "opt3", "emoji": "🌸🌸🌸", "label": "3朵"},
+        {"id": "opt4", "emoji": "🌸", "label": "1朵"}
       ],
       "correct": "opt1",
       "feedback": {
@@ -73,9 +73,9 @@
       "instruction": "数一数有几个球?",
       "options": [
         {"id": "opt1", "emoji": "🔵🔵", "label": "2个"},
-        {"id": "opt2", "emoji": "🔵🔵", "label": "3个"},
+        {"id": "opt2", "emoji": "🔵🔵🔵", "label": "3个"},
         {"id": "opt3", "emoji": "🔵", "label": "1个"},
-        {"id": "opt4", "emoji": "🔵🔵🔵", "label": "4个"}
+        {"id": "opt4", "emoji": "🔵🔵🔵🔵", "label": "4个"}
       ],
       "correct": "opt2",
       "feedback": {
@@ -89,9 +89,9 @@
       "instruction": "有几只小猫?",
       "options": [
         {"id": "opt1", "emoji": "🐱", "label": "1只"},
-        {"id": "opt2", "emoji": "🐱", "label": "2只"},
+        {"id": "opt2", "emoji": "🐱🐱", "label": "2只"},
         {"id": "opt3", "emoji": "🐱🐱🐱", "label": "3只"},
-        {"id": "opt4", "emoji": "🐱🐱🐱", "label": "4只"}
+        {"id": "opt4", "emoji": "🐱🐱🐱🐱", "label": "4只"}
       ],
       "correct": "opt3",
       "feedback": {

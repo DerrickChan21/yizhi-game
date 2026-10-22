@@ -8,8 +8,8 @@
       "type": "compare",
       "instruction": "哪个是深红色?",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "深红色"},
-        {"id": "opt2", "emoji": "", "label": "浅红色"},
+        {"id": "opt1", "hex": "#8B0000", "label": "深红色"},
+        {"id": "opt2", "hex": "#FF8080", "label": "浅红色"},
         {"id": "opt3", "emoji": "🔵", "label": "蓝色"},
         {"id": "opt4", "emoji": "🟢", "label": "绿色"}
       ],
@@ -25,7 +25,7 @@
       "instruction": "找出浅蓝色",
       "options": [
         {"id": "opt1", "emoji": "🔵", "label": "深蓝色"},
-        {"id": "opt2", "emoji": "", "label": "浅蓝色"},
+        {"id": "opt2", "hex": "#6699FF", "label": "浅蓝色"},
         {"id": "opt3", "emoji": "🔴", "label": "红色"},
         {"id": "opt4", "emoji": "🟡", "label": "黄色"}
       ],
@@ -40,10 +40,10 @@
       "type": "compare",
       "instruction": "深绿色和浅绿色,哪个更深?",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "深绿色"},
-        {"id": "opt2", "emoji": "", "label": "浅绿色"},
-        {"id": "opt3", "emoji": "", "label": "红色"},
-        {"id": "opt4", "emoji": "", "label": "蓝色"}
+        {"id": "opt1", "hex": "#006400", "label": "深绿色"},
+        {"id": "opt2", "hex": "#90EE90", "label": "浅绿色"},
+        {"id": "opt3", "hex": "#FF0000", "label": "红色"},
+        {"id": "opt4", "hex": "#0000FF", "label": "蓝色"}
       ],
       "correct": "opt1",
       "feedback": {
@@ -56,8 +56,8 @@
       "type": "compare",
       "instruction": "哪个颜色更浅?",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "浅黄色"},
-        {"id": "opt2", "emoji": "", "label": "深黄色"},
+        {"id": "opt1", "hex": "#FFF3A0", "label": "浅黄色"},
+        {"id": "opt2", "hex": "#B8860B", "label": "深黄色"},
         {"id": "opt3", "emoji": "🔴", "label": "红色"},
         {"id": "opt4", "emoji": "🟢", "label": "绿色"}
       ],
@@ -89,7 +89,7 @@
       "instruction": "找出和深黄色一样的",
       "options": [
         {"id": "opt1", "emoji": "🟡", "label": "浅黄"},
-        {"id": "opt2", "emoji": "", "label": "深黄"},
+        {"id": "opt2", "hex": "#B8860B", "label": "深黄"},
         {"id": "opt3", "emoji": "🟢", "label": "绿色"},
         {"id": "opt4", "emoji": "🔵", "label": "蓝色"}
       ],
@@ -105,9 +105,9 @@
       "instruction": "哪个是浅紫色?",
       "options": [
         {"id": "opt1", "emoji": "🟣", "label": "深紫色"},
-        {"id": "opt2", "emoji": "", "label": "浅紫色"},
+        {"id": "opt2", "hex": "#C8A2E8", "label": "浅紫色"},
         {"id": "opt3", "emoji": "🔴", "label": "红色"},
-        {"id": "opt4", "emoji": "", "label": "绿色"}
+        {"id": "opt4", "hex": "#00FF00", "label": "绿色"}
       ],
       "correct": "opt2",
       "feedback": {

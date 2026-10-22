@@ -8,7 +8,7 @@
       "type": "classify",
       "instruction": "把圆形的球放到圆形篮子里",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt1", "shape": "circle", "label": "圆形"},
         {"id": "opt2", "emoji": "⬜", "label": "方形"},
         {"id": "opt3", "emoji": "🔺", "label": "三角形"},
         {"id": "opt4", "emoji": "⭐", "label": "星形"}
@@ -26,8 +26,8 @@
       "options": [
         {"id": "opt1", "emoji": "🍎", "label": "苹果"},
         {"id": "opt2", "emoji": "📦", "label": "盒子"},
-        {"id": "opt3", "emoji": "", "label": "球"},
-        {"id": "opt4", "emoji": "", "label": "披萨"}
+        {"id": "opt3", "emoji": "⚽", "label": "球"},
+        {"id": "opt4", "emoji": "🍕", "label": "披萨"}
       ],
       "correct": "opt2",
       "feedback": {
@@ -42,7 +42,7 @@
       "options": [
         {"id": "opt1", "emoji": "🍪", "label": "饼干"},
         {"id": "opt2", "emoji": "🍕", "label": "披萨"},
-        {"id": "opt3", "emoji": "", "label": "球"},
+        {"id": "opt3", "emoji": "⚽", "label": "球"},
         {"id": "opt4", "emoji": "📦", "label": "盒子"}
       ],
       "correct": "opt2",
@@ -59,7 +59,7 @@
         {"id": "opt1", "emoji": "⭐", "label": "星形"},
         {"id": "opt2", "emoji": "🔺", "label": "三角形"},
         {"id": "opt3", "emoji": "⬜", "label": "方形"},
-        {"id": "opt4", "emoji": "", "label": "圆形"}
+        {"id": "opt4", "shape": "circle", "label": "圆形"}
       ],
       "correct": "opt4",
       "feedback": {
@@ -72,7 +72,7 @@
       "type": "classify",
       "instruction": "把这些积木按形状分开",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "圆形积木"},
+        {"id": "opt1", "shape": "circle", "label": "圆形积木"},
         {"id": "opt2", "emoji": "⬜", "label": "方形积木"},
         {"id": "opt3", "emoji": "🔺", "label": "三角积木"},
         {"id": "opt4", "emoji": "⭐", "label": "星形积木"}
@@ -88,7 +88,7 @@
       "type": "classify",
       "instruction": "哪个篮子里装的都是方形?",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "圆形篮"},
+        {"id": "opt1", "shape": "circle", "label": "圆形篮"},
         {"id": "opt2", "emoji": "📦📦", "label": "方形篮"},
         {"id": "opt3", "emoji": "🔺🔺", "label": "三角篮"},
         {"id": "opt4", "emoji": "⭐⭐", "label": "星形篮"}

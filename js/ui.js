@@ -26,16 +26,112 @@ UIManager.prototype.showQuestion = function(question) {
   }
 };
 
+/* ------------------------------------------------------------
+   颜色题不再依赖 emoji 字体
+   iOS 9 内置的 emoji 字体缺 🟢🟡🟠🟣（Unicode 12 才加入），会渲染成
+   空心方框。颜色是这几道题的唯一题干，空白等于题目不成立。
+   这里把所有"色环"字符统一换成 CSS 画的实心圆，
+   色值与题库 hex 字段保持一致。
+   ------------------------------------------------------------ */
+var COLOR_CIRCLE_HEX = {
+  '🔴': '#FF0000',
+  '🟠': '#FFA500',
+  '🟡': '#FFFF00',
+  '🟢': '#00FF00',
+  '🔵': '#0000FF',
+  '🟣': '#800080'
+};
+
+/* 按码点拆字符，避免把 emoji 的代理对拆成两半 */
+function splitByCodePoint(text) {
+  var out = [];
+  var i = 0;
+  var code;
+  while (i < text.length) {
+    code = text.charCodeAt(i);
+    if (code >= 0xD800 && code <= 0xDBFF && i + 1 < text.length) {
+      out.push(text.substring(i, i + 2));
+      i += 2;
+    } else {
+      out.push(text.charAt(i));
+      i += 1;
+    }
+  }
+  return out;
+}
+
+UIManager.prototype.createColorSwatch = function(hex) {
+  var dot = document.createElement('span');
+  dot.className = 'color-swatch';
+  dot.style.backgroundColor = hex;
+  return dot;
+};
+
+/* 形状题用几何字符渲染。
+   圆形/方形/三角形/星形本来就没法用 emoji 表达（数据里 emoji 是空串），
+   ● ■ ▲ ★ 是普通文字符号，任何字体都有，不依赖 emoji 字体，
+   在 iOS 9 上和现在的浏览器上长得一样。 */
+var SHAPE_GLYPH = {
+  circle: '●',
+  square: '■',
+  triangle: '▲',
+  star: '★'
+};
+
+/* 选项的图形节点：纯色画圆，混合内容逐字符替换 */
+UIManager.prototype.createOptionVisual = function(option) {
+  var wrap, chars, hex, buf, i, changed;
+  var count, glyph;
+
+  if (option.shape && SHAPE_GLYPH[option.shape]) {
+    wrap = document.createElement('div');
+    wrap.className = 'option-emoji';
+    glyph = SHAPE_GLYPH[option.shape];
+    count = option.shapeCount || 1;
+    for (i = 0; i < count; i++) {
+      wrap.appendChild(document.createTextNode(glyph));
+    }
+    return wrap;
+  }
+
+  if (option.hex) {
+    wrap = document.createElement('div');
+    wrap.className = 'option-emoji';
+    wrap.appendChild(this.createColorSwatch(option.hex));
+    return wrap;
+  }
+  if (!option.emoji) return null;
+
+  wrap = document.createElement('div');
+  wrap.className = 'option-emoji';
+  chars = splitByCodePoint(String(option.emoji));
+  buf = '';
+  changed = false;
+  for (i = 0; i < chars.length; i++) {
+    hex = COLOR_CIRCLE_HEX[chars[i]];
+    if (hex) {
+      changed = true;
+      if (buf) {
+        wrap.appendChild(document.createTextNode(buf));
+        buf = '';
+      }
+      wrap.appendChild(this.createColorSwatch(hex));
+    } else {
+      buf += chars[i];
+    }
+  }
+  if (buf) wrap.appendChild(document.createTextNode(buf));
+  if (!changed && !buf) return null;
+  return wrap;
+};
+
 UIManager.prototype.createOptionCard = function(option, index) {
   var card = document.createElement('div');
+  var visual;
   card.className = 'option-card';
   card.setAttribute('data-option-id', option.id);
-  if (option.emoji) {
-    var emoji = document.createElement('div');
-    emoji.className = 'option-emoji';
-    emoji.textContent = option.emoji;
-    card.appendChild(emoji);
-  }
+  visual = this.createOptionVisual(option);
+  if (visual) card.appendChild(visual);
   if (option.label) {
     var label = document.createElement('div');
     label.className = 'option-label';

@@ -8,7 +8,7 @@
       "type": "compose",
       "instruction": "两个三角形可以拼成什么?",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt1", "shape": "circle", "label": "圆形"},
         {"id": "opt2", "emoji": "⬜", "label": "方形"},
         {"id": "opt3", "emoji": "🔺", "label": "两个三角"},
         {"id": "opt4", "emoji": "⭐", "label": "星形"}
@@ -27,7 +27,7 @@
         {"id": "opt1", "emoji": "🐟", "label": "小鱼"},
         {"id": "opt2", "emoji": "🏠", "label": "房子"},
         {"id": "opt3", "emoji": "🚗", "label": "汽车"},
-        {"id": "opt4", "emoji": "", "label": "球"}
+        {"id": "opt4", "emoji": "⚽", "label": "球"}
       ],
       "correct": "opt1",
       "feedback": {
@@ -43,7 +43,7 @@
         {"id": "opt1", "emoji": "🏠", "label": "房子"},
         {"id": "opt2", "emoji": "🐟", "label": "小鱼"},
         {"id": "opt3", "emoji": "🚗", "label": "汽车"},
-        {"id": "opt4", "emoji": "", "label": "球"}
+        {"id": "opt4", "emoji": "⚽", "label": "球"}
       ],
       "correct": "opt1",
       "feedback": {
@@ -72,8 +72,8 @@
       "type": "compose",
       "instruction": "用形状拼出小花",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "圆形花心"},
-        {"id": "opt2", "emoji": "", "label": "方形花瓣"},
+        {"id": "opt1", "shape": "circle", "label": "圆形花心"},
+        {"id": "opt2", "shape": "square", "label": "方形花瓣"},
         {"id": "opt3", "emoji": "🔺", "label": "三角叶子"},
         {"id": "opt4", "emoji": "⭐", "label": "星形花蕊"}
       ],
@@ -88,8 +88,8 @@
       "type": "compose",
       "instruction": "几个圆形可以拼成毛毛虫?",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "1个圆形"},
-        {"id": "opt2", "emoji": "🔵🔵", "label": "3个圆形"},
+        {"id": "opt1", "shape": "circle", "label": "1个圆形"},
+        {"id": "opt2", "emoji": "🔵🔵🔵", "label": "3个圆形"},
         {"id": "opt3", "emoji": "⬜⬜", "label": "2个方形"},
         {"id": "opt4", "emoji": "🔺🔺🔺", "label": "3个三角"}
       ],

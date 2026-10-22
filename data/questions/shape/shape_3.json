@@ -9,7 +9,7 @@
       "instruction": "找出和圆形一样的形状",
       "options": [
         {"id": "opt1", "emoji": "⬜", "label": "方形"},
-        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "shape": "circle", "label": "圆形"},
         {"id": "opt3", "emoji": "🔺", "label": "三角形"},
         {"id": "opt4", "emoji": "⭐", "label": "星形"}
       ],
@@ -27,7 +27,7 @@
         {"id": "opt1", "emoji": "⭐", "label": "星星"},
         {"id": "opt2", "emoji": "⭐", "label": "星星"},
         {"id": "opt3", "emoji": "🔺", "label": "三角形"},
-        {"id": "opt4", "emoji": "", "label": "圆形"}
+        {"id": "opt4", "shape": "circle", "label": "圆形"}
       ],
       "correct": "opt1",
       "feedback": {
@@ -41,7 +41,7 @@
       "instruction": "方形的好朋友在哪里?",
       "options": [
         {"id": "opt1", "emoji": "🔺", "label": "三角形"},
-        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "shape": "circle", "label": "圆形"},
         {"id": "opt3", "emoji": "⬜", "label": "方形"},
         {"id": "opt4", "emoji": "⭐", "label": "星形"}
       ],
@@ -57,7 +57,7 @@
       "instruction": "匹配相同的形状",
       "options": [
         {"id": "opt1", "emoji": "🔺", "label": "三角形"},
-        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "shape": "circle", "label": "圆形"},
         {"id": "opt3", "emoji": "⬜", "label": "方形"},
         {"id": "opt4", "emoji": "⭐", "label": "星形"}
       ],
@@ -72,10 +72,10 @@
       "type": "match",
       "instruction": "找出不同的那个",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "圆形"},
-        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt1", "shape": "circle", "label": "圆形"},
+        {"id": "opt2", "shape": "circle", "label": "圆形"},
         {"id": "opt3", "emoji": "⬜", "label": "方形"},
-        {"id": "opt4", "emoji": "", "label": "圆形"}
+        {"id": "opt4", "shape": "circle", "label": "圆形"}
       ],
       "correct": "opt3",
       "feedback": {
@@ -89,7 +89,7 @@
       "instruction": "形状连连看",
       "options": [
         {"id": "opt1", "emoji": "⭐", "label": "星形"},
-        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "shape": "circle", "label": "圆形"},
         {"id": "opt3", "emoji": "🔺", "label": "三角形"},
         {"id": "opt4", "emoji": "⬜", "label": "方形"}
       ],

@@ -8,7 +8,7 @@
       "type": "identify",
       "instruction": "找出圆形",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt1", "shape": "circle", "label": "圆形"},
         {"id": "opt2", "emoji": "⬜", "label": "方形"},
         {"id": "opt3", "emoji": "🔺", "label": "三角形"},
         {"id": "opt4", "emoji": "⭐", "label": "星形"}
@@ -25,8 +25,8 @@
       "instruction": "哪个是方形?",
       "options": [
         {"id": "opt1", "emoji": "🔺", "label": "三角形"},
-        {"id": "opt2", "emoji": "", "label": "方形"},
-        {"id": "opt3", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "shape": "square", "label": "方形"},
+        {"id": "opt3", "shape": "circle", "label": "圆形"},
         {"id": "opt4", "emoji": "⭐", "label": "星形"}
       ],
       "correct": "opt2",
@@ -40,7 +40,7 @@
       "type": "identify",
       "instruction": "找出三角形",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt1", "shape": "circle", "label": "圆形"},
         {"id": "opt2", "emoji": "⬜", "label": "方形"},
         {"id": "opt3", "emoji": "🔺", "label": "三角形"},
         {"id": "opt4", "emoji": "⭐", "label": "星形"}
@@ -57,7 +57,7 @@
       "instruction": "点一点星形",
       "options": [
         {"id": "opt1", "emoji": "🔺", "label": "三角形"},
-        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "shape": "circle", "label": "圆形"},
         {"id": "opt3", "emoji": "⭐", "label": "星形"},
         {"id": "opt4", "emoji": "⬜", "label": "方形"}
       ],
@@ -75,7 +75,7 @@
         {"id": "opt1", "emoji": "⭐", "label": "星形"},
         {"id": "opt2", "emoji": "🔺", "label": "三角形"},
         {"id": "opt3", "emoji": "⬜", "label": "方形"},
-        {"id": "opt4", "emoji": "", "label": "圆形"}
+        {"id": "opt4", "shape": "circle", "label": "圆形"}
       ],
       "correct": "opt4",
       "feedback": {

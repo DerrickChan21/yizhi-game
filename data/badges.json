@@ -111,7 +111,7 @@
     {
       "id": "number_3",
       "name": "数字达人",
-      "emoji": "🧮",
+      "emoji": "🎲",
       "description": "完成数字星球第3关",
       "condition": "比较大小",
       "rarity": "uncommon",

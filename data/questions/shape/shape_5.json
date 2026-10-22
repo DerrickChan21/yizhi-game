@@ -8,7 +8,7 @@
       "type": "identify",
       "instruction": "找出圆形",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt1", "shape": "circle", "label": "圆形"},
         {"id": "opt2", "emoji": "⬜", "label": "方形"},
         {"id": "opt3", "emoji": "🔺", "label": "三角形"},
         {"id": "opt4", "emoji": "⭐", "label": "星形"}
@@ -25,7 +25,7 @@
       "instruction": "把方形的积木分类",
       "options": [
         {"id": "opt1", "emoji": "⬜", "label": "方形"},
-        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt2", "shape": "circle", "label": "圆形"},
         {"id": "opt3", "emoji": "🔺", "label": "三角形"},
         {"id": "opt4", "emoji": "⭐", "label": "星形"}
       ],
@@ -40,8 +40,8 @@
       "type": "match",
       "instruction": "找出和三角形一样的",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "圆形"},
-        {"id": "opt2", "emoji": "", "label": "方形"},
+        {"id": "opt1", "shape": "circle", "label": "圆形"},
+        {"id": "opt2", "shape": "square", "label": "方形"},
         {"id": "opt3", "emoji": "🔺", "label": "三角形"},
         {"id": "opt4", "emoji": "⭐", "label": "星形"}
       ],
@@ -59,7 +59,7 @@
         {"id": "opt1", "emoji": "🏠", "label": "房子"},
         {"id": "opt2", "emoji": "🐟", "label": "小鱼"},
         {"id": "opt3", "emoji": "🚗", "label": "汽车"},
-        {"id": "opt4", "emoji": "", "label": "球"}
+        {"id": "opt4", "emoji": "⚽", "label": "球"}
       ],
       "correct": "opt1",
       "feedback": {
@@ -72,7 +72,7 @@
       "type": "identify",
       "instruction": "星形在哪里?",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "圆形"},
+        {"id": "opt1", "shape": "circle", "label": "圆形"},
         {"id": "opt2", "emoji": "⬜", "label": "方形"},
         {"id": "opt3", "emoji": "🔺", "label": "三角形"},
         {"id": "opt4", "emoji": "⭐", "label": "星形"}
@@ -88,10 +88,10 @@
       "type": "match",
       "instruction": "找出不同的形状",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "圆形"},
-        {"id": "opt2", "emoji": "", "label": "圆形"},
+        {"id": "opt1", "shape": "circle", "label": "圆形"},
+        {"id": "opt2", "shape": "circle", "label": "圆形"},
         {"id": "opt3", "emoji": "⬜", "label": "方形"},
-        {"id": "opt4", "emoji": "", "label": "圆形"}
+        {"id": "opt4", "shape": "circle", "label": "圆形"}
       ],
       "correct": "opt3",
       "feedback": {
@@ -104,7 +104,7 @@
       "type": "compose",
       "instruction": "用形状拼出雪人",
       "options": [
-        {"id": "opt1", "emoji": "", "label": "两个圆形"},
+        {"id": "opt1", "shape": "circle", "shapeCount": 2, "label": "两个圆形"},
         {"id": "opt2", "emoji": "⬜⬜", "label": "两个方形"},
         {"id": "opt3", "emoji": "🔺", "label": "两个三角"},
         {"id": "opt4", "emoji": "⭐⭐", "label": "两个星形"}
