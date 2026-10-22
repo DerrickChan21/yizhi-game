@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iOS 9 诊断页</title>
+<style>
+  body { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 18px;
+         padding: 16px; background: #fff; color: #222; line-height: 1.6; }
+  h1 { font-size: 26px; margin-bottom: 8px; }
+  .box { border: 2px solid #ccc; border-radius: 10px; padding: 12px; margin-bottom: 14px; }
+  .row { padding: 4px 0; border-bottom: 1px solid #eee; }
+  .ok { color: #1a7f37; font-weight: bold; }
+  .no { color: #d73a49; font-weight: bold; }
+  .warn { color: #b08800; font-weight: bold; }
+  .code { font-family: monospace; font-size: 15px; color: #555; word-break: break-all; }
+  button { font-size: 20px; padding: 12px 20px; margin: 6px 6px 6px 0;
+           background: #4ECDC4; color: #fff; border: none; border-radius: 8px; min-height: 44px; }
+  #js-alive { background: #ffe; }
+</style>
+</head>
+<body>
+
+<h1>iOS 9 诊断页</h1>
+<p class="code">说明：本页不依赖 alert，结果直接写在屏幕上。打开后往下看红叉在哪一行。</p>
+
+<div class="box" id="js-alive">
+  <div class="row"><b>阶段 0 ─ JS 引擎</b></div>
+  <div class="row" id="r-js">（如果这一行一直是"未执行"，说明脚本根本没跑）</div>
+</div>
+
+<div class="box">
+  <div class="row"><b>阶段 1 ─ 环境</b></div>
+  <div class="row code" id="r-ua"></div>
+  <div class="row" id="r-ios"></div>
+</div>
+
+<div class="box">
+  <div class="row"><b>阶段 2 ─ JS 文件能否加载</b></div>
+  <div class="row" id="r-storage"></div>
+  <div class="row" id="r-audio"></div>
+  <div class="row" id="r-ui"></div>
+  <div class="row" id="r-app"></div>
+  <div class="row" id="r-game"></div>
+  <div class="row" id="r-badges"></div>
+</div>
+
+<div class="box">
+  <div class="row"><b>阶段 2.5 ─ 线上 JS 的真实内容（关键）</b></div>
+  <div class="row">下面这行是服务器返回的 <span class="code">js/app.js</span> 开头 200 个字符。<br>
+    正常应看到 <span class="code">/** 益智游戏 - 应用入口</span> 这类 JS 代码；<br>
+    如果看到 <span class="code">&lt;!DOCTYPE html&gt;</span> → 服务器把 404 回退成了首页（SPA 配置问题）；<br>
+    如果看到问号或乱码 → <b>编码不对</b>。</div>
+  <div class="row code" id="r-raw">读取中...</div>
+  <div class="row" id="r-cs"></div>
+</div>
+
+<div class="box">
+  <div class="row"><b>阶段 3 ─ 全局对象是否建立</b></div>
+  <div class="row" id="r-obj"></div>
+</div>
+
+<div class="box">
+  <div class="row"><b>阶段 4 ─ iOS 9 关键 API 探测</b></div>
+  <div class="row" id="r-api"></div>
+</div>
+
+<div class="box">
+  <div class="row"><b>阶段 5 ─ 弹窗是否被系统拦住</b></div>
+  <div class="row">点下面这个按钮，应该弹出一个框。<b>如果点了没反应，说明 iPad 把 alert 拦了</b>（这就能解释"alert 没弹出"，而代码其实在跑）。</div>
+  <div><button onclick="doAlert()">点我测试 alert</button></div>
+  <div class="row" id="r-alert">未测试</div>
+</div>
+
+<div class="box">
+  <div class="row"><b>阶段 6 ─ XHR 能否读到 JSON</b></div>
+  <div class="row"><button onclick="doXhr()">点我测试读题库</button></div>
+  <div class="row" id="r-xhr">未测试</div>
+</div>
+
+<script>
+/* 严格 ES5，不使用任何 ES6 语法 */
+var out = {};
+
+function set(id, html) {
+  var el = document.getElementById(id);
+  if (el) el.innerHTML = html;
+}
+function mark(ok) {
+  return ok ? '<span class="ok">OK</span>' : '<span class="no">失败</span>';
+}
+
+/* ---- 阶段 0 ---- */
+set('r-js', '<span class="ok">JS 已执行</span>（脚本活着）');
+
+/* ---- 阶段 1 ---- */
+var ua = navigator.userAgent;
+set('r-ua', ua);
+var m = ua.match(/OS (\d+)_(\d+)/);
+if (m) {
+  var v = parseInt(m[1], 10);
+  var cls = v <= 9 ? 'no' : 'ok';
+  set('r-ios', '<span class="' + cls + '">检测到 iOS ' + m[1] + '.' + m[2] + '</span>' +
+    (v <= 9 ? ' （iOS 9 及以下：不支持 CSS Grid、不支持 flex gap、不支持箭头函数/const）' : ''));
+} else {
+  set('r-ios', '<span class="warn">未识别出 iOS 版本（可能不是 iPad/iPhone）</span>');
+}
+
+/* ---- 阶段 2：逐个动态加载 JS，记录成功/失败 ---- */
+var jsFiles = ['js/storage.js', 'js/audio.js', 'js/ui.js', 'js/app.js', 'js/game.js', 'js/badges.js'];
+var ids = ['r-storage', 'r-audio', 'r-ui', 'r-app', 'r-game', 'r-badges'];
+
+function loadOne(i) {
+  if (i >= jsFiles.length) return;
+  var s = document.createElement('script');
+  s.src = jsFiles[i];
+  s.onload = function () { set(ids[i], jsFiles[i] + ' ── ' + mark(true)); loadOne(i + 1); };
+  s.onerror = function () { set(ids[i], jsFiles[i] + ' ── ' + mark(false) + ' <span class="no">（加载失败：文件不存在 / 没上传 / MIME 类型不对）</span>'); loadOne(i + 1); };
+  document.body.appendChild(s);
+}
+loadOne(0);
+
+/* ---- 阶段 2.5：把线上 JS 的真实内容抓出来看 ---- */
+(function () {
+  var x = new XMLHttpRequest();
+  x.open('GET', 'js/app.js', true);
+  x.onreadystatechange = function () {
+    if (x.readyState === 4) {
+      if (x.status === 200 || x.status === 0) {
+        var t = String(x.responseText).replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        var head = t.substring(0, 200);
+        var cls = 'code';
+        if (t.indexOf('&lt;!DOCTYPE') === 0 || t.indexOf('&lt;html') !== -1) {
+          head = '【严重】服务器返回的是 HTML 页面，不是 JS 文件 —— ' + head.substring(0, 120);
+          cls = 'no';
+        } else if (t.indexOf('\uFFFD') !== -1) {
+          head = '【严重】内容乱码（含替换字符）—— ' + head.substring(0, 120);
+          cls = 'no';
+        }
+        set('r-raw', '<span class="' + cls + '">' + head + '</span>');
+      } else {
+        set('r-raw', '<span class="no">读取失败，HTTP ' + x.status + '</span>');
+      }
+    }
+  };
+  x.onerror = function () { set('r-raw', '<span class="no">请求出错（file:// 下读不到属正常）</span>'); };
+  x.send();
+})();
+
+set('r-cs', '页面实际编码：<span class="code">' + (document.characterSet || document.charset) +
+  '</span>；协议：<span class="code">' + location.protocol + '</span>；地址：<span class="code">' + location.href + '</span>');
+
+/* ---- 阶段 4：API 探测 ---- */
+function has(fn) {
+  try { return fn(); } catch (e) { return false; }
+}
+var apis = [
+  ['Array.forEach', function () { return typeof Array.prototype.forEach === 'function'; }],
+  ['Array.indexOf', function () { return typeof Array.prototype.indexOf === 'function'; }],
+  ['Array.filter', function () { return typeof Array.prototype.filter === 'function'; }],
+  ['Object.keys', function () { return typeof Object.keys === 'function'; }],
+  ['JSON.parse', function () { return typeof JSON.parse === 'function'; }],
+  ['String.indexOf', function () { return typeof 'a'.indexOf === 'function'; }],
+  ['String.includes(ES6)', function () { return typeof 'a'.includes === 'function'; }],
+  ['classList', function () { return typeof document.body.classList === 'object'; }],
+  ['querySelectorAll', function () { return typeof document.querySelectorAll === 'function'; }],
+  ['addEventListener', function () { return typeof document.addEventListener === 'function'; }],
+  ['localStorage', function () { localStorage.setItem('__t', '1'); localStorage.removeItem('__t'); return true; }],
+  ['XMLHttpRequest', function () { return typeof XMLHttpRequest === 'function' || typeof XMLHttpRequest === 'object'; }],
+  ['speechSynthesis', function () { return typeof window.speechSynthesis !== 'undefined'; }],
+  ['Audio', function () { return typeof window.Audio === 'function'; }],
+  ['CSS Grid 支持', function () { return typeof CSS !== 'undefined' && typeof CSS.supports === 'function' && CSS.supports('display', 'grid'); }]
+];
+var html = '';
+for (var i = 0; i < apis.length; i++) {
+  var v = has(apis[i][1]);
+  var name = apis[i][0];
+  var isEs6 = name.indexOf('ES6') !== -1 || name.indexOf('Grid') !== -1;
+  html += '<div class="row">' + name + ' ── ' + (v ? '<span class="ok">有</span>' : (isEs6 ? '<span class="warn">没有（正常，旧系统本来就没有）</span>' : '<span class="no">没有（异常）</span>')) + '</div>';
+}
+set('r-api', html);
+
+/* ---- 阶段 3：全局对象（延后到脚本加载完之后再判） ---- */
+setTimeout(function () {
+  var objs = [
+    ['gameStorage', typeof window.gameStorage],
+    ['audioManager', typeof window.audioManager],
+    ['uiManager', typeof window.uiManager],
+    ['app (仅首页有)', typeof window.app],
+    ['game (仅 game.html 有)', typeof window.game]
+  ];
+  var h = '';
+  for (var j = 0; j < objs.length; j++) {
+    var ok = objs[j][1] !== 'undefined';
+    h += '<div class="row">' + objs[j][0] + ' ── ' + (ok ? '<span class="ok">已建立</span>' : '<span class="no">undefined</span>') + '</div>';
+  }
+  set('r-obj', h);
+}, 1500);
+
+/* ---- 阶段 5 ---- */
+function doAlert() {
+  var got = false;
+  try {
+    window.alert('如果你看到了这个框，说明 alert 没被系统拦住。');
+    got = true;
+  } catch (e) { got = false; }
+  set('r-alert', got ? '<span class="ok">alert 弹出了</span>' : '<span class="no">alert 抛异常</span>');
+}
+window.doAlert = doAlert;
+
+/* ---- 阶段 6 ---- */
+function doXhr() {
+  set('r-xhr', '<span class="warn">请求中...</span>');
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'data/questions/color/color_1.json', true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200 || xhr.status === 0) {
+        var n = -1;
+        try { n = JSON.parse(xhr.responseText).questions.length; } catch (e) { n = -2; }
+        set('r-xhr', '<span class="ok">读到题库</span>，第1关共 ' + n + ' 题' + (n === -2 ? '（<span class="no">但 JSON 解析失败</span>）' : ''));
+      } else {
+        set('r-xhr', '<span class="no">读取失败，HTTP ' + xhr.status + '</span>（file:// 下读不到是正常的，需要 http 方式打开）');
+      }
+    }
+  };
+  xhr.onerror = function () { set('r-xhr', '<span class="no">请求出错</span>（很可能是 file:// 打开，浏览器不许读旁边的文件）'); };
+  xhr.send();
+}
+window.doXhr = doXhr;
+</script>
+</body>
+</html>
